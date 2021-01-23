@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="ParentContainer" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.labyrinth.StartViewController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="Container" maxHeight="900.0" maxWidth="1300.0" prefHeight="900.0" prefWidth="1250.0">
+         <children>
+            <ImageView fitHeight="900.0" fitWidth="1250.0">
+               <image>
+                  <Image url="@StartView.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="SpielStart" blendMode="MULTIPLY" layoutX="216.0" layoutY="386.0" mnemonicParsing="false" onAction="#SpielStartenBtn" prefHeight="163.0" prefWidth="864.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
