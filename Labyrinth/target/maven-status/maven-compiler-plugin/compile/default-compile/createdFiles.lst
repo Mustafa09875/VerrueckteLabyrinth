@@ -1,5 +1,7 @@
-com\mycompany\labyrinth\App.class
-com\mycompany\labyrinth\SpielViewController.class
-com\mycompany\labyrinth\NewClass.class
+com/mycompany/labyrinth/KartenModel.class
+com/mycompany/labyrinth/BelohnungModel.class
+com/mycompany/labyrinth/SpielfigurModel.class
+com/mycompany/labyrinth/StartViewController.class
 module-info.class
-com\mycompany\labyrinth\StartViewController.class
+com/mycompany/labyrinth/SpielViewController.class
+com/mycompany/labyrinth/App.class
