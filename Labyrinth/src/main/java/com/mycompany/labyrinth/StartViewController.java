@@ -38,11 +38,6 @@ public class StartViewController implements Initializable {
     @FXML
     private AnchorPane Container;
 
-    /**
-     * Initializes the controller class.
-     */
-     
-        
     
     
     //dsffffffffffff

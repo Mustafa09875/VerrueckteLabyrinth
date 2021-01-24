@@ -21,6 +21,11 @@
                         <Image url="@Polygon%201.png" />
                      </image>
                   </ImageView>
+                  <ImageView fitHeight="796.0" fitWidth="796.0" layoutX="238.0" layoutY="104.0">
+                     <image>
+                        <Image url="@Labyrinth%20Hintergrund.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>
