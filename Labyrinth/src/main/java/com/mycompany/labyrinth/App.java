@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * JavaFX App
@@ -14,6 +15,37 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    private static ArrayList<BelohnungModel> belohnungen;
+    private static ArrayList<KartenModel> karten;
+    private static ArrayList<SpielfigurModel> spielfiguren;
+    
+    //Setter und Getter
+
+    public static ArrayList<BelohnungModel> getBelohnungen() {
+        return belohnungen;
+    }
+
+    public static void setBelohnungen(ArrayList<BelohnungModel> belohnungen) {
+        App.belohnungen = belohnungen;
+    }
+
+    public static ArrayList<KartenModel> getKarten() {
+        return karten;
+    }
+
+    public static void setKarten(ArrayList<KartenModel> karten) {
+        App.karten = karten;
+    }
+
+    public static ArrayList<SpielfigurModel> getSpielfiguren() {
+        return spielfiguren;
+    }
+
+    public static void setSpielfiguren(ArrayList<SpielfigurModel> spielfiguren) {
+        App.spielfiguren = spielfiguren;
+    }
+    
+    
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -32,6 +64,9 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        belohnungen = new ArrayList<BelohnungModel>();
+        karten = new ArrayList<KartenModel>();
+        spielfiguren = new ArrayList<SpielfigurModel>();
         launch();
     }
 
