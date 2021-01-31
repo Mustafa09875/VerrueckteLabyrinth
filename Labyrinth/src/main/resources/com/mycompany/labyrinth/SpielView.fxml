@@ -191,22 +191,22 @@
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="833.0" layoutY="702.0">
+                  <ImageView fx:id="FeldGrün" layoutX="833.0" layoutY="702.0">
                      <image>
                         <Image url="@SpielFiguren/GrünFeld.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="389.0" layoutY="258.0">
+                  <ImageView fx:id="FeldGelb" layoutX="389.0" layoutY="258.0">
                      <image>
                         <Image url="@SpielFiguren/GelbFeld.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="389.0" layoutY="193.0">
+                  <ImageView fx:id="FigurGeld" layoutX="389.0" layoutY="193.0">
                      <image>
                         <Image url="@SpielFiguren/Gelb.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="833.0" layoutY="625.0">
+                  <ImageView fx:id="FigurGrün" layoutX="833.0" layoutY="625.0">
                      <image>
                         <Image url="@SpielFiguren/Grün.png" />
                      </image>

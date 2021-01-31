@@ -33,6 +33,14 @@ public class SpielViewController implements Initializable {
     private ImageView BackStartView;
     @FXML
     private AnchorPane Container;
+    @FXML
+    private ImageView FeldGrün;
+    @FXML
+    private ImageView FeldGelb;
+    @FXML
+    private ImageView FigurGeld;
+    @FXML
+    private ImageView FigurGrün;
 
     /**
      * Initializes the controller class.
@@ -66,8 +74,8 @@ public class SpielViewController implements Initializable {
         time.setOnFinished(event1 ->{ 
             parentContainer.getChildren().remove(Container); 
         });
-        
         time.play();
+        
     }
     
 }
