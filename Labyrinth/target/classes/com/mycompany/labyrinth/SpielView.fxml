@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -26,6 +27,189 @@
                         <Image url="@Labyrinth%20Hintergrund.png" />
                      </image>
                   </ImageView>
+                  <Group layoutX="364.0" layoutY="233.0">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="111.0">
+                           <image>
+                              <Image url="@Karten/14-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="222.0" layoutY="444.0">
+                           <image>
+                              <Image url="@Karten/13-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="333.0" layoutY="331.0">
+                           <image>
+                              <Image url="@Karten/12-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0">
+                           <image>
+                              <Image url="@Karten/11-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="444.0" layoutY="111.0">
+                           <image>
+                              <Image url="@Karten/10-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="444.0" layoutY="222.0">
+                           <image>
+                              <Image url="@Karten/9-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="222.0">
+                           <image>
+                              <Image url="@Karten/8-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="111.0" layoutY="331.0">
+                           <image>
+                              <Image url="@Karten/7-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="333.0" layoutY="222.0">
+                           <image>
+                              <Image url="@Karten/6-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="222.0" layoutY="331.0">
+                           <image>
+                              <Image url="@Karten/5-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="444.0" layoutY="444.0">
+                           <image>
+                              <Image url="@Karten/4-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="333.0">
+                           <image>
+                              <Image url="@Karten/3-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutY="222.0">
+                           <image>
+                              <Image url="@Karten/2-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="111.0" layoutY="222.0">
+                           <image>
+                              <Image url="@Karten/1-Kollegah.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="333.0" layoutY="111.0">
+                           <image>
+                              <Image url="@Karten/15-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="333.0" layoutY="444.0">
+                           <image>
+                              <Image url="@Karten/16-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="444.0">
+                           <image>
+                              <Image url="@Karten/17-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="444.0" layoutY="331.0">
+                           <image>
+                              <Image url="@Karten/18-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutY="331.0">
+                           <image>
+                              <Image url="@Karten/19-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="111.0" layoutY="111.0">
+                           <image>
+                              <Image url="@Karten/20-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutY="111.0">
+                           <image>
+                              <Image url="@Karten/23-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="222.0" layoutY="111.0">
+                           <image>
+                              <Image url="@Karten/24-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="222.0" layoutY="222.0">
+                           <image>
+                              <Image url="@Karten/14-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="111.0" layoutY="444.0">
+                           <image>
+                              <Image url="@Karten/22-.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutY="444.0" rotate="-90.0">
+                           <image>
+                              <Image url="@Karten/20-.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Group>
+                  <Group layoutX="218.0" layoutY="104.0">
+                     <children>
+                        <ImageView layoutY="169.0">
+                           <image>
+                              <Image url="@Pfeil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutY="391.0">
+                           <image>
+                              <Image url="@Pfeil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="816.0" layoutY="169.0" nodeOrientation="RIGHT_TO_LEFT">
+                           <image>
+                              <Image url="@Pfeil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="816.0" layoutY="391.0" nodeOrientation="RIGHT_TO_LEFT">
+                           <image>
+                              <Image url="@Pfeil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="816.0" layoutY="607.0" nodeOrientation="RIGHT_TO_LEFT">
+                           <image>
+                              <Image url="@Pfeil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutY="607.0">
+                           <image>
+                              <Image url="@Pfeil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="196.0" layoutY="4.0" rotate="90.0">
+                           <image>
+                              <Image url="@Pfeil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="529.0" rotate="90.0">
+                           <image>
+                              <Image url="@Pfeil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="519.0" layoutY="775.0" rotate="-90.0">
+                           <image>
+                              <Image url="@Pfeil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="196.0" layoutY="775.0" rotate="-90.0">
+                           <image>
+                              <Image url="@Pfeil.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Group>
                </children>
             </AnchorPane>
          </children>
