@@ -3,6 +3,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 
 <StackPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.labyrinth.SpielViewController">
@@ -11,6 +14,22 @@
          <children>
             <AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1250.0">
                <children>
+                  <GridPane layoutX="364.0" layoutY="233.0" prefHeight="545.0" prefWidth="546.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="99.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="118.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="111.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="111.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="104.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="186.0" minHeight="0.0" prefHeight="111.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="413.0" minHeight="0.0" prefHeight="111.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="413.0" minHeight="4.0" prefHeight="109.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="413.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
                   <ImageView fitHeight="900.0" fitWidth="1250.0">
                      <image>
                         <Image url="@SpielHintergrundView.jpg" />
@@ -31,27 +50,27 @@
                         <Image url="@Karten/14-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="586.0" layoutY="677.0">
+                  <ImageView fx:id="L11SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="586.0" layoutY="677.0">
                      <image>
                         <Image url="@Karten/13-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="564.0">
+                  <ImageView fx:id="L9SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="564.0">
                      <image>
                         <Image url="@Karten/12-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="344.0">
+                  <ImageView fx:id="L3SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="344.0">
                      <image>
                         <Image url="@Karten/11-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="344.0">
+                  <ImageView fx:id="L5SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="344.0">
                      <image>
                         <Image url="@Karten/10-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="TSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="455.0">
+                  <ImageView fx:id="T5SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="455.0">
                      <image>
                         <Image url="@Karten/9-.png" />
                      </image>
@@ -61,64 +80,59 @@
                         <Image url="@Karten/8-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="564.0">
+                  <ImageView fx:id="L7SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="564.0">
                      <image>
                         <Image url="@Karten/7-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="455.0">
+                  <ImageView fx:id="L6SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="455.0">
                      <image>
                         <Image url="@Karten/6-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="586.0" layoutY="564.0">
+                  <ImageView fx:id="L8SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="586.0" layoutY="564.0">
                      <image>
                         <Image url="@Karten/5-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="TSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="677.0">
+                  <ImageView fx:id="T6SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="677.0">
                      <image>
                         <Image url="@Karten/4-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="TSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="233.0">
+                  <ImageView fx:id="T1SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="233.0">
                      <image>
                         <Image url="@Karten/3-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="TSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="455.0">
+                  <ImageView fx:id="T3SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="455.0">
                      <image>
                         <Image url="@Karten/2-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="TSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="455.0">
+                  <ImageView fx:id="T4SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="455.0">
                      <image>
                         <Image url="@Karten/1-Kollegah.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="ISpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="344.0">
+                  <ImageView fx:id="I2SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="344.0">
                      <image>
                         <Image url="@Karten/15-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="ISpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="677.0">
+                  <ImageView fx:id="I6SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="677.0">
                      <image>
                         <Image url="@Karten/16-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="ISpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="564.0">
+                  <ImageView fx:id="I5SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="564.0">
                      <image>
                         <Image url="@Karten/17-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="233.0">
+                  <ImageView fx:id="L1SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="233.0">
                      <image>
                         <Image url="@Karten/18-.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="564.0">
-                     <image>
-                        <Image url="@Karten/19-.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="233.0">
@@ -126,27 +140,27 @@
                         <Image url="@Karten/20-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="344.0">
+                  <ImageView fx:id="L2SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="344.0">
                      <image>
                         <Image url="@Karten/23-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="586.0" layoutY="344.0">
+                  <ImageView fx:id="L4SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="586.0" layoutY="344.0">
                      <image>
                         <Image url="@Karten/24-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="ISpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="586.0" layoutY="455.0">
+                  <ImageView fx:id="I3SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="586.0" layoutY="455.0">
                      <image>
                         <Image url="@Karten/14-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="677.0">
+                  <ImageView fx:id="L12SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="677.0">
                      <image>
                         <Image url="@Karten/22-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="LSpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="677.0" rotate="-90.0">
+                  <ImageView fx:id="L10SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="677.0" rotate="-90.0">
                      <image>
                         <Image url="@Karten/20-.png" />
                      </image>
@@ -209,6 +223,11 @@
                   <ImageView fx:id="FigurGrün" layoutX="833.0" layoutY="625.0">
                      <image>
                         <Image url="@SpielFiguren/Grün.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="I4SpielKarte1" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="565.0">
+                     <image>
+                        <Image url="@Karten/17-.png" />
                      </image>
                   </ImageView>
                </children>
