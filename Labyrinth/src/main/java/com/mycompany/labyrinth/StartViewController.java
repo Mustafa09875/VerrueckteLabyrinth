@@ -50,21 +50,21 @@ public class StartViewController implements Initializable {
     private void SpielStartenBtn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SpielView.fxml")); 
       
-      Scene spielview = SpielStart.getScene();
+        Scene spielview = SpielStart.getScene();
       
       
-      root.translateYProperty().set(spielview.getHeight());
+        root.translateYProperty().set(spielview.getHeight());
       
       
-      StackPane parentContainer =  (StackPane)spielview.getRoot();
-      parentContainer.getChildren().add(root);
+        StackPane parentContainer =  (StackPane)spielview.getRoot();
+        parentContainer.getChildren().add(root);
       
-      Timeline time = new Timeline();
+        Timeline time = new Timeline();
         KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
         KeyFrame kf = new KeyFrame(javafx.util.Duration.seconds(0.3), kv);
         time.getKeyFrames().add(kf);
         time.setOnFinished(event1 ->{ 
-            ParentContainer.getChildren().remove(Container); 
+            ParentContainer.getChildren().remove(Container);
         });
         
         time.play();
