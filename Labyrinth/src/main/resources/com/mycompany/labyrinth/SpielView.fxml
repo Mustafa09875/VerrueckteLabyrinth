@@ -166,42 +166,42 @@
                         <Image url="@Karten/20-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="PWestOben" layoutX="222.0" layoutY="386.0">
+                  <ImageView fx:id="PWestOben" layoutX="222.0" layoutY="386.0" onMouseClicked="#btnPWestOben">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="POstOben" layoutX="1034.0" layoutY="386.0" nodeOrientation="RIGHT_TO_LEFT">
+                  <ImageView fx:id="POstOben" layoutX="1034.0" layoutY="386.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#btnPOstOben">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="POstUnten" layoutX="1034.0" layoutY="605.0" nodeOrientation="RIGHT_TO_LEFT">
+                  <ImageView fx:id="POstUnten" layoutX="1034.0" layoutY="605.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#btnPOstUnten">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="PWestUnten" layoutX="222.0" layoutY="605.0">
+                  <ImageView fx:id="PWestUnten" layoutX="222.0" layoutY="605.0" onMouseClicked="#btnPWestUnten">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="PNordLinks" layoutX="515.0" layoutY="104.0" rotate="90.0">
+                  <ImageView layoutX="515.0" layoutY="104.0" onMouseClicked="#btnPNordLinks" rotate="90.0">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="PNordRechts" layoutX="737.0" layoutY="104.0" rotate="90.0">
+                  <ImageView fx:id="PNordRechts" layoutX="737.0" layoutY="104.0" onMouseClicked="#btnPNordRechts" rotate="90.0">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="PSüdRechts" layoutX="737.0" layoutY="880.0" rotate="-90.0">
+                  <ImageView fx:id="PSüdRechts" layoutX="737.0" layoutY="880.0" onMouseClicked="#btnPSüdRechts" rotate="-90.0">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="PSüdLinks" layoutX="515.0" layoutY="880.0" rotate="-90.0">
+                  <ImageView fx:id="PSüdLinks" layoutX="515.0" layoutY="880.0" onMouseClicked="#btnPSüdLinks" rotate="-90.0">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>

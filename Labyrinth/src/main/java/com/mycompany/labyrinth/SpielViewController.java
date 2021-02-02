@@ -58,8 +58,6 @@ public class SpielViewController implements Initializable {
     @FXML
     private ImageView PWestUnten;
     @FXML
-    private ImageView PNordLinks;
-    @FXML
     private ImageView PNordRechts;
     @FXML
     private ImageView PSüdRechts;
@@ -193,6 +191,38 @@ public class SpielViewController implements Initializable {
             parentContainer.getChildren().remove(Container);});
         time.play();
         
+    }
+
+    @FXML
+    private void btnPWestOben(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPOstOben(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPOstUnten(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPWestUnten(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPNordLinks(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPNordRechts(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPSüdRechts(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPSüdLinks(MouseEvent event) {
     }
 
     
