@@ -31,7 +31,7 @@
                         <Image url="@Karten/14-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="586.0" layoutY="671.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="586.0" layoutY="677.0">
                      <image>
                         <Image url="@Karten/13-.png" />
                      </image>
@@ -41,7 +41,7 @@
                         <Image url="@Karten/12-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="233.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="344.0">
                      <image>
                         <Image url="@Karten/11-.png" />
                      </image>
@@ -76,7 +76,7 @@
                         <Image url="@Karten/5-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="671.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="677.0">
                      <image>
                         <Image url="@Karten/4-.png" />
                      </image>
@@ -101,17 +101,17 @@
                         <Image url="@Karten/15-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="671.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="677.0">
                      <image>
                         <Image url="@Karten/16-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="233.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="564.0">
                      <image>
                         <Image url="@Karten/17-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="564.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="233.0">
                      <image>
                         <Image url="@Karten/18-.png" />
                      </image>
@@ -121,7 +121,7 @@
                         <Image url="@Karten/19-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="344.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="233.0">
                      <image>
                         <Image url="@Karten/20-.png" />
                      </image>
@@ -141,47 +141,37 @@
                         <Image url="@Karten/14-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="671.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="808.0" layoutY="677.0">
                      <image>
                         <Image url="@Karten/22-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="671.0" rotate="-90.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="677.0" rotate="-90.0">
                      <image>
                         <Image url="@Karten/20-.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="218.0" layoutY="273.0">
+                  <ImageView layoutX="222.0" layoutY="386.0">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="218.0" layoutY="495.0">
+                  <ImageView layoutX="1034.0" layoutY="386.0" nodeOrientation="RIGHT_TO_LEFT">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="1034.0" layoutY="273.0" nodeOrientation="RIGHT_TO_LEFT">
+                  <ImageView layoutX="1034.0" layoutY="605.0" nodeOrientation="RIGHT_TO_LEFT">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="1034.0" layoutY="495.0" nodeOrientation="RIGHT_TO_LEFT">
+                  <ImageView layoutX="222.0" layoutY="605.0">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="1034.0" layoutY="711.0" nodeOrientation="RIGHT_TO_LEFT">
-                     <image>
-                        <Image url="@Pfeil.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView layoutX="218.0" layoutY="711.0">
-                     <image>
-                        <Image url="@Pfeil.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView layoutX="404.0" layoutY="104.0" rotate="90.0">
+                  <ImageView layoutX="515.0" layoutY="104.0" rotate="90.0">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
@@ -191,14 +181,34 @@
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="737.0" layoutY="876.0" rotate="-90.0">
+                  <ImageView layoutX="737.0" layoutY="880.0" rotate="-90.0">
                      <image>
                         <Image url="@Pfeil.png" />
                      </image>
                   </ImageView>
-                  <ImageView layoutX="404.0" layoutY="876.0" rotate="-90.0">
+                  <ImageView layoutX="515.0" layoutY="880.0" rotate="-90.0">
                      <image>
                         <Image url="@Pfeil.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="FeldGrün" layoutX="833.0" layoutY="702.0">
+                     <image>
+                        <Image url="@SpielFiguren/GrünFeld.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="FeldGelb" layoutX="389.0" layoutY="258.0">
+                     <image>
+                        <Image url="@SpielFiguren/GelbFeld.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="FigurGeld" layoutX="389.0" layoutY="193.0">
+                     <image>
+                        <Image url="@SpielFiguren/Gelb.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="FigurGrün" layoutX="833.0" layoutY="625.0">
+                     <image>
+                        <Image url="@SpielFiguren/Grün.png" />
                      </image>
                   </ImageView>
                </children>
