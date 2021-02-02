@@ -130,7 +130,19 @@ public class SpielViewController implements Initializable {
         T5SpielKarte.setLayoutX(808); T5SpielKarte.setLayoutY(455);
         T6SpielKarte.setLayoutX(475); T6SpielKarte.setLayoutY(677);
         
-       
+        LSpielKarte.setLayoutX(364); LSpielKarte.setLayoutY(233);
+        L1SpielKarte.setLayoutX(808); L1SpielKarte.setLayoutY(677);
+        L2SpielKarte.setLayoutX(364); L2SpielKarte.setLayoutY(344);
+        L3SpielKarte.setLayoutX(475); L3SpielKarte.setLayoutY(344);
+        L4SpielKarte.setLayoutX(586); L4SpielKarte.setLayoutY(344);
+        L5SpielKarte.setLayoutX(808); L5SpielKarte.setLayoutY(344);
+        L6SpielKarte.setLayoutX(697); L6SpielKarte.setLayoutY(344);
+        L7SpielKarte.setLayoutX(475); L7SpielKarte.setLayoutY(564);
+        L8SpielKarte.setLayoutX(586); L8SpielKarte.setLayoutY(564);
+        L9SpielKarte.setLayoutX(697); L9SpielKarte.setLayoutY(564);
+        L10SpielKarte.setLayoutX(364); L10SpielKarte.setLayoutY(677);
+        L11SpielKarte.setLayoutX(586); L11SpielKarte.setLayoutY(677);
+        
         
         ISpielKarte.setLayoutX(475); ISpielKarte.setLayoutY(233);
         I1SpielKarte.setLayoutX(697); I1SpielKarte.setLayoutY(677);
