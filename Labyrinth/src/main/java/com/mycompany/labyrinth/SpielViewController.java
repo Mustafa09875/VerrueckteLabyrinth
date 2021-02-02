@@ -122,32 +122,22 @@ public class SpielViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        TSpielKarte.setLayoutX(588);  TSpielKarte.setLayoutY(233);
+        TSpielKarte.setLayoutX(586);  TSpielKarte.setLayoutY(233);
         T1SpielKarte.setLayoutX(697); T1SpielKarte.setLayoutY(233);
-        T2SpielKarte.setLayoutX(23); T2SpielKarte.setLayoutY(578);
-        T3SpielKarte.setLayoutX(23); T3SpielKarte.setLayoutY(578);
-        T4SpielKarte.setLayoutX(23); T4SpielKarte.setLayoutY(578);
-        T5SpielKarte.setLayoutX(23); T5SpielKarte.setLayoutY(578);
+        T2SpielKarte.setLayoutX(252); T2SpielKarte.setLayoutY(456);
+        T3SpielKarte.setLayoutX(364); T3SpielKarte.setLayoutY(455);
+        T4SpielKarte.setLayoutX(475); T4SpielKarte.setLayoutY(455);
+        T5SpielKarte.setLayoutX(808); T5SpielKarte.setLayoutY(455);
+        T6SpielKarte.setLayoutX(475); T6SpielKarte.setLayoutY(677);
         
-        LSpielKarte.setLayoutX(0); LSpielKarte.setLayoutY(0);
-        L1SpielKarte.setLayoutX(0); L1SpielKarte.setLayoutY(0);
-        L2SpielKarte.setLayoutX(0); L2SpielKarte.setLayoutY(0);
-        L3SpielKarte.setLayoutX(0); L3SpielKarte.setLayoutY(0);
-        L4SpielKarte.setLayoutX(0); L4SpielKarte.setLayoutY(0);
-        L5SpielKarte.setLayoutX(0); L5SpielKarte.setLayoutY(0);
-        L6SpielKarte.setLayoutX(0); L6SpielKarte.setLayoutY(0);
-        L7SpielKarte.setLayoutX(0); L7SpielKarte.setLayoutY(0);
-        L8SpielKarte.setLayoutX(0); L8SpielKarte.setLayoutY(0);
-        L9SpielKarte.setLayoutX(0); L9SpielKarte.setLayoutY(0);
-        L10SpielKarte.setLayoutX(0); L10SpielKarte.setLayoutY(0);
-        L11SpielKarte.setLayoutX(0); L11SpielKarte.setLayoutY(0);
+       
         
-        ISpielKarte.setLayoutX(0); ISpielKarte.setLayoutY(0);
-        I1SpielKarte.setLayoutX(0); I1SpielKarte.setLayoutY(0);
-        I2SpielKarte.setLayoutX(0); I2SpielKarte.setLayoutY(0);
-        I3SpielKarte.setLayoutX(0); I3SpielKarte.setLayoutY(0);
-        I4SpielKarte.setLayoutX(0); I4SpielKarte.setLayoutY(0);
-        I5SpielKarte.setLayoutX(0); I5SpielKarte.setLayoutY(0);
+        ISpielKarte.setLayoutX(475); ISpielKarte.setLayoutY(233);
+        I1SpielKarte.setLayoutX(697); I1SpielKarte.setLayoutY(677);
+        I2SpielKarte.setLayoutX(697); I2SpielKarte.setLayoutY(344);
+        I3SpielKarte.setLayoutX(586); I3SpielKarte.setLayoutY(455);
+        I4SpielKarte.setLayoutX(364); I4SpielKarte.setLayoutY(565);
+        I5SpielKarte.setLayoutX(808); I5SpielKarte.setLayoutY(564);
         
         
         
