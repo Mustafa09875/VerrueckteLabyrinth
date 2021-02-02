@@ -133,16 +133,29 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void BtnBackToStartView(MouseEvent event) throws IOException {
+<<<<<<< HEAD
+        Parent root = FXMLLoader.load(getClass().getResource("StartView.fxml")); 
+=======
       Parent root = FXMLLoader.load(getClass().getResource("StartView.fxml")); 
+>>>>>>> de39a1e7617ed038aa6e3cc23f7f6349902734d3
       
-      Scene startview = BackStartView.getScene();
+        Scene startview = BackStartView.getScene();
       
+<<<<<<< HEAD
+      
+        root.translateYProperty().set(-1 *startview.getHeight());
+      
+        
+        StackPane parentContainer =  (StackPane)startview.getRoot();
+        parentContainer.getChildren().add(root);
+=======
       root.translateYProperty().set(-1 *startview.getHeight());
       
       StackPane parentContainer =  (StackPane)startview.getRoot();
       parentContainer.getChildren().add(root);
+>>>>>>> de39a1e7617ed038aa6e3cc23f7f6349902734d3
               
-      Timeline time = new Timeline();
+        Timeline time = new Timeline();
         KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
         KeyFrame kf = new KeyFrame(javafx.util.Duration.seconds(0.3), kv);
         time.getKeyFrames().add(kf);
