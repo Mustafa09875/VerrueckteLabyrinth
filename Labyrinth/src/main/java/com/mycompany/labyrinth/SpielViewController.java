@@ -41,6 +41,28 @@ public class SpielViewController implements Initializable {
     private ImageView FigurGeld;
     @FXML
     private ImageView FigurGrün;
+    @FXML
+    private ImageView ISpielKarte;
+    @FXML
+    private ImageView LSpielKarte;
+    @FXML
+    private ImageView TSpielKarte;
+    @FXML
+    private ImageView PWestOben;
+    @FXML
+    private ImageView POstOben;
+    @FXML
+    private ImageView POstUnten;
+    @FXML
+    private ImageView PWestUnten;
+    @FXML
+    private ImageView PNordLinks;
+    @FXML
+    private ImageView PNordRechts;
+    @FXML
+    private ImageView PSüdRechts;
+    @FXML
+    private ImageView PSüdLinks;
 
     /**
      * Initializes the controller class.
