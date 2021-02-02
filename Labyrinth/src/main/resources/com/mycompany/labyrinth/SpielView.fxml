@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -230,6 +231,7 @@
                         <Image url="@Karten/17-.png" />
                      </image>
                   </ImageView>
+                  <Label fx:id="WarningBackText" layoutX="6.0" layoutY="105.0" onMouseExited="#MouseExitedBacktoStartView" prefHeight="39.0" prefWidth="296.0" text="Das ganze Spiel wird gelöscht, wenn Sie zurück gehen." textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>
