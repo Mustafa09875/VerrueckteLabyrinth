@@ -17,10 +17,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -107,6 +109,9 @@ public class SpielViewController implements Initializable {
     private ImageView L10SpielKarte;
     @FXML
     private ImageView I4SpielKarte1;
+    @FXML
+    private Label WarningBackText;
+    
 
     /**
      * Initializes the controller class.
@@ -114,22 +119,26 @@ public class SpielViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        WarningBackText.setVisible(false);
+        
     }    
 
     @FXML
     private void MouseEnteredBacktoStartView(MouseEvent event) {
-    }
+         WarningBackText.setVisible(true);}
+    
+    @FXML
+    private void MouseExitedBacktoStartView(MouseEvent event) {
+        WarningBackText.setVisible(false);}
 
     @FXML
     private void BtnBackToStartView(MouseEvent event) throws IOException {
-          Parent root = FXMLLoader.load(getClass().getResource("StartView.fxml")); 
+      Parent root = FXMLLoader.load(getClass().getResource("StartView.fxml")); 
       
       Scene startview = BackStartView.getScene();
       
-      
       root.translateYProperty().set(-1 *startview.getHeight());
       
-        
       StackPane parentContainer =  (StackPane)startview.getRoot();
       parentContainer.getChildren().add(root);
               
@@ -138,10 +147,11 @@ public class SpielViewController implements Initializable {
         KeyFrame kf = new KeyFrame(javafx.util.Duration.seconds(0.3), kv);
         time.getKeyFrames().add(kf);
         time.setOnFinished(event1 ->{ 
-            parentContainer.getChildren().remove(Container); 
-        });
+            parentContainer.getChildren().remove(Container);});
         time.play();
         
     }
+
+    
     
 }
