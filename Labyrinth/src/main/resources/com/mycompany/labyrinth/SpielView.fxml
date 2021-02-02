@@ -121,7 +121,7 @@
                         <Image url="@Karten/15-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="I6SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="677.0">
+                  <ImageView fx:id="I1SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="697.0" layoutY="677.0">
                      <image>
                         <Image url="@Karten/16-.png" />
                      </image>
@@ -226,12 +226,17 @@
                         <Image url="@SpielFiguren/Grün.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="I4SpielKarte1" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="565.0">
+                  <ImageView fx:id="I4SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="565.0">
                      <image>
                         <Image url="@Karten/17-.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="WarningBackText" layoutX="6.0" layoutY="105.0" onMouseExited="#MouseExitedBacktoStartView" prefHeight="39.0" prefWidth="296.0" text="Das ganze Spiel wird gelöscht, wenn Sie zurück gehen." textFill="WHITE" />
+                  <ImageView fx:id="T2SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="252.0" layoutY="456.0" rotate="180.0">
+                     <image>
+                        <Image url="@Karten/25-.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>

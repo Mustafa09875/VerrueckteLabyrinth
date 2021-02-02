@@ -91,8 +91,7 @@ public class SpielViewController implements Initializable {
     private ImageView T4SpielKarte;
     @FXML
     private ImageView I2SpielKarte;
-    @FXML
-    private ImageView I6SpielKarte;
+   
     @FXML
     private ImageView I5SpielKarte;
     @FXML
@@ -108,9 +107,13 @@ public class SpielViewController implements Initializable {
     @FXML
     private ImageView L10SpielKarte;
     @FXML
-    private ImageView I4SpielKarte1;
-    @FXML
     private Label WarningBackText;
+    @FXML
+    private ImageView T2SpielKarte;
+    @FXML
+    private ImageView I1SpielKarte;
+    @FXML
+    private ImageView I4SpielKarte;
     
 
     /**
@@ -119,6 +122,36 @@ public class SpielViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        TSpielKarte.setLayoutX(588);  TSpielKarte.setLayoutY(233);
+        T1SpielKarte.setLayoutX(697); T1SpielKarte.setLayoutY(233);
+        T2SpielKarte.setLayoutX(23); T2SpielKarte.setLayoutY(578);
+        T3SpielKarte.setLayoutX(23); T3SpielKarte.setLayoutY(578);
+        T4SpielKarte.setLayoutX(23); T4SpielKarte.setLayoutY(578);
+        T5SpielKarte.setLayoutX(23); T5SpielKarte.setLayoutY(578);
+        
+        LSpielKarte.setLayoutX(0); LSpielKarte.setLayoutY(0);
+        L1SpielKarte.setLayoutX(0); L1SpielKarte.setLayoutY(0);
+        L2SpielKarte.setLayoutX(0); L2SpielKarte.setLayoutY(0);
+        L3SpielKarte.setLayoutX(0); L3SpielKarte.setLayoutY(0);
+        L4SpielKarte.setLayoutX(0); L4SpielKarte.setLayoutY(0);
+        L5SpielKarte.setLayoutX(0); L5SpielKarte.setLayoutY(0);
+        L6SpielKarte.setLayoutX(0); L6SpielKarte.setLayoutY(0);
+        L7SpielKarte.setLayoutX(0); L7SpielKarte.setLayoutY(0);
+        L8SpielKarte.setLayoutX(0); L8SpielKarte.setLayoutY(0);
+        L9SpielKarte.setLayoutX(0); L9SpielKarte.setLayoutY(0);
+        L10SpielKarte.setLayoutX(0); L10SpielKarte.setLayoutY(0);
+        L11SpielKarte.setLayoutX(0); L11SpielKarte.setLayoutY(0);
+        
+        ISpielKarte.setLayoutX(0); ISpielKarte.setLayoutY(0);
+        I1SpielKarte.setLayoutX(0); I1SpielKarte.setLayoutY(0);
+        I2SpielKarte.setLayoutX(0); I2SpielKarte.setLayoutY(0);
+        I3SpielKarte.setLayoutX(0); I3SpielKarte.setLayoutY(0);
+        I4SpielKarte.setLayoutX(0); I4SpielKarte.setLayoutY(0);
+        I5SpielKarte.setLayoutX(0); I5SpielKarte.setLayoutY(0);
+        
+        
+        
+        
         WarningBackText.setVisible(false);
         
     }    

@@ -232,6 +232,11 @@
                      </image>
                   </ImageView>
                   <Label fx:id="WarningBackText" layoutX="6.0" layoutY="105.0" onMouseExited="#MouseExitedBacktoStartView" prefHeight="39.0" prefWidth="296.0" text="Das ganze Spiel wird gelöscht, wenn Sie zurück gehen." textFill="WHITE" />
+                  <ImageView fx:id="T2SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="252.0" layoutY="456.0" rotate="180.0">
+                     <image>
+                        <Image url="@Karten/25-.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>

@@ -47,6 +47,19 @@ public class SpielfigurModel {
         this.y = y;
     }
     
+     LSpielKarte.setLayoutX(0); LSpielKarte.setLayoutY(0);
+        L1SpielKarte.setLayoutX(0); L1SpielKarte.setLayoutY(0);
+        L2SpielKarte.setLayoutX(0); L2SpielKarte.setLayoutY(0);
+        L3SpielKarte.setLayoutX(0); L3SpielKarte.setLayoutY(0);
+        L4SpielKarte.setLayoutX(0); L4SpielKarte.setLayoutY(0);
+        L5SpielKarte.setLayoutX(0); L5SpielKarte.setLayoutY(0);
+        L6SpielKarte.setLayoutX(0); L6SpielKarte.setLayoutY(0);
+        L7SpielKarte.setLayoutX(0); L7SpielKarte.setLayoutY(0);
+        L8SpielKarte.setLayoutX(0); L8SpielKarte.setLayoutY(0);
+        L9SpielKarte.setLayoutX(0); L9SpielKarte.setLayoutY(0);
+        L10SpielKarte.setLayoutX(0); L10SpielKarte.setLayoutY(0);
+        L11SpielKarte.setLayoutX(0); L11SpielKarte.setLayoutY(0);
+    
     
     
 }
