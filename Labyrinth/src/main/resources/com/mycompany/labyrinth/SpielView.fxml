@@ -216,7 +216,7 @@
                         <Image url="@SpielFiguren/GelbFeld.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="FigurGeld" layoutX="389.0" layoutY="193.0">
+                  <ImageView fx:id="FigurGeld" layoutX="389.0" layoutY="193.0" onKeyPressed="#GeldKeyPressed">
                      <image>
                         <Image url="@SpielFiguren/Gelb.png" />
                      </image>
