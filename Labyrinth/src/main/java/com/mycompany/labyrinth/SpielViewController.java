@@ -6,6 +6,7 @@
 package com.mycompany.labyrinth;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.Interpolator;
@@ -17,8 +18,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -43,11 +46,8 @@ public class SpielViewController implements Initializable {
     private ImageView FigurGeld;
     @FXML
     private ImageView FigurGrün;
-    @FXML
     private ImageView ISpielKarte;
-    @FXML
     private ImageView LSpielKarte;
-    @FXML
     private ImageView TSpielKarte;
     @FXML
     private ImageView PWestOben;
@@ -63,64 +63,129 @@ public class SpielViewController implements Initializable {
     private ImageView PSüdRechts;
     @FXML
     private ImageView PSüdLinks;
-    @FXML
     private ImageView L11SpielKarte;
-    @FXML
     private ImageView L9SpielKarte;
-    @FXML
     private ImageView L3SpielKarte;
-    @FXML
     private ImageView L5SpielKarte;
-    @FXML
     private ImageView T5SpielKarte;
-    @FXML
     private ImageView L7SpielKarte;
-    @FXML
     private ImageView L6SpielKarte;
-    @FXML
     private ImageView L8SpielKarte;
-    @FXML
     private ImageView T6SpielKarte;
-    @FXML
     private ImageView T1SpielKarte;
-    @FXML
     private ImageView T3SpielKarte;
-    @FXML
     private ImageView T4SpielKarte;
-    @FXML
     private ImageView I2SpielKarte;
    
-    @FXML
     private ImageView I5SpielKarte;
-    @FXML
     private ImageView L1SpielKarte;
-    @FXML
     private ImageView L2SpielKarte;
-    @FXML
     private ImageView L4SpielKarte;
-    @FXML
     private ImageView I3SpielKarte;
-    @FXML
-    private ImageView L12SpielKarte;
-    @FXML
     private ImageView L10SpielKarte;
     @FXML
     private Label WarningBackText;
     @FXML
     private ImageView T2SpielKarte;
-    @FXML
     private ImageView I1SpielKarte;
-    @FXML
     private ImageView I4SpielKarte;
+    @FXML
+    private Button Buttonzumtesten;
+    @FXML
+    private ImageView ISpielKarte10;
+    @FXML
+    private ImageView L11SpielKarte24;
+    @FXML
+    private ImageView L9SpielKarte33;
+    @FXML
+    private ImageView L3SpielKarte11;
+    @FXML
+    private ImageView L5SpielKarte41;
+    @FXML
+    private ImageView T5SpielKarte42;
+    @FXML
+    private ImageView TSpielKarte20;
+    @FXML
+    private ImageView L7SpielKarte13;
+    @FXML
+    private ImageView L6SpielKarte32;
+    @FXML
+    private ImageView L8SpielKarte23;
+    @FXML
+    private ImageView T6SpielKarte14;
+    @FXML
+    private ImageView T1SpielKarte30;
+    @FXML
+    private ImageView T3SpielKarte02;
+    @FXML
+    private ImageView T4SpielKarte12;
+    @FXML
+    private ImageView I2SpielKarte31;
+    @FXML
+    private ImageView I1SpielKarte34;
+    @FXML
+    private ImageView I5SpielKarte43;
+    @FXML
+    private ImageView L1SpielKarte40;
+    @FXML
+    private ImageView LSpielKarte00;
+    @FXML
+    private ImageView L2SpielKarte01;
+    @FXML
+    private ImageView L4SpielKarte21;
+    @FXML
+    private ImageView I3SpielKarte22;
+    @FXML
+    private ImageView L12SpielKarte44;
+    @FXML
+    private ImageView L10SpielKarte04;
+    @FXML
+    private ImageView I4SpielKarte03;
+    @FXML
+    private ImageView PNordLinks;
+    @FXML
+    private ImageView RotateDown;
+    @FXML
+    private ImageView RotateRight;
+    @FXML
+    private ImageView RotateLeft;
+    @FXML
+    private ImageView RotationUp;
     
-
+      private static KartenModel board [][]= new KartenModel[5][5];
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        TSpielKarte.setLayoutX(586);  TSpielKarte.setLayoutY(233);
+        
+      App.getKarten().add(TSpielKarte);
+      App.getKarten().add(T1SpielKarte);
+      App.getKarten().add(T2SpielKarte);
+        
+        
+        App.getSpielfiguren().add(new SpielfigurGrün("Grün", 2, 3, false));
+        
+        KartenModel km = new KartenModel(true, true, true, true, TSpielKarte);      KartenModel km4 = new KartenModel(true, true, true, true, T4SpielKarte);
+        KartenModel km1 = new KartenModel(true, true, true, true, T1SpielKarte);    KartenModel km5 = new KartenModel(true, true, true, true, T5SpielKarte);
+        KartenModel km2 = new KartenModel(true, true, true, true, T2SpielKarte);    KartenModel km6 = new KartenModel(true, true, true, true, T6SpielKarte);
+        KartenModel km3 = new KartenModel(true, true, true, true, T3SpielKarte);    
+        
+        KartenModel km7 = new KartenModel(true, true, true, true, LSpielKarte);   KartenModel km13 = new KartenModel(true, true, true, true, L6SpielKarte);
+        KartenModel km8 = new KartenModel(true, true, true, true, L1SpielKarte);  KartenModel km14 = new KartenModel(true, true, true, true, L7SpielKarte);
+        KartenModel km9 = new KartenModel(true, true, true, true, L2SpielKarte);  KartenModel km15 = new KartenModel(true, true, true, true, L8SpielKarte);
+        KartenModel km10 = new KartenModel(true, true, true, true, L3SpielKarte); KartenModel km16 = new KartenModel(true, true, true, true, L9SpielKarte);
+        KartenModel km11 = new KartenModel(true, true, true, true, L4SpielKarte); KartenModel km17 = new KartenModel(true, true, true, true, L10SpielKarte);
+        KartenModel km12 = new KartenModel(true, true, true, true, L11SpielKarte);
+        
+        KartenModel km18 = new KartenModel(true, true, true, true, ISpielKarte);   KartenModel km21 = new KartenModel(true, true, true, true, I2SpielKarte);
+        KartenModel km19 = new KartenModel(true, true, true, true, I2SpielKarte);  KartenModel km22 = new KartenModel(true, true, true, true, I3SpielKarte);
+        KartenModel km20 = new KartenModel(true, true, true, true, I4SpielKarte);  KartenModel km23 = new KartenModel(true, true, true, true, I5SpielKarte);
+       
+        
+        
+      /**  TSpielKarte.setLayoutX(586);  TSpielKarte.setLayoutY(233);
         T1SpielKarte.setLayoutX(697); T1SpielKarte.setLayoutY(233);
         T2SpielKarte.setLayoutX(252); T2SpielKarte.setLayoutY(456);
         T3SpielKarte.setLayoutX(364); T3SpielKarte.setLayoutY(455);
@@ -147,16 +212,133 @@ public class SpielViewController implements Initializable {
         I2SpielKarte.setLayoutX(697); I2SpielKarte.setLayoutY(344);
         I3SpielKarte.setLayoutX(586); I3SpielKarte.setLayoutY(455);
         I4SpielKarte.setLayoutX(364); I4SpielKarte.setLayoutY(565);
-        I5SpielKarte.setLayoutX(808); I5SpielKarte.setLayoutY(564);
-        
-        
-        
+        I5SpielKarte.setLayoutX(808); I5SpielKarte.setLayoutY(564);**/
         
         WarningBackText.setVisible(false);
         
     }    
 
+   
+    private void Createboard(){
+        int x;
+        int y;
+        
+        for(x=0; x<5; x++){
+            for(y=0; y<5; y++){
+           
+              if(y==0){
+               switch(x)
+               {case 0: 
+                case 1:
+                case 2:
+                case 3:
+                case 4:}
+              }
+                   else if(y==1){
+                   switch(x)
+                   {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:}  
+                    }
+              
+            }
+        
+        } 
+    }
+     
+                
+            @FXML
+    private void FigurGelbClicked(MouseEvent event) {
+       
+              
+    }
+
     @FXML
+    private void FigurGrünClicked(MouseEvent event) {
+          App.getSpielfiguren().add(new SpielfigurGrün("Grün", 2, 3, false));
+          App.getSfgrün().setClicked(true);
+    }
+
+    @FXML
+    private void AnchoKeyPressed(KeyEvent event) {
+        
+            if(App.getSfgelb().isClicked() == true){    
+                   switch (event.getCode()){
+         case W:
+                FigurGeld.setY(FigurGeld.getY() - 8);
+                break;
+            case S:
+                FigurGeld.setY(FigurGeld.getY() + 8);
+                break;
+            case A:
+                FigurGeld.setX(FigurGeld.getX() - 8);
+                break;
+            case D:
+                FigurGeld.setX(FigurGeld.getX() + 8);
+                break;
+                  default : break;}
+               }
+            else if (App.getSfgrün().isClicked() == true){
+                switch (event.getCode()){
+              case W:
+                FigurGrün.setY(FigurGrün.getY() - 8);
+                break;
+            case S:
+                FigurGrün.setY(FigurGrün.getY() + 8);
+                break;
+            case A:
+                FigurGrün.setX(FigurGrün.getX() - 8);
+                break;
+            case D:
+                FigurGrün.setX(FigurGrün.getX() + 8);
+                break;
+            default : break;}
+            }
+    }
+            
+            
+  
+  
+
+    @FXML
+    private void StackPaneKeyPressed(KeyEvent event) {
+    }
+    
+    @FXML
+    private void btnPWestOben(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPOstOben(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPOstUnten(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPWestUnten(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPNordLinks(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPNordRechts(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPSüdRechts(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnPSüdLinks(MouseEvent event) {
+    }
+
+     @FXML
     private void MouseEnteredBacktoStartView(MouseEvent event) {
          WarningBackText.setVisible(true);}
     
@@ -193,38 +375,7 @@ public class SpielViewController implements Initializable {
         
     }
 
-    @FXML
-    private void btnPWestOben(MouseEvent event) {
-    }
-
-    @FXML
-    private void btnPOstOben(MouseEvent event) {
-    }
-
-    @FXML
-    private void btnPOstUnten(MouseEvent event) {
-    }
-
-    @FXML
-    private void btnPWestUnten(MouseEvent event) {
-    }
-
-    @FXML
-    private void btnPNordLinks(MouseEvent event) {
-    }
-
-    @FXML
-    private void btnPNordRechts(MouseEvent event) {
-    }
-
-    @FXML
-    private void btnPSüdRechts(MouseEvent event) {
-    }
-
-    @FXML
-    private void btnPSüdLinks(MouseEvent event) {
-    }
-
-    
-    
+  
 }
+
+

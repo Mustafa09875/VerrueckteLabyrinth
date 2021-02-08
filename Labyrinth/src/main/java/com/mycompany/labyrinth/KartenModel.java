@@ -5,46 +5,39 @@
  */
 package com.mycompany.labyrinth;
 
+import javafx.scene.image.ImageView;
+
 /**
  *
  * @author ivan
  */
 public class KartenModel {
     
-    private int x;
-    private int y;
+   
     private boolean linkerEingang;
     private boolean obererEingang;
     private boolean rechterEingang;
     private boolean untererEingang;
+    private ImageView karten;
 
-    public KartenModel(int x, int y, boolean linkerEingang, boolean obererEingang, boolean rechterEingang, boolean untererEingang) {
-        this.x = x;
-        this.y = y;
+    public KartenModel(boolean linkerEingang, boolean obererEingang, boolean rechterEingang, boolean untererEingang, ImageView karten) {
+    
         this.linkerEingang = linkerEingang;
         this.obererEingang = obererEingang;
         this.rechterEingang = rechterEingang;
         this.untererEingang = untererEingang;
+        this.karten = karten;
+    }
+
+    public ImageView getKarten() {
+        return karten;
+    }
+
+    public void setKarten(ImageView karten) {
+        this.karten = karten;
     }
     
     
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public boolean isLinkerEingang() {
         return linkerEingang;
     }

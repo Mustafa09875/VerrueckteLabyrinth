@@ -9,17 +9,29 @@ package com.mycompany.labyrinth;
  *
  * @author ivan
  */
-public class SpielfigurModel {
+public abstract class SpielfigurModel {
     
     private String name;
     private int x;
     private int y;
+    private boolean isclicked;
 
-    public SpielfigurModel(String name, int x, int y) {
+    public SpielfigurModel(String name, int x, int y, boolean isclicked) {
         this.name = name;
         this.x = x;
         this.y = y;
+        isclicked = false;
     }
+
+    public boolean isClicked() {
+        return isclicked;
+    }
+
+    public void setClicked(boolean clicked) {
+        this.isclicked = clicked;
+    }
+    
+    
 
     public String getName() {
         return name;

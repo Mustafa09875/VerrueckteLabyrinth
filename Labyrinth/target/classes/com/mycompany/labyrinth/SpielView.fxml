@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,7 +14,7 @@
    <children>
       <AnchorPane fx:id="Container">
          <children>
-            <AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1250.0">
+            <AnchorPane id="AnchorPane" onKeyPressed="#AnchoKeyPressed" prefHeight="900.0" prefWidth="1250.0">
                <children>
                   <GridPane layoutX="364.0" layoutY="233.0" prefHeight="545.0" prefWidth="546.0">
                     <columnConstraints>
@@ -216,16 +217,6 @@
                         <Image url="@SpielFiguren/GelbFeld.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="FigurGeld" layoutX="389.0" layoutY="193.0" onKeyPressed="#GeldKeyPressed">
-                     <image>
-                        <Image url="@SpielFiguren/Gelb.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="FigurGrün" layoutX="833.0" layoutY="625.0">
-                     <image>
-                        <Image url="@SpielFiguren/Grün.png" />
-                     </image>
-                  </ImageView>
                   <ImageView fx:id="I4SpielKarte" fitHeight="100.0" fitWidth="100.0" layoutX="364.0" layoutY="565.0">
                      <image>
                         <Image url="@Karten/17-.png" />
@@ -237,6 +228,17 @@
                         <Image url="@Karten/25-.png" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="FigurGeld" layoutX="389.0" layoutY="193.0" onMouseClicked="#FigurGelbClicked">
+                     <image>
+                        <Image url="@SpielFiguren/Gelb.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="FigurGrün" layoutX="833.0" layoutY="625.0" onKeyPressed="#StackPaneKeyPressed" onMouseClicked="#FigurGrünClicked">
+                     <image>
+                        <Image url="@SpielFiguren/Grün.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Buttonzumtesten" layoutX="69.0" layoutY="29.0" mnemonicParsing="false" text="Button" />
                </children>
             </AnchorPane>
          </children>
