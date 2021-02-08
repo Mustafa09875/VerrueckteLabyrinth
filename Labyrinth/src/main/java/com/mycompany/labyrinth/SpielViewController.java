@@ -245,6 +245,7 @@ public class SpielViewController implements Initializable {
               
             }
         
+<<<<<<< Updated upstream
         } 
     }
      
@@ -263,6 +264,12 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void AnchoKeyPressed(KeyEvent event) {
+=======
+        
+        
+        
+        WarningBackText.setVisible(false);
+>>>>>>> Stashed changes
         
             if(App.getSfgelb().isClicked() == true){    
                    switch (event.getCode()){
