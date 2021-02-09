@@ -115,7 +115,7 @@
                         </ImageView>
                         <ImageView fx:id="T4SpielKarte12" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <image>
-                              <Image url="@Karten/1-Kollegah.png" />
+                              <Image url="@Karten/1-.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="I2SpielKarte31" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
