@@ -28,7 +28,7 @@ public class App extends Application {
   
     
      
-   
+ 
     
     
     
@@ -99,16 +99,20 @@ public class App extends Application {
     public static void setSpielkarten(KartenModel spielkarten) {
         App.spielkarten = spielkarten;
     }
-
-    
-    
     
     
     
     public static void getRandomCard(){
        int grad = 0;
-       int t = new Random().nextInt(App.getKartenKlasse().size());
-       int nummer = new  Random().nextInt(3);
+       /** Ich erstelle eine Random methode vom Typ int und mein nextInt Gibt den nächsten pseudozufälligen, gleich 
+        * verteilten Integer zurück. Alle möglichen int-Werte aus meiner Arraylist getKartenKlasse.size, sowohl 
+        * positive als auch negative, sind in dem Bereich der Werte, die zurückgegeben werden.**/
+        int t = new Random().nextInt(App.getKartenKlasse().size());
+        /**
+         * Mit der Random Methode wird eine Zufällige Zahl zwischen 0 und 1 ausgesucht, ist die
+         * zahl 0, dann wird die Karte um 90 Grad gedreht, ist die 2, dann...
+         */
+        int nummer = new  Random().nextInt(3);
        switch(nummer){
               case 0: grad = 90; break;
               case 1: grad = 180; break;
@@ -149,9 +153,10 @@ public class App extends Application {
         karten = new ArrayList<ImageView>();
         spielfiguren = new ArrayList<SpielfigurModel>();
         kartenKlasse = new ArrayList <KartenModel>();
-      
+        
         spielfiguren.add(new SpielfigurGrün("Grün", 2, 3, false));
         spielfiguren.add(new SpielFigurGelb("Gelb", 1, 2, false));
+        
         
         launch();
     }

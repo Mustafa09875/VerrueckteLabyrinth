@@ -46,9 +46,6 @@ public class SpielViewController implements Initializable {
     private ImageView FigurGeld;
     @FXML
     private ImageView FigurGrün;
-    private ImageView ISpielKarte;
-    private ImageView LSpielKarte;
-    private ImageView TSpielKarte;
     @FXML
     private ImageView PWestOben;
     @FXML
@@ -63,84 +60,10 @@ public class SpielViewController implements Initializable {
     private ImageView PSüdRechts;
     @FXML
     private ImageView PSüdLinks;
-    private ImageView L11SpielKarte;
-    private ImageView L9SpielKarte;
-    private ImageView L3SpielKarte;
-    private ImageView L5SpielKarte;
-    private ImageView T5SpielKarte;
-    private ImageView L7SpielKarte;
-    private ImageView L6SpielKarte;
-    private ImageView L8SpielKarte;
-    private ImageView T6SpielKarte;
-    private ImageView T1SpielKarte;
-    private ImageView T3SpielKarte;
-    private ImageView T4SpielKarte;
-    private ImageView I2SpielKarte;
-   
-    private ImageView I5SpielKarte;
-    private ImageView L1SpielKarte;
-    private ImageView L2SpielKarte;
-    private ImageView L4SpielKarte;
-    private ImageView I3SpielKarte;
-    private ImageView L10SpielKarte;
     @FXML
     private Label WarningBackText;
     @FXML
-    private ImageView T2SpielKarte;
-    private ImageView I1SpielKarte;
-    private ImageView I4SpielKarte;
-    @FXML
     private Button Buttonzumtesten;
-    @FXML
-    private ImageView ISpielKarte10;
-    @FXML
-    private ImageView L11SpielKarte24;
-    @FXML
-    private ImageView L9SpielKarte33;
-    @FXML
-    private ImageView L3SpielKarte11;
-    @FXML
-    private ImageView L5SpielKarte41;
-    @FXML
-    private ImageView T5SpielKarte42;
-    @FXML
-    private ImageView TSpielKarte20;
-    @FXML
-    private ImageView L7SpielKarte13;
-    @FXML
-    private ImageView L6SpielKarte32;
-    @FXML
-    private ImageView L8SpielKarte23;
-    @FXML
-    private ImageView T6SpielKarte14;
-    @FXML
-    private ImageView T1SpielKarte30;
-    @FXML
-    private ImageView T3SpielKarte02;
-    @FXML
-    private ImageView T4SpielKarte12;
-    @FXML
-    private ImageView I2SpielKarte31;
-    @FXML
-    private ImageView I1SpielKarte34;
-    @FXML
-    private ImageView I5SpielKarte43;
-    @FXML
-    private ImageView L1SpielKarte40;
-    @FXML
-    private ImageView LSpielKarte00;
-    @FXML
-    private ImageView L2SpielKarte01;
-    @FXML
-    private ImageView L4SpielKarte21;
-    @FXML
-    private ImageView I3SpielKarte22;
-    @FXML
-    private ImageView L12SpielKarte44;
-    @FXML
-    private ImageView L10SpielKarte04;
-    @FXML
-    private ImageView I4SpielKarte03;
     @FXML
     private ImageView PNordLinks;
     @FXML
@@ -152,7 +75,67 @@ public class SpielViewController implements Initializable {
     @FXML
     private ImageView RotationUp;
     
-      private static KartenModel board [][]= new KartenModel[5][5];
+    
+   private static KartenModel board [][]= new KartenModel[4][4];
+    
+    
+    
+    @FXML
+    private ImageView ISpielKarte10;
+    @FXML
+    private ImageView L7SpielKarte33;
+    @FXML
+    private ImageView I1SpielKarte11;
+    @FXML
+    private ImageView L4SpielKarte41;
+    @FXML
+    private ImageView I4SpielKarte42;
+    @FXML
+    private ImageView TSpielKarte20;
+    @FXML
+    private ImageView L6SpielKarte13;
+    @FXML
+    private ImageView L5SpielKarte32;
+    @FXML
+    private ImageView T1SpielKarte30;
+    @FXML
+    private ImageView I2SpielKarte31;
+    @FXML
+    private ImageView I7SpielKarte34;
+    @FXML
+    private ImageView I6SpielKarte43;
+    @FXML
+    private ImageView L1SpielKarte40;
+    @FXML
+    private ImageView LSpielKarte00;
+    @FXML
+    private ImageView L2SpielKarte01;
+    @FXML
+    private ImageView L3SpielKarte21;
+    @FXML
+    private ImageView I3SpielKarte22;
+    @FXML
+    private ImageView I5SpielKarte03;
+    @FXML
+    private ImageView T2SpielKarte;
+    @FXML
+    private ImageView L9SpielKarte24;
+    @FXML
+    private ImageView T4SpielKarte23;
+    @FXML
+    private ImageView t5SpielKarte14;
+    @FXML
+    private ImageView T2SpielKarte02;
+    @FXML
+    private ImageView T3SpielKarte12;
+    @FXML
+    private ImageView L10SpielKarte44;
+    @FXML
+    private ImageView L8SpielKarte04;
+  
+  
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -160,28 +143,30 @@ public class SpielViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-      
-        
-        App.getSpielfiguren().add(new SpielfigurGrün("Grün", 2, 3, false));
         
         
+        //App.getSpielfiguren().add(new SpielfigurGrün("Grün", 2, 3, false));
         
         
-        KartenModel km = new KartenModel(true, true, true, true, TSpielKarte);      KartenModel km4 = new KartenModel(true, true, true, true, T4SpielKarte);
-        KartenModel km1 = new KartenModel(true, true, true, true, T1SpielKarte);    KartenModel km5 = new KartenModel(true, true, true, true, T5SpielKarte);
-        KartenModel km2 = new KartenModel(true, true, true, true, T2SpielKarte);    KartenModel km6 = new KartenModel(true, true, true, true, T6SpielKarte);
-        KartenModel km3 = new KartenModel(true, true, true, true, T3SpielKarte);    
         
-        KartenModel km7 = new KartenModel(true, true, true, true, LSpielKarte);   KartenModel km13 = new KartenModel(true, true, true, true, L6SpielKarte);
-        KartenModel km8 = new KartenModel(true, true, true, true, L1SpielKarte);  KartenModel km14 = new KartenModel(true, true, true, true, L7SpielKarte);
-        KartenModel km9 = new KartenModel(true, true, true, true, L2SpielKarte);  KartenModel km15 = new KartenModel(true, true, true, true, L8SpielKarte);
-        KartenModel km10 = new KartenModel(true, true, true, true, L3SpielKarte); KartenModel km16 = new KartenModel(true, true, true, true, L9SpielKarte);
-        KartenModel km11 = new KartenModel(true, true, true, true, L4SpielKarte); KartenModel km17 = new KartenModel(true, true, true, true, L10SpielKarte);
-        KartenModel km12 = new KartenModel(true, true, true, true, L11SpielKarte);
         
-        KartenModel km18 = new KartenModel(true, true, true, true, ISpielKarte);   KartenModel km21 = new KartenModel(true, true, true, true, I2SpielKarte);
-        KartenModel km19 = new KartenModel(true, true, true, true, I2SpielKarte);  KartenModel km22 = new KartenModel(true, true, true, true, I3SpielKarte);
-        KartenModel km20 = new KartenModel(true, true, true, true, I4SpielKarte);  KartenModel km23 = new KartenModel(true, true, true, true, I5SpielKarte);
+        KartenModel km = new KartenModel(true, true, true, true, TSpielKarte20);      KartenModel km4 = new KartenModel(true, true, true, true, T4SpielKarte23);
+        KartenModel km1 = new KartenModel(true, true, true, true, T1SpielKarte30);    KartenModel km5 = new KartenModel(true, true, true, true, t5SpielKarte14);
+        KartenModel km2 = new KartenModel(true, true, true, true, T2SpielKarte02);      KartenModel km6 = new KartenModel(true, true, true, true, T2SpielKarte);
+        KartenModel km3 = new KartenModel(true, true, true, true, T3SpielKarte12);    
+        
+        KartenModel km7 = new KartenModel(true, true, true, true, LSpielKarte00);   KartenModel km13 = new KartenModel(true, true, true, true, L6SpielKarte13);
+        KartenModel km8 = new KartenModel(true, true, true, true, L1SpielKarte40);  KartenModel km14 = new KartenModel(true, true, true, true, L7SpielKarte33);
+        KartenModel km9 = new KartenModel(true, true, true, true, L2SpielKarte01);  KartenModel km15 = new KartenModel(true, true, true, true, L8SpielKarte04);
+        KartenModel km10 = new KartenModel(true, true, true, true, L3SpielKarte21); KartenModel km16 = new KartenModel(true, true, true, true, L9SpielKarte24);
+        KartenModel km11 = new KartenModel(true, true, true, true, L4SpielKarte41); KartenModel km17 = new KartenModel(true, true, true, true, L10SpielKarte44);
+        KartenModel km12 = new KartenModel(true, true, true, true, I7SpielKarte34); 
+        
+        
+        KartenModel km18 = new KartenModel(true, true, true, true, ISpielKarte10);   KartenModel km21 = new KartenModel(true, true, true, true, I2SpielKarte31);
+        KartenModel km19 = new KartenModel(true, true, true, true, I1SpielKarte11);  KartenModel km22 = new KartenModel(true, true, true, true, I3SpielKarte22);
+        KartenModel km20 = new KartenModel(true, true, true, true, I4SpielKarte42);  KartenModel km23 = new KartenModel(true, true, true, true, I5SpielKarte03);
+        KartenModel km24 = new KartenModel(true, true, true, true, L5SpielKarte32);  KartenModel km25 = new KartenModel(true, true, true, true, I6SpielKarte43);
        
         App.getKartenKlasse().add(km); App.getKartenKlasse().add(km1); App.getKartenKlasse().add(km2); App.getKartenKlasse().add(km3); 
         App.getKartenKlasse().add(km4); App.getKartenKlasse().add(km5); App.getKartenKlasse().add(km6); App.getKartenKlasse().add(km7);
@@ -189,25 +174,29 @@ public class SpielViewController implements Initializable {
         App.getKartenKlasse().add(km12); App.getKartenKlasse().add(km13); App.getKartenKlasse().add(km14); App.getKartenKlasse().add(km15); 
         App.getKartenKlasse().add(km16); App.getKartenKlasse().add(km17); App.getKartenKlasse().add(km18); App.getKartenKlasse().add(km19);
         App.getKartenKlasse().add(km20); App.getKartenKlasse().add(km21); App.getKartenKlasse().add(km22); App.getKartenKlasse().add(km23);
+        App.getKartenKlasse().add(km24); App.getKartenKlasse().add(km25);
         
 
         WarningBackText.setVisible(false);
+         
+        
     }    
 
-    private void Boarderstellen(){
+   private void Boarderstellen(){
         int x;
         int y;
-        
+       
         for(x=0; x<5; x++){
             for(y=0; y<5; y++){
-           
-              if(y==0){
+            //App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(270); board [x][y].getKarten().setLayoutY(130);
+            
+            if(y==0){
                switch(x)
-               {//case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+               {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
                 case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(233);
                 case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(252); board [x][y].getKarten().setLayoutY(455);
                 case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(455);
-                //case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(455); 
+                case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(455); 
                     }
                 }
                    else if(y==1){
@@ -239,18 +228,23 @@ public class SpielViewController implements Initializable {
               
                                   else if(y==4){
                                   switch(x)
-                                 {//case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(677);
+                                 {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(677);
                                   case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(344);
                                   case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(455);
                                   case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(565);
-                                  //case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(564);
+                                  case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(564);
                                         }
+                                  
+                                  
                             } 
-            }
+                     }
         
 
-        } 
-    }@FXML
+            } 
+          
+    }
+    
+    @FXML
     private void FigurGelbClicked(MouseEvent event) {
        
               
@@ -264,8 +258,29 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void AnchoKeyPressed(KeyEvent event) {
+        
+        
+        
+            
+                   switch (event.getCode()){
+         case W:
+                FigurGeld.setY(FigurGeld.getY() - 8);
+                break;
+            case S:
+                FigurGeld.setY(FigurGeld.getY() + 8);
+                break;
+            case A:
+                FigurGeld.setX(FigurGeld.getX() - 8);
+                break;
+            case D:
+                FigurGeld.setX(FigurGeld.getX() + 8);
+                break;
+                  default : break;}
+               }
+        
+        
 
-            if(App.getSfgelb().isClicked() == true){    
+            /**if(App.getSfgelb().isClicked() == true){    
                    switch (event.getCode()){
          case W:
                 FigurGeld.setY(FigurGeld.getY() - 8);
@@ -297,12 +312,9 @@ public class SpielViewController implements Initializable {
                 break;
             default : break;}
             }
-    }
-            
-            
-  
-  
-
+                 **/
+    
+       
     @FXML
     private void StackPaneKeyPressed(KeyEvent event) {
     }

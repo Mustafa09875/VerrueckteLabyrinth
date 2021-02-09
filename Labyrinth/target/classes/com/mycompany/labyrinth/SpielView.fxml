@@ -53,27 +53,27 @@
                               <Image url="@Karten/14-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="L11SpielKarte24" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                        <ImageView fx:id="L9SpielKarte24" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                            <image>
                               <Image url="@Karten/13-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="L9SpielKarte33" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                        <ImageView fx:id="L7SpielKarte33" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                            <image>
                               <Image url="@Karten/12-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="L3SpielKarte11" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <ImageView fx:id="I1SpielKarte11" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <image>
                               <Image url="@Karten/11-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="L5SpielKarte41" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                        <ImageView fx:id="L4SpielKarte41" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
                            <image>
                               <Image url="@Karten/10-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="T5SpielKarte42" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                        <ImageView fx:id="I4SpielKarte42" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
                            <image>
                               <Image url="@Karten/9-.png" />
                            </image>
@@ -83,22 +83,22 @@
                               <Image url="@Karten/8-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="L7SpielKarte13" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <ImageView fx:id="L6SpielKarte13" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <image>
                               <Image url="@Karten/7-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="L6SpielKarte32" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <ImageView fx:id="L5SpielKarte32" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                            <image>
                               <Image url="@Karten/6-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="L8SpielKarte23" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                        <ImageView fx:id="T4SpielKarte23" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                            <image>
                               <Image url="@Karten/5-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="T6SpielKarte14" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <ImageView fx:id="t5SpielKarte14" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <image>
                               <Image url="@Karten/4-.png" />
                            </image>
@@ -108,12 +108,12 @@
                               <Image url="@Karten/3-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="T3SpielKarte02" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.rowIndex="2">
+                        <ImageView fx:id="T2SpielKarte02" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.rowIndex="2">
                            <image>
                               <Image url="@Karten/2-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="T4SpielKarte12" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <ImageView fx:id="T3SpielKarte12" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <image>
                               <Image url="@Karten/1-.png" />
                            </image>
@@ -123,12 +123,12 @@
                               <Image url="@Karten/15-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="I1SpielKarte34" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                        <ImageView fx:id="I7SpielKarte34" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                            <image>
                               <Image url="@Karten/16-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="I5SpielKarte43" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                        <ImageView fx:id="I6SpielKarte43" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
                            <image>
                               <Image url="@Karten/17-.png" />
                            </image>
@@ -148,27 +148,27 @@
                               <Image url="@Karten/23-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="L4SpielKarte21" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <ImageView fx:id="L3SpielKarte21" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <image>
                               <Image url="@Karten/24-.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="I3SpielKarte22" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <image>
-                              <Image url="@Karten/14-.png" />
+                              <Image url="@Karten/17-%20-%20Kopie.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="L12SpielKarte44" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                        <ImageView fx:id="L10SpielKarte44" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
                            <image>
                               <Image url="@Karten/22-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="L10SpielKarte04" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" rotate="-90.0" GridPane.rowIndex="4">
+                        <ImageView fx:id="L8SpielKarte04" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" rotate="-90.0" GridPane.rowIndex="4">
                            <image>
                               <Image url="@Karten/20-.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="I4SpielKarte03" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.rowIndex="3">
+                        <ImageView fx:id="I5SpielKarte03" fitHeight="100.0" fitWidth="100.0" layoutY="50.0" GridPane.rowIndex="3">
                            <image>
                               <Image url="@Karten/17-.png" />
                            </image>
