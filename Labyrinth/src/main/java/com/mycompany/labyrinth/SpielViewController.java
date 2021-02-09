@@ -190,36 +190,7 @@ public class SpielViewController implements Initializable {
         App.getKartenKlasse().add(km16); App.getKartenKlasse().add(km17); App.getKartenKlasse().add(km18); App.getKartenKlasse().add(km19);
         App.getKartenKlasse().add(km20); App.getKartenKlasse().add(km21); App.getKartenKlasse().add(km22); App.getKartenKlasse().add(km23);
         
-        
-      /**  TSpielKarte.setLayoutX(586);  TSpielKarte.setLayoutY(233);
-        T1SpielKarte.setLayoutX(697); T1SpielKarte.setLayoutY(233);
-        T2SpielKarte.setLayoutX(252); T2SpielKarte.setLayoutY(456);
-        T3SpielKarte.setLayoutX(364); T3SpielKarte.setLayoutY(455);
-        T4SpielKarte.setLayoutX(475); T4SpielKarte.setLayoutY(455);
-        T5SpielKarte.setLayoutX(808); T5SpielKarte.setLayoutY(455);
-        T6SpielKarte.setLayoutX(475); T6SpielKarte.setLayoutY(677);
-        
-        LSpielKarte.setLayoutX(364); LSpielKarte.setLayoutY(233);
-        L1SpielKarte.setLayoutX(808); L1SpielKarte.setLayoutY(233);
-        L2SpielKarte.setLayoutX(364); L2SpielKarte.setLayoutY(344);
-        L3SpielKarte.setLayoutX(475); L3SpielKarte.setLayoutY(344);
-        L4SpielKarte.setLayoutX(586); L4SpielKarte.setLayoutY(344);
-        L5SpielKarte.setLayoutX(808); L5SpielKarte.setLayoutY(344);
-        L6SpielKarte.setLayoutX(697); L6SpielKarte.setLayoutY(455);
-        L7SpielKarte.setLayoutX(475); L7SpielKarte.setLayoutY(564);
-        L8SpielKarte.setLayoutX(586); L8SpielKarte.setLayoutY(564);
-        L9SpielKarte.setLayoutX(697); L9SpielKarte.setLayoutY(564);
-        L10SpielKarte.setLayoutX(364); L10SpielKarte.setLayoutY(677);
-        L11SpielKarte.setLayoutX(586); L11SpielKarte.setLayoutY(677);
-        
-        
-        ISpielKarte.setLayoutX(475); ISpielKarte.setLayoutY(233);
-        I1SpielKarte.setLayoutX(697); I1SpielKarte.setLayoutY(677);
-        I2SpielKarte.setLayoutX(697); I2SpielKarte.setLayoutY(344);
-        I3SpielKarte.setLayoutX(586); I3SpielKarte.setLayoutY(455);
-        I4SpielKarte.setLayoutX(364); I4SpielKarte.setLayoutY(565);
-        I5SpielKarte.setLayoutX(808); I5SpielKarte.setLayoutY(564);**/
-        
+
         WarningBackText.setVisible(false);
         
     }    
@@ -260,20 +231,20 @@ public class SpielViewController implements Initializable {
               
                             else if(y==3){
                             switch(x)
-                            {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                            case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                            case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                            case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                            case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);}
+                            {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(564);
+                            case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(564);
+                            case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(677);
+                            case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(677);
+                            case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(233);}
                             } 
               
                                   else if(y==4){
                                   switch(x)
-                                 {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                                  case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                                  case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                                  case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                                  case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);}
+                                 {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(677);
+                                  case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(344);
+                                  case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(455);
+                                  case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(565);
+                                  case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(564);}
                             } 
             }
         
