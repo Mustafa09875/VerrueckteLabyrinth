@@ -160,12 +160,12 @@ public class SpielViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-      App.getKarten().add(TSpielKarte);
-      App.getKarten().add(T1SpielKarte);
-      App.getKarten().add(T2SpielKarte);
-        
+      
         
         App.getSpielfiguren().add(new SpielfigurGrün("Grün", 2, 3, false));
+        
+        
+        
         
         KartenModel km = new KartenModel(true, true, true, true, TSpielKarte);      KartenModel km4 = new KartenModel(true, true, true, true, T4SpielKarte);
         KartenModel km1 = new KartenModel(true, true, true, true, T1SpielKarte);    KartenModel km5 = new KartenModel(true, true, true, true, T5SpielKarte);
@@ -183,6 +183,12 @@ public class SpielViewController implements Initializable {
         KartenModel km19 = new KartenModel(true, true, true, true, I2SpielKarte);  KartenModel km22 = new KartenModel(true, true, true, true, I3SpielKarte);
         KartenModel km20 = new KartenModel(true, true, true, true, I4SpielKarte);  KartenModel km23 = new KartenModel(true, true, true, true, I5SpielKarte);
        
+        App.getKartenKlasse().add(km); App.getKartenKlasse().add(km1); App.getKartenKlasse().add(km2); App.getKartenKlasse().add(km3); 
+        App.getKartenKlasse().add(km4); App.getKartenKlasse().add(km5); App.getKartenKlasse().add(km6); App.getKartenKlasse().add(km7);
+        App.getKartenKlasse().add(km8); App.getKartenKlasse().add(km9); App.getKartenKlasse().add(km10); App.getKartenKlasse().add(km11);
+        App.getKartenKlasse().add(km12); App.getKartenKlasse().add(km13); App.getKartenKlasse().add(km14); App.getKartenKlasse().add(km15); 
+        App.getKartenKlasse().add(km16); App.getKartenKlasse().add(km17); App.getKartenKlasse().add(km18); App.getKartenKlasse().add(km19);
+        App.getKartenKlasse().add(km20); App.getKartenKlasse().add(km21); App.getKartenKlasse().add(km22); App.getKartenKlasse().add(km23);
         
         
       /**  TSpielKarte.setLayoutX(586);  TSpielKarte.setLayoutY(233);
@@ -219,7 +225,7 @@ public class SpielViewController implements Initializable {
     }    
 
    
-    private void Createboard(){
+    private void Boarderstellen(){
         int x;
         int y;
         
@@ -228,29 +234,52 @@ public class SpielViewController implements Initializable {
            
               if(y==0){
                switch(x)
-               {case 0: 
-                case 1:
-                case 2:
-                case 3:
-                case 4:}
-              }
+               {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233); }
+                }
                    else if(y==1){
                    switch(x)
                    {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:}  
-                    }
+                    case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                    case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                    case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                    case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);}
+                   }
+                    
+                        else if(y==2){
+                        switch(x)
+                        {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                        case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                        case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                        case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                        case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);}
+                         }
               
+                            else if(y==3){
+                            switch(x)
+                            {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                            case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                            case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                            case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                            case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);}
+                            } 
+              
+                                  else if(y==4){
+                                  switch(x)
+                                 {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                                  case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                                  case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                                  case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                                  case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);}
+                            } 
             }
         
-<<<<<<< Updated upstream
+
         } 
-    }
-     
-                
-            @FXML
+    }@FXML
     private void FigurGelbClicked(MouseEvent event) {
        
               
@@ -264,13 +293,7 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void AnchoKeyPressed(KeyEvent event) {
-=======
-        
-        
-        
-        WarningBackText.setVisible(false);
->>>>>>> Stashed changes
-        
+
             if(App.getSfgelb().isClicked() == true){    
                    switch (event.getCode()){
          case W:
