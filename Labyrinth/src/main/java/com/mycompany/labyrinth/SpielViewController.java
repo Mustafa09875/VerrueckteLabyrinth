@@ -142,7 +142,7 @@ public class SpielViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+        Boarderstellen();
         
         
         //App.getSpielfiguren().add(new SpielfigurGrün("Grün", 2, 3, false));
@@ -150,23 +150,23 @@ public class SpielViewController implements Initializable {
         
         
         
-        KartenModel km = new KartenModel(true, true, true, true, TSpielKarte20);      KartenModel km4 = new KartenModel(true, true, true, true, T4SpielKarte23);
-        KartenModel km1 = new KartenModel(true, true, true, true, T1SpielKarte30);    KartenModel km5 = new KartenModel(true, true, true, true, t5SpielKarte14);
-        KartenModel km2 = new KartenModel(true, true, true, true, T2SpielKarte02);      KartenModel km6 = new KartenModel(true, true, true, true, T2SpielKarte);
-        KartenModel km3 = new KartenModel(true, true, true, true, T3SpielKarte12);    
+        KartenModel km = new KartenModel(true, true, true, false, TSpielKarte20);      KartenModel km4 = new KartenModel(true, true, true, false, T4SpielKarte23);
+        KartenModel km1 = new KartenModel(true, true, true, false, T1SpielKarte30);    KartenModel km5 = new KartenModel(true, true, true, false, t5SpielKarte14);
+        KartenModel km2 = new KartenModel(true, true, true, false, T2SpielKarte02);      KartenModel km6 = new KartenModel(true, true, true, true, T2SpielKarte);
+        KartenModel km3 = new KartenModel(true, true, true, false, T3SpielKarte12);    
         
-        KartenModel km7 = new KartenModel(true, true, true, true, LSpielKarte00);   KartenModel km13 = new KartenModel(true, true, true, true, L6SpielKarte13);
-        KartenModel km8 = new KartenModel(true, true, true, true, L1SpielKarte40);  KartenModel km14 = new KartenModel(true, true, true, true, L7SpielKarte33);
-        KartenModel km9 = new KartenModel(true, true, true, true, L2SpielKarte01);  KartenModel km15 = new KartenModel(true, true, true, true, L8SpielKarte04);
-        KartenModel km10 = new KartenModel(true, true, true, true, L3SpielKarte21); KartenModel km16 = new KartenModel(true, true, true, true, L9SpielKarte24);
-        KartenModel km11 = new KartenModel(true, true, true, true, L4SpielKarte41); KartenModel km17 = new KartenModel(true, true, true, true, L10SpielKarte44);
-        KartenModel km12 = new KartenModel(true, true, true, true, I7SpielKarte34); 
+        KartenModel km7 = new KartenModel(false, false, true, true, LSpielKarte00);   KartenModel km13 = new KartenModel(false, false, true, true, L6SpielKarte13);
+        KartenModel km8 = new KartenModel(true, false, false, true, L1SpielKarte40);  KartenModel km14 = new KartenModel(true, true, false, false, L7SpielKarte33);
+        KartenModel km9 = new KartenModel(true, true, false, false, L2SpielKarte01);  KartenModel km15 = new KartenModel(false, true, true, false, L8SpielKarte04);
+        KartenModel km10 = new KartenModel(true, true, false, false, L3SpielKarte21); KartenModel km16 = new KartenModel(false, false, true, true, L9SpielKarte24);
+        KartenModel km11 = new KartenModel(true, false, false, true, L4SpielKarte41); KartenModel km17 = new KartenModel(true, true, false, false, L10SpielKarte44);
+        KartenModel km12 = new KartenModel(true, false, true, false, I7SpielKarte34); 
         
         
-        KartenModel km18 = new KartenModel(true, true, true, true, ISpielKarte10);   KartenModel km21 = new KartenModel(true, true, true, true, I2SpielKarte31);
-        KartenModel km19 = new KartenModel(true, true, true, true, I1SpielKarte11);  KartenModel km22 = new KartenModel(true, true, true, true, I3SpielKarte22);
-        KartenModel km20 = new KartenModel(true, true, true, true, I4SpielKarte42);  KartenModel km23 = new KartenModel(true, true, true, true, I5SpielKarte03);
-        KartenModel km24 = new KartenModel(true, true, true, true, L5SpielKarte32);  KartenModel km25 = new KartenModel(true, true, true, true, I6SpielKarte43);
+        KartenModel km18 = new KartenModel(true, false, true, false, ISpielKarte10);   KartenModel km21 = new KartenModel(true, false, true, false, I2SpielKarte31);
+        KartenModel km19 = new KartenModel(true, false, true, false, I1SpielKarte11);  KartenModel km22 = new KartenModel(true, false, true, false, I3SpielKarte22);
+        KartenModel km20 = new KartenModel(true, false, true, false, I4SpielKarte42);  KartenModel km23 = new KartenModel(true, false, true, false, I5SpielKarte03);
+        KartenModel km24 = new KartenModel(true, false, false, true, L5SpielKarte32);  KartenModel km25 = new KartenModel(true, false, true, false, I6SpielKarte43);
        
         App.getKartenKlasse().add(km); App.getKartenKlasse().add(km1); App.getKartenKlasse().add(km2); App.getKartenKlasse().add(km3); 
         App.getKartenKlasse().add(km4); App.getKartenKlasse().add(km5); App.getKartenKlasse().add(km6); App.getKartenKlasse().add(km7);
