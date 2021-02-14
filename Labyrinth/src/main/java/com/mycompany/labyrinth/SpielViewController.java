@@ -76,7 +76,7 @@ public class SpielViewController implements Initializable {
     private ImageView RotationUp;
     
     
-   private static KartenModel board [][]= new KartenModel[4][4];
+   
     
     
     
@@ -135,22 +135,22 @@ public class SpielViewController implements Initializable {
   
   
     
-    
+    private static KartenModel board [][]= new KartenModel[5][5];
+   
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-        
-        
+   
+       
         //App.getSpielfiguren().add(new SpielfigurGrün("Grün", 2, 3, false));
         
         
         
         
-        KartenModel km = new KartenModel(true, true, true, true, TSpielKarte20);      KartenModel km4 = new KartenModel(true, true, true, true, T4SpielKarte23);
+      KartenModel km = new KartenModel(true, true, true, true, TSpielKarte20);      KartenModel km4 = new KartenModel(true, true, true, true, T4SpielKarte23);
         KartenModel km1 = new KartenModel(true, true, true, true, T1SpielKarte30);    KartenModel km5 = new KartenModel(true, true, true, true, t5SpielKarte14);
         KartenModel km2 = new KartenModel(true, true, true, true, T2SpielKarte02);      KartenModel km6 = new KartenModel(true, true, true, true, T2SpielKarte);
         KartenModel km3 = new KartenModel(true, true, true, true, T3SpielKarte12);    
@@ -175,14 +175,13 @@ public class SpielViewController implements Initializable {
         App.getKartenKlasse().add(km16); App.getKartenKlasse().add(km17); App.getKartenKlasse().add(km18); App.getKartenKlasse().add(km19);
         App.getKartenKlasse().add(km20); App.getKartenKlasse().add(km21); App.getKartenKlasse().add(km22); App.getKartenKlasse().add(km23);
         App.getKartenKlasse().add(km24); App.getKartenKlasse().add(km25);
-        
+        System.out.println(App.getKartenKlasse().size());
+        Boarderstellen();
 
         WarningBackText.setVisible(false);
          
-        
-    }    
-
-   private void Boarderstellen(){
+      
+    } private void Boarderstellen(){
         int x;
         int y;
        
