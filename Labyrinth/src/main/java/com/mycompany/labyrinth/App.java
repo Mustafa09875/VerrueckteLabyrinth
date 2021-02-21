@@ -127,7 +127,7 @@ public class App extends Application {
         spielfiguren = new ArrayList<SpielfigurModel>();
        
         
-    ImageView eins = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/1-");
+    /**ImageView eins = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/1-");
      ImageView zwei = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/2-");
      ImageView drei = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/3-");
      ImageView vier = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/4-");
@@ -152,11 +152,11 @@ public class App extends Application {
      ImageView dreiundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/23-");
      ImageView vierundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/24-");
      ImageView fünfundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/25-");
-     ImageView sechsundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/26-");
+     ImageView sechsundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/26-");**/
       
         kartenKlasse = new ArrayList <KartenModel>();
         
-       kartenKlasse.add(new KartenModel(true, true, true, true, eins));
+       /**kartenKlasse.add(new KartenModel(true, true, true, true, eins));
         kartenKlasse.add(new KartenModel(true, true, true, true, zwei));
         kartenKlasse.add(new KartenModel(true, true, true, true, drei));
         kartenKlasse.add(new KartenModel(true, true, true, true, vier));
@@ -181,7 +181,7 @@ public class App extends Application {
         kartenKlasse.add(new KartenModel(true, true, true, true, dreiundzwanzig));
         kartenKlasse.add(new KartenModel(true, true, true, true, vierundzwanzig));
         kartenKlasse.add(new KartenModel(true, true, true, true, fünfundzwanzig));
-        kartenKlasse.add(new KartenModel(true, true, true, true, sechsundzwanzig));
+        kartenKlasse.add(new KartenModel(true, true, true, true, sechsundzwanzig));**/
         
        
             
