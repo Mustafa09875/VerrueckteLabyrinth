@@ -285,7 +285,6 @@ public class SpielViewController implements Initializable {
            * wird nicht zugelassen, dass er weiter geht, indem der Spiele auf die dementsprechende Position gesetzt wird.
            **/
            
-          
           if(FigurGeld.getY() > 424 && FigurGeld.getX() == 0){
               FigurGeld.setY(424); FigurGeld.setX(0);}
                
@@ -299,7 +298,23 @@ public class SpielViewController implements Initializable {
                                 FigurGeld.setY(424); FigurGeld.setX(318);  } 
                                 
                                 else if(FigurGeld.getY() > 424 && FigurGeld.getX() == 424){
-                                   FigurGeld.setY(424); FigurGeld.setX(424);  } 
+                                   FigurGeld.setY(424); FigurGeld.setX(424);  }
+                                
+          // letzte Reihe nach rechts                      
+          if(FigurGeld.getY() > 424 && FigurGeld.getX() == 0){
+              FigurGeld.setY(424); FigurGeld.setX(0);}
+               
+                 else if(FigurGeld.getY() > 424 && FigurGeld.getX() == 106){
+                    FigurGeld.setY(424); FigurGeld.setX(106);  } 
+                 
+                        else if(FigurGeld.getY() > 424 && FigurGeld.getX() == 212){
+                         FigurGeld.setY(424); FigurGeld.setX(212);  } 
+                                
+                                else if(FigurGeld.getY() > 424 && FigurGeld.getX() == 318){
+                                FigurGeld.setY(424); FigurGeld.setX(318);  } 
+                                
+                                else if(FigurGeld.getY() > 424 && FigurGeld.getX() == 424){
+                                   FigurGeld.setY(424); FigurGeld.setX(424);  }                      
                      
                  else {
                      }
