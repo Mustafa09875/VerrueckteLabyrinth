@@ -14,6 +14,10 @@ public class SpielFigurGelb extends SpielfigurModel{
     public SpielFigurGelb(String name, int x, int y, boolean isclicked) {
         super(name, x, y, isclicked);
     }
+
+    public boolean statusausgeben() {
+       return this.isClicked();
+    }
     
     
     

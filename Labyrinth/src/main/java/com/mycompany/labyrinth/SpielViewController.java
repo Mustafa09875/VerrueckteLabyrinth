@@ -8,6 +8,7 @@ package com.mycompany.labyrinth;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -133,9 +134,11 @@ public class SpielViewController implements Initializable {
     @FXML
     private ImageView L8SpielKarte04;
   
-  
+    boolean statusgrün;
+    boolean statusgelb;
     
     private static KartenModel board [][]= new KartenModel[5][5];
+    private static Random randomzahl;
    
     /**
      * Initializes the controller class.
@@ -144,7 +147,7 @@ public class SpielViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
    
-       
+       randomzahl = new Random();
         //App.getSpielfiguren().add(new SpielfigurGrün("Grün", 2, 3, false));
         
         
@@ -176,12 +179,42 @@ public class SpielViewController implements Initializable {
         App.getKartenKlasse().add(km20); App.getKartenKlasse().add(km21); App.getKartenKlasse().add(km22); App.getKartenKlasse().add(km23);
         App.getKartenKlasse().add(km24); App.getKartenKlasse().add(km25);
         System.out.println(App.getKartenKlasse().size());
-        Boarderstellen();
+       
+        //Boarderstellen();
 
         WarningBackText.setVisible(false);
          
       
-    } private void Boarderstellen(){
+    }
+    
+    
+    public static void getRandomCard(){
+       int grad = 0;
+       /** Ich erstelle eine Random methode vom Typ int und mein nextInt Gibt den nächsten zufälligen, gleich 
+        * verteilten Integer zurück. Alle möglichen int-Werte aus meiner Arraylist getKartenKlasse.size, sowohl 
+        * positive als auch negative, sind in dem Bereich der Werte, die zurückgegeben werden.**/
+        int t = randomzahl.nextInt(26);
+        /**
+         * Mit der Random Methode wird eine Zufällige Zahl zwischen 0 und 1 ausgesucht, ist die
+         * zahl 0, dann wird die Karte um 90 Grad gedreht, ist die 2, dann...
+         */
+        int nummer = randomzahl.nextInt(3);
+       switch(nummer){
+              case 0: grad = 90; break;
+              case 1: grad = 180; break;
+              case 2: grad = 270; break;
+              case 3: grad = 360; break;
+        }
+        if(App.getKartenKlasse().isEmpty()){
+            App.setSpielkarten(App.getKartenKlasse().get(t));
+        }else
+          App.setRandomkarte(App.getKartenKlasse().get(t));
+          App.getRandomkarte().getKarten().setRotate(grad);
+          App.getKartenKlasse().remove(t);
+
+        }
+    
+    private void Boarderstellen(){
         int x;
         int y;
        
@@ -191,47 +224,47 @@ public class SpielViewController implements Initializable {
             
             if(y==0){
                switch(x)
-               {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(233);
-                case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(252); board [x][y].getKarten().setLayoutY(455);
-                case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(455);
-                case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(455); 
+               {case 0: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
+                case 1: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(233);
+                case 2: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(252); board [x][y].getKarten().setLayoutY(455);
+                case 3: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(455);
+                case 4: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(455); 
                     }
                 }
                    else if(y==1){
                    switch(x)
-                   {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(455);
-                    case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(677);
-                    case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(233);
-                    case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(233);
-                    case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(344);}
+                   {case 0: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(455);
+                    case 1: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(677);
+                    case 2: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(233);
+                    case 3: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(233);
+                    case 4: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(344);}
                    }
                     
                         else if(y==2){
                         switch(x)
-                        {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(344);
-                        case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(344);
-                        case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(344);
-                        case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(455);
-                        case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(564);}
+                        {case 0: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(344);
+                        case 1: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(344);
+                        case 2: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(344);
+                        case 3: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(455);
+                        case 4: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(564);}
                          }
               
                             else if(y==3){
                             switch(x)
-                            {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(564);
-                            case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(564);
-                            case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(677);
-                            case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(677);
-                            case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(233);}
+                            {case 0: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(564);
+                            case 1: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(564);
+                            case 2: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(677);
+                            case 3: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(677);
+                            case 4: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(233);}
                             } 
               
                                   else if(y==4){
                                   switch(x)
-                                 {case 0: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(677);
-                                  case 1: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(344);
-                                  case 2: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(455);
-                                  case 3: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(565);
-                                  case 4: App.getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(564);
+                                 {case 0: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(677);
+                                  case 1: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(344);
+                                  case 2: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(455);
+                                  case 3: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(565);
+                                  case 4: getRandomCard();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(564);
                                         }
                                   
                                   
@@ -243,83 +276,134 @@ public class SpielViewController implements Initializable {
           
     }
     
+    
+     private void grenze(){
+          int x = (int) FigurGeld.getX();
+          int y = (int) FigurGeld.getY();
+          
+          /**Letzte Reihe unten: wird die Spielerposition y tiefer als 424 bewegt und befindet er sich im x Achsenabschnitt auf 0, dann
+           * wird nicht zugelassen, dass er weiter geht, indem der Spiele auf die dementsprechende Position gesetzt wird.
+           **/
+           
+          
+          if(FigurGeld.getY() > 424 && FigurGeld.getX() == 0){
+              FigurGeld.setY(424); FigurGeld.setX(0);}
+               
+                 else if(FigurGeld.getY() > 424 && FigurGeld.getX() == 106){
+                    FigurGeld.setY(424); FigurGeld.setX(106);  } 
+                 
+                        else if(FigurGeld.getY() > 424 && FigurGeld.getX() == 212){
+                         FigurGeld.setY(424); FigurGeld.setX(212);  } 
+                                
+                                else if(FigurGeld.getY() > 424 && FigurGeld.getX() == 318){
+                                FigurGeld.setY(424); FigurGeld.setX(318);  } 
+                                
+                                else if(FigurGeld.getY() > 424 && FigurGeld.getX() == 424){
+                                   FigurGeld.setY(424); FigurGeld.setX(424);  } 
+                     
+                 else {
+                     }
+          
+          
+          
+        /**  // Nach unten wird größer als 424
+        if(y > 424){
+        switch(x){
+        case 0:    FigurGeld.setY(424); FigurGeld.setX(0);
+        case 106:  FigurGeld.setY(424); FigurGeld.setX(106);
+        case 212:  FigurGeld.setY(424); FigurGeld.setX(212);
+        case 318:  FigurGeld.setY(424); FigurGeld.setX(318);
+        case 424:  FigurGeld.setY(424); FigurGeld.setX(424);
+        }
+        }
+        else if (x > 424 ) {
+        switch(y){
+        case 0: FigurGeld.setX(424); FigurGeld.setY(0);
+        case 106: FigurGeld.setX(424); FigurGeld.setY(106);
+        case 212: FigurGeld.setX(424); FigurGeld.setY(212);
+        case 318: FigurGeld.setX(424); FigurGeld.setY(318);
+        case 424: FigurGeld.setX(424); FigurGeld.setY(424);
+        }
+        }**/
+   
+         }
+    
+           
     @FXML
     private void FigurGelbClicked(MouseEvent event) {
-       
+      
+           statusgelb = true;
+           statusgrün = false;
+          
+           FigurGrün.setX(FeldGrün.getX()); FigurGrün.setY(FeldGrün.getY());
+           FigurGeld.setX(FeldGelb.getX()); FigurGeld.setY(FeldGelb.getY());
+        
               
     }
 
     @FXML
     private void FigurGrünClicked(MouseEvent event) {
-          App.getSpielfiguren().add(new SpielfigurGrün("Grün", 2, 3, false));
-          App.getSfgrün().setClicked(true);
+                    
+          statusgrün = true;
+          statusgelb = false;
+         
+          FigurGeld.setX(FeldGelb.getX()); FigurGeld.setY(FeldGelb.getY());
+           FigurGrün.setX(FeldGrün.getX()); FigurGeld.setY(FeldGrün.getY());
+           
     }
 
     @FXML
     private void AnchoKeyPressed(KeyEvent event) {
-        
-        
-        
-            
-                   switch (event.getCode()){
-         case W:
-                FigurGeld.setY(FigurGeld.getY() - 8);
-                break;
-            case S:
-                FigurGeld.setY(FigurGeld.getY() + 8);
-                break;
-            case A:
-                FigurGeld.setX(FigurGeld.getX() - 8);
-                break;
-            case D:
-                FigurGeld.setX(FigurGeld.getX() + 8);
-                break;
-                  default : break;}
-               }
-        
-        
-
-            /**if(App.getSfgelb().isClicked() == true){    
-                   switch (event.getCode()){
-         case W:
-                FigurGeld.setY(FigurGeld.getY() - 8);
-                break;
-            case S:
-                FigurGeld.setY(FigurGeld.getY() + 8);
-                break;
-            case A:
-                FigurGeld.setX(FigurGeld.getX() - 8);
-                break;
-            case D:
-                FigurGeld.setX(FigurGeld.getX() + 8);
-                break;
-                  default : break;}
-               }
-            else if (App.getSfgrün().isClicked() == true){
-                switch (event.getCode()){
-              case W:
-                FigurGrün.setY(FigurGrün.getY() - 8);
-                break;
-            case S:
-                FigurGrün.setY(FigurGrün.getY() + 8);
-                break;
-            case A:
-                FigurGrün.setX(FigurGrün.getX() - 8);
-                break;
-            case D:
-                FigurGrün.setX(FigurGrün.getX() + 8);
-                break;
-            default : break;}
-            }
-                 **/
-    
        
+        // & FigurGeld.getLayoutX() <= 829 & FigurGeld.getLayoutX() >= 380 & FigurGeld.getLayoutY() <= 613 & FigurGeld.getLayoutY() <= 175
+                
+            if(statusgelb == true){    
+                switch (event.getCode()){
+                case W:
+                FigurGeld.setY(FigurGeld.getY() - 106);
+                break;
+                case S:
+                FigurGeld.setY(FigurGeld.getY() + 106);
+                break;
+                case A:
+                FigurGeld.setX(FigurGeld.getX() - 106);
+                break;
+                case D:
+                FigurGeld.setX(FigurGeld.getX() + 106);
+                break;
+                 default : break;}
+                grenze();
+               }
+                  
+            //  || FigurGrün.getX() < 829 || FigurGrün.getX() > 380 || FigurGrün.getY() < 613 || FigurGrün.getY() < 180
+                    else if (statusgrün == true ){
+                        switch (event.getCode()){
+                      case W:
+                        FigurGrün.setY(FigurGrün.getY() - 106);
+                        break;
+                    case S:
+                        FigurGrün.setY(FigurGrün.getY() + 106);
+                        break;
+                    case A:
+                        FigurGrün.setX(FigurGrün.getX() - 106);
+                        break;
+                    case D:
+                        FigurGrün.setX(FigurGrün.getX() + 106);
+                        break;
+                    default : break;}
+                        grenze();
+                    }
+               System.out.println(FigurGeld.getX() + "X and Y " + FigurGeld.getY());
+               System.out.println(FigurGrün.getX() + "X and Y " + FigurGrün.getY());
+    
+    }
     @FXML
     private void StackPaneKeyPressed(KeyEvent event) {
     }
     
     @FXML
     private void btnPWestOben(MouseEvent event) {
+     
     }
 
     @FXML
@@ -340,6 +424,7 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPNordRechts(MouseEvent event) {
+        
     }
 
     @FXML
@@ -386,6 +471,8 @@ public class SpielViewController implements Initializable {
         time.play();
         
     }
+
+    
 
   
 }

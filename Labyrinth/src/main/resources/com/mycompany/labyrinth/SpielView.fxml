@@ -225,7 +225,7 @@
                         <Image url="@SpielFiguren/GrünFeld.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="FigurGrün" layoutX="828.0" layoutY="615.0" onKeyPressed="#StackPaneKeyPressed" onMouseClicked="#FigurGrünClicked">
+                  <ImageView fx:id="FigurGrün" layoutX="824.0" layoutY="610.0" onKeyPressed="#StackPaneKeyPressed" onMouseClicked="#FigurGrünClicked">
                      <image>
                         <Image url="@SpielFiguren/Grün.png" />
                      </image>

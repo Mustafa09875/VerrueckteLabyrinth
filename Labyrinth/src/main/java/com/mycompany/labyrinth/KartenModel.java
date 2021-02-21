@@ -19,6 +19,7 @@ public class KartenModel {
     private boolean rechterEingang;
     private boolean untererEingang;
     private ImageView karten;
+    
 
     public KartenModel(boolean linkerEingang, boolean obererEingang, boolean rechterEingang, boolean untererEingang, ImageView karten) {
     
@@ -27,7 +28,11 @@ public class KartenModel {
         this.rechterEingang = rechterEingang;
         this.untererEingang = untererEingang;
         this.karten = karten;
+      
     }
+
+  
+    
 
     public ImageView getKarten() {
         return karten;

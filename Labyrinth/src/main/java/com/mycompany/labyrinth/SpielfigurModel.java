@@ -5,6 +5,8 @@
  */
 package com.mycompany.labyrinth;
 
+import javafx.scene.image.ImageView;
+
 /**
  *
  * @author ivan
@@ -15,14 +17,19 @@ public abstract class SpielfigurModel {
     private int x;
     private int y;
     private boolean isclicked;
-
+   
     public SpielfigurModel(String name, int x, int y, boolean isclicked) {
         this.name = name;
         this.x = x;
         this.y = y;
         isclicked = false;
+      
     }
+    
+    
 
+    
+        
     public boolean isClicked() {
         return isclicked;
     }

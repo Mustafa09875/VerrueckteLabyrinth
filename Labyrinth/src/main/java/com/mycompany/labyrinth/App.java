@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
+
 import javafx.scene.image.ImageView;
 
 /**
@@ -23,25 +23,18 @@ public class App extends Application {
     private static SpielFigurGelb sfgelb;
     private static SpielfigurGrün sfgrün;
     private static ArrayList <KartenModel> kartenKlasse;
-    private static ArrayList <KartenModel> neueKartenklasse;
+
     
     private static KartenModel randomkarte;
     private static KartenModel spielkarten;
   
     
-     private static Random random = new Random();
+  
      
      
      
 
-    public static ArrayList<KartenModel> getNeueKartenklasse() {
-        return neueKartenklasse;
-    }
-
-    //Setter und Getter
-    public static void setNeueKartenklasse(ArrayList<KartenModel> neueKartenklasse) {
-        App.neueKartenklasse = neueKartenklasse;
-    }
+  
 
     public static ArrayList<BelohnungModel> getBelohnungen() {
         return belohnungen;
@@ -100,7 +93,7 @@ public class App extends Application {
     }
 
     public static KartenModel getSpielkarten() {
-        return App.spielkarten;
+        return spielkarten;
     }
 
     public static void setSpielkarten(KartenModel spielkarten) {
@@ -108,24 +101,7 @@ public class App extends Application {
     }
     
     
-    public static void getRandomCard(){
-       int grad = 0;
-       int t = new Random().nextInt(App.getKartenKlasse().size());
-       int nummer = new  Random().nextInt(3);
-       switch(nummer){
-              case 0: grad = 90; break;
-              case 1: grad = 180; break;
-              case 2: grad = 270; break;
-              case 3: grad = 360; break;
-        }
-        if(App.getKartenKlasse().size() == 1){
-            App.setSpielkarten(App.getKartenKlasse().get(t));
-        }else
-          App.setRandomkarte(App.getKartenKlasse().get(t));
-          App.getRandomkarte().getKarten().setRotate(grad);
-          App.getKartenKlasse().remove(t);
-
-        }
+    
     
     
     
@@ -149,8 +125,7 @@ public class App extends Application {
         belohnungen = new ArrayList<BelohnungModel>();
         karten = new ArrayList<ImageView>();
         spielfiguren = new ArrayList<SpielfigurModel>();
-        neueKartenklasse = new ArrayList <KartenModel>();
-        
+       
         
     ImageView eins = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/1-");
      ImageView zwei = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/2-");
@@ -181,31 +156,31 @@ public class App extends Application {
       
         kartenKlasse = new ArrayList <KartenModel>();
         
-       neueKartenklasse.add(new KartenModel(true, true, true, true, eins));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, zwei));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, drei));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, vier));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, fünf));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, sechs));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, sieben));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, acht));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, neun));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, zehn));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, elf));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, zwölf));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, dreizehn));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, vierzehn));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, fünfzehn));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, sechszehn));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, siebzehn));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, achtzehn));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, neunzehn));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, zwanzig));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, einundzwanzig));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, zweiundzwanzig));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, dreiundzwanzig));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, vierundzwanzig));
-        neueKartenklasse.add(new KartenModel(true, true, true, true, fünfundzwanzig));
+       kartenKlasse.add(new KartenModel(true, true, true, true, eins));
+        kartenKlasse.add(new KartenModel(true, true, true, true, zwei));
+        kartenKlasse.add(new KartenModel(true, true, true, true, drei));
+        kartenKlasse.add(new KartenModel(true, true, true, true, vier));
+        kartenKlasse.add(new KartenModel(true, true, true, true, fünf));
+        kartenKlasse.add(new KartenModel(true, true, true, true, sechs));
+        kartenKlasse.add(new KartenModel(true, true, true, true, sieben));
+        kartenKlasse.add(new KartenModel(true, true, true, true, acht));
+        kartenKlasse.add(new KartenModel(true, true, true, true, neun));
+        kartenKlasse.add(new KartenModel(true, true, true, true, zehn));
+        kartenKlasse.add(new KartenModel(true, true, true, true, elf));
+        kartenKlasse.add(new KartenModel(true, true, true, true, zwölf));
+        kartenKlasse.add(new KartenModel(true, true, true, true, dreizehn));
+        kartenKlasse.add(new KartenModel(true, true, true, true, vierzehn));
+        kartenKlasse.add(new KartenModel(true, true, true, true, fünfzehn));
+        kartenKlasse.add(new KartenModel(true, true, true, true, sechszehn));
+        kartenKlasse.add(new KartenModel(true, true, true, true, siebzehn));
+        kartenKlasse.add(new KartenModel(true, true, true, true, achtzehn));
+        kartenKlasse.add(new KartenModel(true, true, true, true, neunzehn));
+        kartenKlasse.add(new KartenModel(true, true, true, true, zwanzig));
+        kartenKlasse.add(new KartenModel(true, true, true, true, einundzwanzig));
+        kartenKlasse.add(new KartenModel(true, true, true, true, zweiundzwanzig));
+        kartenKlasse.add(new KartenModel(true, true, true, true, dreiundzwanzig));
+        kartenKlasse.add(new KartenModel(true, true, true, true, vierundzwanzig));
+        kartenKlasse.add(new KartenModel(true, true, true, true, fünfundzwanzig));
         kartenKlasse.add(new KartenModel(true, true, true, true, sechsundzwanzig));
         
        
