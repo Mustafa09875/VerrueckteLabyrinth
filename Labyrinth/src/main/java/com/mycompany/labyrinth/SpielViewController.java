@@ -137,7 +137,7 @@ public class SpielViewController implements Initializable {
     boolean statusgrün;
     boolean statusgelb;
     
-    private static KartenModel [][] board = new KartenModel[5][5];
+    private static KartenModel [][] board  = new KartenModel[5][5];
     
     private static Random randomzahl;
    
@@ -193,69 +193,103 @@ public class SpielViewController implements Initializable {
       
     }
         
-    public static KartenModel getRandomTile(){
-        //Generiert eine Random Int, welche Max so groß ist wie die ArrList.
-        int i = (int) (Math.random() * App.getKartenKlasse().size());
-        //Dann wird das Random Tile Hier gespeichert
-        KartenModel tile = App.getKartenKlasse().get(i);
-        //Und hier wird das Tile dann removed
-        App.getKartenKlasse().remove(i);
-        //Und zurückgegeben
-        return tile;
-    }
+ 
+    
+    
+    public static void getRandomTile(){
+       int grad = 0;
+       
+        /**Ich erstelle eine Random methode vom Typ int und mein nextInt Gibt den nächsten zufälligen, gleich 
+        verteilten Integer zurück. Alle möglichen int-Werte aus meiner Arraylist getKartenKlasse.size, sowohl 
+        positive als auch negative, sind in dem Bereich der Werte, die zurückgegeben werden.**/
+       int t = randomzahl.nextInt(App.getKartenKlasse().size());
+       
+       
+       /**Mit der Random Methode wird eine Zufällige Zahl zwischen 0 und 1 ausgesucht, ist die
+        zahl 0, dann wird die Karte um 90 Grad gedreht, ist die 2, dann...**/
+       int nummer = new  Random().nextInt(3);
+       
+       
+       switch(nummer){
+              case 0: grad = 90; break;
+              case 1: grad = 180; break;
+              case 2: grad = 270; break;
+              case 3: grad = 360; break;
+        }
+       
+       // solange in der ArrayList nicht eine Karte übrig geblieben ist, wird...
+        if(App.getKartenKlasse().size() == 1){
+        }
+        else
+            
+          //Mein KartenModel(Randomkarte) wird auf die zufällige karte gesetzt, die mit get t, also eine zufällige zahl aus der ArrayList geholt
+          App.setRandomkarte(App.getKartenKlasse().get(t));
+        
+         //Dann bekommt die Karten eine zufällige gradnummer
+          App.getRandomkarte().getKarten().setRotate(grad);
+          
+          // und sie wird dann gelöscht
+          App.getKartenKlasse().remove(t);
+       
+        }
     
     
     
     private void feld(){
         int x;
         int y;
-       
+        
+            
         for(x=0; x<5; x++){
             for(y=0; y<5; y++){
             
             if(y==0){
                switch(x)
-               {case 0: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(233);
-                case 1: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(233);
-                case 2: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(252); board [x][y].getKarten().setLayoutY(455);
-                case 3: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(455);
-                case 4: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(455); 
+                   /**
+                    * mit Randomtile wird meine zufällige Karte aus der ArrayList zwischengespeichert. 
+                    * Dann wird diese Random Karte, das Objekt, was ich oben festgelegt habe, ins Board gespeicher und die Position wird festgelegt.
+                    **/
+               {case 0: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(370); board [x][y].getKarten().setLayoutY(230);break;
+                case 1: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(230); break;
+                case 2: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(580); board [x][y].getKarten().setLayoutY(230); break;
+                case 3: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(685); board [x][y].getKarten().setLayoutY(230); break;
+                case 4: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(790); board [x][y].getKarten().setLayoutY(230); break;
                     }
                 }
                    else if(y==1){
                    switch(x)
-                   {case 0: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(455);
-                    case 1: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(677);
-                    case 2: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(233);
-                    case 3: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(233);
-                    case 4: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(344);}
+                   {case 0: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(370); board [x][y].getKarten().setLayoutY(335); break;
+                    case 1: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(335);break;
+                    case 2: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(580); board [x][y].getKarten().setLayoutY(335); break;
+                    case 3: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(685); board [x][y].getKarten().setLayoutY(335); break;
+                    case 4: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(790); board [x][y].getKarten().setLayoutY(335);} break;
                    }
                     
                         else if(y==2){
                         switch(x)
-                        {case 0: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(344);
-                        case 1: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(344);
-                        case 2: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(344);
-                        case 3: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(455);
-                        case 4: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(564);}
+                        {case 0: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(370); board [x][y].getKarten().setLayoutY(440); break;
+                        case 1: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(440); break;
+                        case 2: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(580); board [x][y].getKarten().setLayoutY(440); break;
+                        case 3: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(685); board [x][y].getKarten().setLayoutY(440); break;
+                        case 4: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(790); board [x][y].getKarten().setLayoutY(440);} break;
                          }
               
                             else if(y==3){
                             switch(x)
-                            {case 0: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(564);
-                            case 1: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(564);
-                            case 2: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(677);
-                            case 3: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(677);
-                            case 4: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(233);}
+                            {case 0: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(370); board [x][y].getKarten().setLayoutY(545); break;
+                            case 1: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(545); break;
+                            case 2: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(580); board [x][y].getKarten().setLayoutY(545); break;
+                            case 3: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(685); board [x][y].getKarten().setLayoutY(545); break;
+                            case 4: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(790); board [x][y].getKarten().setLayoutY(545);} break;
                             } 
               
                                   else if(y==4){
                                   switch(x)
-                                 {case 0: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(677);
-                                  case 1: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(697); board [x][y].getKarten().setLayoutY(344);
-                                  case 2: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(586); board [x][y].getKarten().setLayoutY(455);
-                                  case 3: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(364); board [x][y].getKarten().setLayoutY(565);
-                                  case 4: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(808); board [x][y].getKarten().setLayoutY(564);
+                                 {case 0: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(370); board [x][y].getKarten().setLayoutY(650); break;
+                                  case 1: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(475); board [x][y].getKarten().setLayoutY(650); break;
+                                  case 2: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(580); board [x][y].getKarten().setLayoutY(650); break;
+                                  case 3: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(685); board [x][y].getKarten().setLayoutY(650); break;
+                                  case 4: getRandomTile();board[x][y] = App.getRandomkarte(); board [x][y].getKarten().setLayoutX(790); board [x][y].getKarten().setLayoutY(650); break;
                                         }
                                   
                                   
@@ -264,7 +298,7 @@ public class SpielViewController implements Initializable {
         
 
             } 
-          
+        App.getRandomkarte().getKarten().setLayoutX(277); App.getRandomkarte().getKarten().setLayoutX(133);
     }
     
     
@@ -339,6 +373,76 @@ public class SpielViewController implements Initializable {
                                 else if(FigurGeld.getY() < 0 && FigurGeld.getX() == 424){
                                    FigurGeld.setY(0); FigurGeld.setX(424);  }                      
                      
+        
+          
+          //Alles für den grünen Spiele
+                                
+        if(FigurGrün.getY() > 424 && FigurGrün.getX() == 0){
+              FigurGrün.setY(424); FigurGrün.setX(0);}
+               
+                 else if(FigurGrün.getY() > 424 && FigurGrün.getX() == 106){
+                    FigurGrün.setY(424); FigurGrün.setX(106);  } 
+                 
+                        else if(FigurGrün.getY() > 424 && FigurGeld.getX() == 212){
+                         FigurGrün.setY(424); FigurGrün.setX(212);  } 
+                                
+                                else if(FigurGrün.getY() > 424 && FigurGrün.getX() == 318){
+                                FigurGrün.setY(424); FigurGrün.setX(318);  } 
+                                
+                                else if(FigurGrün.getY() > 424 && FigurGeld.getX() == 424){
+                                   FigurGrün.setY(424); FigurGrün.setX(424);  }
+                                
+          // Nach rechts                      
+          if(FigurGrün.getX() > 424 && FigurGrün.getY() == 0){
+              FigurGrün.setX(424); FigurGrün.setY(0);}
+               
+                 else if(FigurGrün.getX() > 424 && FigurGrün.getY() == 106){
+                    FigurGrün.setX(424); FigurGrün.setY(106);  } 
+                 
+                        else if(FigurGrün.getX() > 424 && FigurGrün.getY() == 212){
+                         FigurGrün.setX(424); FigurGrün.setY(212);  } 
+                                
+                                else if(FigurGrün.getX() > 424 && FigurGrün.getY() == 318){
+                                FigurGrün.setX(424); FigurGrün.setY(318);  } 
+                                
+                                else if(FigurGrün.getX() > 424 && FigurGrün.getY() == 424){
+                                   FigurGrün.setX(424); FigurGrün.setY(424);  }  
+         
+                     
+        // Nach links: wenn x kleiner als 0 wird, das heißt, ich bewege mich nach links raus, dann werde ich zurückgesetzt auf meine vorherige position.                      
+          if(FigurGrün.getX() < 0 && FigurGrün.getY() == 0){
+              FigurGrün.setX(0); FigurGrün.setY(0);}
+               
+                 else if(FigurGrün.getX() < 0 && FigurGrün.getY() == 106){
+                    FigurGrün.setX(0); FigurGrün.setY(106);  } 
+                 
+                        else if(FigurGrün.getX() < 0 && FigurGrün.getY() == 212){
+                         FigurGrün.setX(0); FigurGrün.setY(212);  } 
+                                
+                                else if(FigurGrün.getX() < 0 && FigurGrün.getY() == 318){
+                                FigurGrün.setX(0); FigurGrün.setY(318);  } 
+                                
+                                else if(FigurGrün.getX() < 0 && FigurGrün.getY() == 424){
+                                   FigurGrün.setX(0); FigurGrün.setY(424);  }
+                               
+                                
+           // Nach oben                      
+          if(FigurGrün.getY() < 0 && FigurGrün.getX() == 0){
+              FigurGrün.setY(0); FigurGrün.setX(0);}
+               
+                 else if(FigurGrün.getY() < 0 && FigurGrün.getX() == 106){
+                    FigurGrün.setY(0); FigurGrün.setX(106);  } 
+                 
+                        else if(FigurGrün.getY() < 0 && FigurGeld.getX() == 212){
+                         FigurGrün.setY(0); FigurGrün.setX(212);  } 
+                                
+                                else if(FigurGrün.getY() < 0 && FigurGrün.getX() == 318){
+                                FigurGrün.setY(0); FigurGrün.setX(318);  } 
+                                
+                                else if(FigurGrün.getY() < 0 && FigurGrün.getX() == 424){
+                                   FigurGrün.setY(0); FigurGrün.setX(424);  }                          
+                                
+                                
                  else {
                      }
          /**
