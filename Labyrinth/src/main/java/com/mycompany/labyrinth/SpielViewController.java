@@ -68,14 +68,6 @@ public class SpielViewController implements Initializable {
     private Button Buttonzumtesten;
     @FXML
     private ImageView PNordLinks;
-    @FXML
-    private ImageView RotateDown;
-    @FXML
-    private ImageView RotateRight;
-    @FXML
-    private ImageView RotateLeft;
-    @FXML
-    private ImageView RotationUp;
     
     
    
@@ -606,9 +598,6 @@ public class SpielViewController implements Initializable {
         
     }
 
-    @FXML
-    private void btnKarteDrehen(ActionEvent event) {
-    }
 
     
 
