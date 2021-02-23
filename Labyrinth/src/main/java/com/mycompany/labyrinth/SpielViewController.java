@@ -199,6 +199,7 @@ public class SpielViewController implements Initializable {
         System.out.println(App.getKartenKlasse().size());
 
         feld();
+        ausserhalbDesfeldes();
 
         WarningBackText.setVisible(false);
 
@@ -214,7 +215,7 @@ public class SpielViewController implements Initializable {
          * positive als auch negative, sind in dem Bereich der Werte, die
          * zurückgegeben werden.*
          */
-        int t = randomzahl.nextInt(App.getKartenKlasse().size() - 1);
+        int t = randomzahl.nextInt(App.getKartenKlasse().size());
 
         /**
          * Mit der Random Methode wird eine Zufällige Zahl zwischen 0 und 1
@@ -256,19 +257,21 @@ public class SpielViewController implements Initializable {
     private void feld() {
         int x;
         int y;
+        
+        
 
         for (x = 0; x < 5; x++) {
             for (y = 0; y < 5; y++) {
 
                 if (y == 0) {
-                    switch (x) /**
+                    switch (x) 
+                   {   /**
                      * mit Randomtile wird meine zufällige Karte aus der
                      * ArrayList zwischengespeichert. Dann wird diese Random
                      * Karte, das Objekt, was ich oben festgelegt habe, ins
                      * Board gespeicher und die Position wird festgelegt.
-                    *
                      */
-                    {
+                    
                         case 0:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
@@ -331,6 +334,7 @@ public class SpielViewController implements Initializable {
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(335);
+                            break;
                     }
                     break;
                 } else if (y == 2) {
@@ -364,6 +368,7 @@ public class SpielViewController implements Initializable {
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(440);
+                            break;
                     }
                     break;
                 } else if (y == 3) {
@@ -397,6 +402,7 @@ public class SpielViewController implements Initializable {
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(545);
+                            break;
                     }
                     break;
                 } else if (y == 4) {
@@ -679,6 +685,15 @@ public class SpielViewController implements Initializable {
         System.out.println(FigurGrün.getX() + "X and Y " + FigurGrün.getY());
 
     }
+    
+    private void ausserhalbDesfeldes(){
+       for(KartenModel karten : App.getKartenKlasse()){
+       System.out.println(karten.getKarten().getLayoutX());
+       }
+       }
+        
+      
+    
 
     @FXML
     private void StackPaneKeyPressed(KeyEvent event) {
@@ -686,6 +701,12 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPWestOben(MouseEvent event) {
+       /** board[1][0] = board[1][1];
+        board[1][0] = board[1][1];
+        board[1][0] = board[1][1];
+        board[1][0] = board[1][1];
+        board[1][0] = board[1][1];**/
+        
 
     }
 
