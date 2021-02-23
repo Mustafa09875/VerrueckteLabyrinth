@@ -14,6 +14,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -603,6 +604,10 @@ public class SpielViewController implements Initializable {
             parentContainer.getChildren().remove(Container);});
         time.play();
         
+    }
+
+    @FXML
+    private void btnKarteDrehen(ActionEvent event) {
     }
 
     
