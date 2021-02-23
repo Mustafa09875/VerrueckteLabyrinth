@@ -155,7 +155,7 @@ public class SpielViewController implements Initializable {
         
         
         
-      KartenModel km = new KartenModel(true, true, true, true, TSpielKarte20);      KartenModel km4 = new KartenModel(true, true, true, true, T4SpielKarte23);
+        KartenModel km = new KartenModel(true, true, true, true, TSpielKarte20);      KartenModel km4 = new KartenModel(true, true, true, true, T4SpielKarte23);
         KartenModel km1 = new KartenModel(true, true, true, true, T1SpielKarte30);    KartenModel km5 = new KartenModel(true, true, true, true, t5SpielKarte14);
         KartenModel km2 = new KartenModel(true, true, true, true, T2SpielKarte02);      KartenModel km6 = new KartenModel(true, true, true, true, T2SpielKarte);
         KartenModel km3 = new KartenModel(true, true, true, true, T3SpielKarte12);    
@@ -202,7 +202,7 @@ public class SpielViewController implements Initializable {
         /**Ich erstelle eine Random methode vom Typ int und mein nextInt Gibt den nächsten zufälligen, gleich 
         verteilten Integer zurück. Alle möglichen int-Werte aus meiner Arraylist getKartenKlasse.size, sowohl 
         positive als auch negative, sind in dem Bereich der Werte, die zurückgegeben werden.**/
-       int t = randomzahl.nextInt(App.getKartenKlasse().size());
+       int t = randomzahl.nextInt(App.getKartenKlasse().size()-1);
        
        
        /**Mit der Random Methode wird eine Zufällige Zahl zwischen 0 und 1 ausgesucht, ist die
