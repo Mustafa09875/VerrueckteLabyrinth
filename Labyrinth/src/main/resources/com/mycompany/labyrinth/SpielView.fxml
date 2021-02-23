@@ -111,7 +111,7 @@
                   </ImageView>
                   <ImageView fx:id="I6SpielKarte43" fitHeight="100.0" fitWidth="100.0" layoutX="370.0" layoutY="545.0">
                      <image>
-                        <Image url="@Karten/17-.png" />
+                        <Image url="@Karten/19-.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="L1SpielKarte40" fitHeight="100.0" fitWidth="100.0" layoutX="580.0" layoutY="230.0">
@@ -121,7 +121,7 @@
                   </ImageView>
                   <ImageView fx:id="LSpielKarte00" fitHeight="100.0" fitWidth="100.0" layoutX="370.0" layoutY="440.0">
                      <image>
-                        <Image url="@Karten/20-.png" />
+                        <Image url="@Karten/21-.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="L2SpielKarte01" fitHeight="100.0" fitWidth="100.0" layoutX="475.0" layoutY="545.0">

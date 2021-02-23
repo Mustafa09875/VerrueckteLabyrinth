@@ -30,6 +30,7 @@ public class KartenModel {
         this.untererEingang = untererEingang;
         this.karten = karten;
         this.typ = typ;
+        
       
     }
 

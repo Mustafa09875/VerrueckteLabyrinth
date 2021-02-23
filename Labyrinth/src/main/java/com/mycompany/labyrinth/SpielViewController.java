@@ -206,6 +206,7 @@ public class SpielViewController implements Initializable {
         
         board[4][4].getKarten().setLayoutX(790);
 
+        ausserhalbDesfeldes();
         WarningBackText.setVisible(false);
 
     }
@@ -221,7 +222,9 @@ public class SpielViewController implements Initializable {
          * positive als auch negative, sind in dem Bereich der Werte, die
          * zurückgegeben werden.*
          */
+
         int t = new Random().nextInt(App.getKartenKlasse().size());
+
 
         /**
          * Mit der Random Methode wird eine Zufällige Zahl zwischen 0 und 1
@@ -270,19 +273,21 @@ public class SpielViewController implements Initializable {
         int c=0;
         int x;
         int y;
+        
+        
 
         for (x = 0; x < 5; x++) {
             for (y = 0; y < 5; y++) {
 
                 if (y == 0) {
-                    switch (x) /**
+                    switch (x) 
+                   {   /**
                      * mit Randomtile wird meine zufällige Karte aus der
                      * ArrayList zwischengespeichert. Dann wird diese Random
                      * Karte, das Objekt, was ich oben festgelegt habe, ins
                      * Board gespeicher und die Position wird festgelegt.
-                    *
                      */
-                    {
+                    
                         case 0:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
@@ -428,6 +433,7 @@ public class SpielViewController implements Initializable {
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(545);c++;System.out.println(c);
+                            board[x][y].getKarten().setLayoutY(545);
                             break;
                     }
                     
@@ -564,13 +570,13 @@ public class SpielViewController implements Initializable {
         } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == -106) {
             FigurGrün.setY(0);
             FigurGrün.setX(-106);
-        } else if (FigurGrün.getY() > 0 && FigurGeld.getX() == -212) {
+        } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == -212) {
             FigurGrün.setY(0);
             FigurGrün.setX(-212);
         } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == -318) {
             FigurGrün.setY(0);
-            FigurGrün.setX(318);
-        } else if (FigurGrün.getY() > 0 && FigurGeld.getX() == -424) {
+            FigurGrün.setX(-318);
+        } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == -424) {
             FigurGrün.setY(0);
             FigurGrün.setX(-424);
         }
@@ -581,52 +587,52 @@ public class SpielViewController implements Initializable {
             FigurGrün.setY(0);
         } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -106) {
             FigurGrün.setX(0);
-            FigurGrün.setY(106);
+            FigurGrün.setY(-106);
         } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -212) {
             FigurGrün.setX(0);
-            FigurGrün.setY(212);
+            FigurGrün.setY(-212);
         } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -318) {
             FigurGrün.setX(0);
-            FigurGrün.setY(318);
+            FigurGrün.setY(-318);
         } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -424) {
             FigurGrün.setX(0);
-            FigurGrün.setY(424);
+            FigurGrün.setY(-424);
         }
 
         // Nach links: wenn x kleiner als 0 wird, das heißt, ich bewege mich nach links raus, dann werde ich zurückgesetzt auf meine vorherige position.                      
-        if (FigurGrün.getX() < 0 && FigurGrün.getY() == 0) {
-            FigurGrün.setX(0);
+        if (FigurGrün.getX() < -424 && FigurGrün.getY() == 0) {
+            FigurGrün.setX(-424);
             FigurGrün.setY(0);
-        } else if (FigurGrün.getX() < 0 && FigurGrün.getY() == 106) {
-            FigurGrün.setX(0);
-            FigurGrün.setY(106);
-        } else if (FigurGrün.getX() < 0 && FigurGrün.getY() == 212) {
-            FigurGrün.setX(0);
-            FigurGrün.setY(212);
-        } else if (FigurGrün.getX() < 0 && FigurGrün.getY() == 318) {
-            FigurGrün.setX(0);
-            FigurGrün.setY(318);
-        } else if (FigurGrün.getX() < 0 && FigurGrün.getY() == 424) {
-            FigurGrün.setX(0);
-            FigurGrün.setY(424);
+        } else if (FigurGrün.getX() < -424 && FigurGrün.getY() == -106) {
+            FigurGrün.setX(-424);
+            FigurGrün.setY(-106);
+        } else if (FigurGrün.getX() < -424 && FigurGrün.getY() == -212) {
+            FigurGrün.setX(-424);
+            FigurGrün.setY(-212);
+        } else if (FigurGrün.getX() < -424 && FigurGrün.getY() == -318) {
+            FigurGrün.setX(-424);
+            FigurGrün.setY(-318);
+        } else if (FigurGrün.getX() < -424 && FigurGrün.getY() == -424) {
+            FigurGrün.setX(-424);
+            FigurGrün.setY(-424);
         }
 
         // Nach oben                      
-        if (FigurGrün.getY() < 0 && FigurGrün.getX() == 0) {
-            FigurGrün.setY(0);
+        if (FigurGrün.getY() < -424 && FigurGrün.getX() == 0) {
+            FigurGrün.setY(-424);
             FigurGrün.setX(0);
-        } else if (FigurGrün.getY() < 0 && FigurGrün.getX() == 106) {
-            FigurGrün.setY(0);
-            FigurGrün.setX(106);
-        } else if (FigurGrün.getY() < 0 && FigurGeld.getX() == 212) {
-            FigurGrün.setY(0);
-            FigurGrün.setX(212);
-        } else if (FigurGrün.getY() < 0 && FigurGrün.getX() == 318) {
-            FigurGrün.setY(0);
-            FigurGrün.setX(318);
-        } else if (FigurGrün.getY() < 0 && FigurGrün.getX() == 424) {
-            FigurGrün.setY(0);
-            FigurGrün.setX(424);
+        } else if (FigurGrün.getY() < -424 && FigurGrün.getX() == -106) {
+            FigurGrün.setY(-424);
+            FigurGrün.setX(-106);
+        } else if (FigurGrün.getY() < -424 && FigurGrün.getX() == -212) {
+            FigurGrün.setY(-424);
+            FigurGrün.setX(-212);
+        } else if (FigurGrün.getY() < -424 && FigurGrün.getX() == -318) {
+            FigurGrün.setY(-424);
+            FigurGrün.setX(-318);
+        } else if (FigurGrün.getY() < -424 && FigurGrün.getX() == -424) {
+            FigurGrün.setY(-424);
+            FigurGrün.setX(-424);
         } else {
         }
         /**
@@ -713,6 +719,18 @@ public class SpielViewController implements Initializable {
         System.out.println(FigurGrün.getX() + "X and Y " + FigurGrün.getY());
 
     }
+    
+    private void ausserhalbDesfeldes(){
+       for(KartenModel karten : App.getKartenKlasse()){
+       System.out.println(karten.getKarten().idProperty());
+             if(karten.getKarten().getLayoutX() < 0 || karten.getKarten().getLayoutX() > 424 || karten.getKarten().getLayoutY() > 0 || karten.getKarten().getLayoutY()< -424){
+             karten.getKarten().setLayoutX(243); karten.getKarten().setLayoutY(141);
+            
+        }
+    }
+        
+    }    
+    
 
     @FXML
     private void StackPaneKeyPressed(KeyEvent event) {
@@ -720,6 +738,13 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPWestOben(MouseEvent event) {
+        ausserhalbDesfeldes();
+        board[1][0] = board[1][1];
+        board[1][1] = board[1][2];
+        board[1][2] = board[1][3];
+        board[1][3] = board[1][4];
+        board[1][4] = board[1][5];
+        
 
     }
 
