@@ -19,21 +19,30 @@ public class KartenModel {
     private boolean rechterEingang;
     private boolean untererEingang;
     private ImageView karten;
+    private String typ;
     
 
-    public KartenModel(boolean linkerEingang, boolean obererEingang, boolean rechterEingang, boolean untererEingang, ImageView karten) {
+    public KartenModel(boolean linkerEingang, boolean obererEingang, boolean rechterEingang, boolean untererEingang, ImageView karten, String typ) {
     
         this.linkerEingang = linkerEingang;
         this.obererEingang = obererEingang;
         this.rechterEingang = rechterEingang;
         this.untererEingang = untererEingang;
         this.karten = karten;
+        this.typ = typ;
       
     }
 
-  
-    
 
+
+    public String getTyp() {
+        return typ;
+    }
+
+    public void setTyp(String typ) {
+        this.typ = typ;
+    }
+    
     public ImageView getKarten() {
         return karten;
     }
