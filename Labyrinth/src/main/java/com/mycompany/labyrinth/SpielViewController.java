@@ -25,6 +25,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.RotateEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
@@ -128,8 +129,6 @@ public class SpielViewController implements Initializable {
     private static KartenModel[][] board = new KartenModel[5][5];
 
     private static Random randomzahl;
-    @FXML
-    private ImageView Rotate;
 
     /**
      * Initializes the controller class.
@@ -526,37 +525,37 @@ public class SpielViewController implements Initializable {
         
         //nach unten
         if (FigurGrün.getY() > 0 && FigurGrün.getX() == 0) {
-            FigurGrün.setY(424);
+            FigurGrün.setY(0);
             FigurGrün.setX(0);
-        } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == 106) {
-            FigurGrün.setY(424);
-            FigurGrün.setX(106);
-        } else if (FigurGrün.getY() > 0 && FigurGeld.getX() == 212) {
-            FigurGrün.setY(424);
-            FigurGrün.setX(212);
-        } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == 318) {
-            FigurGrün.setY(424);
+        } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == -106) {
+            FigurGrün.setY(0);
+            FigurGrün.setX(-106);
+        } else if (FigurGrün.getY() > 0 && FigurGeld.getX() == -212) {
+            FigurGrün.setY(0);
+            FigurGrün.setX(-212);
+        } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == -318) {
+            FigurGrün.setY(0);
             FigurGrün.setX(318);
-        } else if (FigurGrün.getY() > 0 && FigurGeld.getX() == 424) {
-            FigurGrün.setY(424);
-            FigurGrün.setX(424);
+        } else if (FigurGrün.getY() > 0 && FigurGeld.getX() == -424) {
+            FigurGrün.setY(0);
+            FigurGrün.setX(-424);
         }
 
         // Nach rechts                      
-        if (FigurGrün.getX() > 424 && FigurGrün.getY() == 0) {
-            FigurGrün.setX(424);
+        if (FigurGrün.getX() > 0 && FigurGrün.getY() == 0) {
+            FigurGrün.setX(0);
             FigurGrün.setY(0);
-        } else if (FigurGrün.getX() > 424 && FigurGrün.getY() == 106) {
-            FigurGrün.setX(424);
+        } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -106) {
+            FigurGrün.setX(0);
             FigurGrün.setY(106);
-        } else if (FigurGrün.getX() > 424 && FigurGrün.getY() == 212) {
-            FigurGrün.setX(424);
+        } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -212) {
+            FigurGrün.setX(0);
             FigurGrün.setY(212);
-        } else if (FigurGrün.getX() > 424 && FigurGrün.getY() == 318) {
-            FigurGrün.setX(424);
+        } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -318) {
+            FigurGrün.setX(0);
             FigurGrün.setY(318);
-        } else if (FigurGrün.getX() > 424 && FigurGrün.getY() == 424) {
-            FigurGrün.setX(424);
+        } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -424) {
+            FigurGrün.setX(0);
             FigurGrün.setY(424);
         }
 
@@ -753,6 +752,10 @@ public class SpielViewController implements Initializable {
         });
         time.play();
 
+    }
+
+    @FXML
+    private void Rotate(RotateEvent event) {
     }
 
 }

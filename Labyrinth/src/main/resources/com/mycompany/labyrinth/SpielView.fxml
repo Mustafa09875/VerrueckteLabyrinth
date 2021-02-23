@@ -220,7 +220,7 @@
                      </image>
                   </ImageView>
                   <Label fx:id="WarningBackText" layoutY="7.0" onMouseExited="#MouseExitedBacktoStartView" prefHeight="39.0" prefWidth="293.0" text="Das ganze Spiel wird gelöscht, wenn Sie zurück gehen." textFill="WHITE" />
-                  <ImageView fx:id="Rotate" fitHeight="32.0" fitWidth="33.0" layoutX="273.0" layoutY="104.0">
+                  <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="273.0" layoutY="104.0" onRotate="#Rotate">
                      <image>
                         <Image url="@SpielFiguren/Pfeil.png" />
                      </image>
