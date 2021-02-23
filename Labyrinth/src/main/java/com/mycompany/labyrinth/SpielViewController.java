@@ -688,11 +688,14 @@ public class SpielViewController implements Initializable {
     
     private void ausserhalbDesfeldes(){
        for(KartenModel karten : App.getKartenKlasse()){
-       System.out.println(karten.getKarten().getLayoutX());
-       }
-       }
+       System.out.println(karten.getKarten().idProperty());
+             if(karten.getKarten().getLayoutX() < 0 || karten.getKarten().getLayoutX() > 424 || karten.getKarten().getLayoutY() > 0 || karten.getKarten().getLayoutY()< -424){
+             karten.getKarten().setLayoutX(243); karten.getKarten().setLayoutY(141);
+            
+        }
+    }
         
-      
+    }    
     
 
     @FXML
@@ -701,11 +704,12 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPWestOben(MouseEvent event) {
-       /** board[1][0] = board[1][1];
+        ausserhalbDesfeldes();
         board[1][0] = board[1][1];
-        board[1][0] = board[1][1];
-        board[1][0] = board[1][1];
-        board[1][0] = board[1][1];**/
+        board[1][1] = board[1][2];
+        board[1][2] = board[1][3];
+        board[1][3] = board[1][4];
+        board[1][4] = board[1][5];
         
 
     }
