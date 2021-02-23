@@ -530,13 +530,13 @@ public class SpielViewController implements Initializable {
         } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == -106) {
             FigurGrün.setY(0);
             FigurGrün.setX(-106);
-        } else if (FigurGrün.getY() > 0 && FigurGeld.getX() == -212) {
+        } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == -212) {
             FigurGrün.setY(0);
             FigurGrün.setX(-212);
         } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == -318) {
             FigurGrün.setY(0);
-            FigurGrün.setX(318);
-        } else if (FigurGrün.getY() > 0 && FigurGeld.getX() == -424) {
+            FigurGrün.setX(-318);
+        } else if (FigurGrün.getY() > 0 && FigurGrün.getX() == -424) {
             FigurGrün.setY(0);
             FigurGrün.setX(-424);
         }
@@ -547,52 +547,52 @@ public class SpielViewController implements Initializable {
             FigurGrün.setY(0);
         } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -106) {
             FigurGrün.setX(0);
-            FigurGrün.setY(106);
+            FigurGrün.setY(-106);
         } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -212) {
             FigurGrün.setX(0);
-            FigurGrün.setY(212);
+            FigurGrün.setY(-212);
         } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -318) {
             FigurGrün.setX(0);
-            FigurGrün.setY(318);
+            FigurGrün.setY(-318);
         } else if (FigurGrün.getX() > 0 && FigurGrün.getY() == -424) {
             FigurGrün.setX(0);
-            FigurGrün.setY(424);
+            FigurGrün.setY(-424);
         }
 
         // Nach links: wenn x kleiner als 0 wird, das heißt, ich bewege mich nach links raus, dann werde ich zurückgesetzt auf meine vorherige position.                      
-        if (FigurGrün.getX() < 0 && FigurGrün.getY() == 0) {
-            FigurGrün.setX(0);
+        if (FigurGrün.getX() < -424 && FigurGrün.getY() == 0) {
+            FigurGrün.setX(-424);
             FigurGrün.setY(0);
-        } else if (FigurGrün.getX() < 0 && FigurGrün.getY() == 106) {
-            FigurGrün.setX(0);
-            FigurGrün.setY(106);
-        } else if (FigurGrün.getX() < 0 && FigurGrün.getY() == 212) {
-            FigurGrün.setX(0);
-            FigurGrün.setY(212);
-        } else if (FigurGrün.getX() < 0 && FigurGrün.getY() == 318) {
-            FigurGrün.setX(0);
-            FigurGrün.setY(318);
-        } else if (FigurGrün.getX() < 0 && FigurGrün.getY() == 424) {
-            FigurGrün.setX(0);
-            FigurGrün.setY(424);
+        } else if (FigurGrün.getX() < -424 && FigurGrün.getY() == -106) {
+            FigurGrün.setX(-424);
+            FigurGrün.setY(-106);
+        } else if (FigurGrün.getX() < -424 && FigurGrün.getY() == -212) {
+            FigurGrün.setX(-424);
+            FigurGrün.setY(-212);
+        } else if (FigurGrün.getX() < -424 && FigurGrün.getY() == -318) {
+            FigurGrün.setX(-424);
+            FigurGrün.setY(-318);
+        } else if (FigurGrün.getX() < -424 && FigurGrün.getY() == -424) {
+            FigurGrün.setX(-424);
+            FigurGrün.setY(-424);
         }
 
         // Nach oben                      
-        if (FigurGrün.getY() < 0 && FigurGrün.getX() == 0) {
-            FigurGrün.setY(0);
+        if (FigurGrün.getY() < -424 && FigurGrün.getX() == 0) {
+            FigurGrün.setY(-424);
             FigurGrün.setX(0);
-        } else if (FigurGrün.getY() < 0 && FigurGrün.getX() == 106) {
-            FigurGrün.setY(0);
-            FigurGrün.setX(106);
-        } else if (FigurGrün.getY() < 0 && FigurGeld.getX() == 212) {
-            FigurGrün.setY(0);
-            FigurGrün.setX(212);
-        } else if (FigurGrün.getY() < 0 && FigurGrün.getX() == 318) {
-            FigurGrün.setY(0);
-            FigurGrün.setX(318);
-        } else if (FigurGrün.getY() < 0 && FigurGrün.getX() == 424) {
-            FigurGrün.setY(0);
-            FigurGrün.setX(424);
+        } else if (FigurGrün.getY() < -424 && FigurGrün.getX() == -106) {
+            FigurGrün.setY(-424);
+            FigurGrün.setX(-106);
+        } else if (FigurGrün.getY() < -424 && FigurGrün.getX() == -212) {
+            FigurGrün.setY(-424);
+            FigurGrün.setX(-212);
+        } else if (FigurGrün.getY() < -424 && FigurGrün.getX() == -318) {
+            FigurGrün.setY(-424);
+            FigurGrün.setX(-318);
+        } else if (FigurGrün.getY() < -424 && FigurGrün.getX() == -424) {
+            FigurGrün.setY(-424);
+            FigurGrün.setX(-424);
         } else {
         }
         /**
