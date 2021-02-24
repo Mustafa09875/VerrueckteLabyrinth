@@ -46,34 +46,6 @@ public class StartViewController implements Initializable {
     }    
 
 
-     /**   public static void getRandomCard(){
-       int grad = 0;
-       * 
-       //Ich erstelle eine Random methode vom Typ int und mein nextInt Gibt den nächsten zufälligen, gleich 
-        //verteilten Integer zurück. Alle möglichen int-Werte aus meiner Arraylist getKartenKlasse.size, sowohl 
-        //positive als auch negative, sind in dem Bereich der Werte, die zurückgegeben werden.
-        
-        * int t = randomzahl.nextInt(26);
-        
-         //Mit der Random Methode wird eine Zufällige Zahl zwischen 0 und 1 ausgesucht, ist die
-        //zahl 0, dann wird die Karte um 90 Grad gedreht, ist die 2, dann...
-         
-        int nummer = randomzahl.nextInt(3);
-       switch(nummer){
-              case 0: grad = 90; break;
-              case 1: grad = 180; break;
-              case 2: grad = 270; break;
-              case 3: grad = 360; break;
-        }
-        if(App.getKartenKlasse().isEmpty()){
-            App.setSpielkarten(App.getKartenKlasse().get(t));
-        }else
-          App.setRandomkarte(App.getKartenKlasse().get(t));
-          App.getRandomkarte().getKarten().setRotate(grad);
-          App.getKartenKlasse().remove(t);
-
-        } 
-           **/
     
     @FXML
     private void SpielStartenBtn(ActionEvent event) throws IOException {
