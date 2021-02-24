@@ -5,9 +5,11 @@
  */
 package com.mycompany.labyrinth;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import static java.lang.Math.random;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -15,7 +17,6 @@ import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,10 +27,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.RotateEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
+
 
 /**
  * FXML Controller class
@@ -126,8 +126,11 @@ public class SpielViewController implements Initializable {
 
     boolean statusgrün;
     boolean statusgelb;
-
+    
+   
     private static KartenModel[][] board = new KartenModel[5][5];
+    private static KartenModel[][] boardFuereinruecken = new KartenModel[5][5];
+    
 
     private static Random randomzahl;
 
@@ -206,7 +209,7 @@ public class SpielViewController implements Initializable {
         
         board[4][4].getKarten().setLayoutX(790);
 
-        ausserhalbDesfeldes();
+      
         WarningBackText.setVisible(false);
 
     }
@@ -251,10 +254,11 @@ public class SpielViewController implements Initializable {
 
         // solange in der ArrayList nicht eine Karte übrig geblieben ist, wird...
         if (App.getKartenKlasse().size() == 1) {
+            
+            //Diese eine karte wird dann als Spielkarte nach aussen gesetzt und unten in der rotation Methode zum rotieren verwendet.
             App.setSpielkarten(App.getKartenKlasse().get(t));
-        } else //Mein KartenModel(Randomkarte) wird auf die zufällige karte gesetzt, die mit get t, also eine zufällige zahl aus der ArrayList geholt
-        {
-            b++;
+        } else{
+            //Mein KartenModel(Randomkarte) wird auf die zufällige karte gesetzt, die mit get t, also eine zufällige zahl aus der ArrayList geholt
             App.setRandomkarte(App.getKartenKlasse().get(t));
         
 
@@ -270,7 +274,7 @@ public class SpielViewController implements Initializable {
         System.out.println(App.getKartenKlasse().size());
     }
     private void feld() {
-        int c=0;
+      
         int x;
         int y;
         
@@ -285,7 +289,7 @@ public class SpielViewController implements Initializable {
                      * mit Randomtile wird meine zufällige Karte aus der
                      * ArrayList zwischengespeichert. Dann wird diese Random
                      * Karte, das Objekt, was ich oben festgelegt habe, ins
-                     * Board gespeicher und die Position wird festgelegt.
+                     * Board gespeichert und die Position wird festgelegt.
                      */
                     
                         case 0:
@@ -293,35 +297,30 @@ public class SpielViewController implements Initializable {
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(230);
-                            System.out.println(c);
                             break;
                         case 1:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(230);
-                            c++;System.out.println(c);
                             break;
                         case 2:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
                             board[x][y].getKarten().setLayoutY(230);
-                            c++;System.out.println(c);
                             break;
                         case 3:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
                             board[x][y].getKarten().setLayoutY(230);
-                            c++;System.out.println(c);
                             break;
                         case 4:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(230);
-                            c++;System.out.println(c);
                             break;
                     }
                 } else if (y == 1) {
@@ -331,35 +330,30 @@ public class SpielViewController implements Initializable {
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(335);
-                            c++;System.out.println(c);
                             break;
                         case 1:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(335);
-                            c++;System.out.println(c);
                             break;
                         case 2:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
                             board[x][y].getKarten().setLayoutY(335);
-                            c++;System.out.println(c);
                             break;
                         case 3:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
                             board[x][y].getKarten().setLayoutY(335);
-                            c++;System.out.println(c);
                             break;
                         case 4:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(335);
-                            c++;System.out.println(c);
                             break;
                     }
                     
@@ -370,35 +364,30 @@ public class SpielViewController implements Initializable {
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(440);
-                            c++;System.out.println(c);
                             break;
                         case 1:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(440);
-                            c++;System.out.println(c);
                             break;
                         case 2:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
                             board[x][y].getKarten().setLayoutY(440);
-                            c++;System.out.println(c);
                             break;
                         case 3:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
                             board[x][y].getKarten().setLayoutY(440);
-                            c++;System.out.println(c);
                             break;
                         case 4:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(440);
-                            c++;System.out.println(c);
                             break;
                     }
                    
@@ -408,31 +397,31 @@ public class SpielViewController implements Initializable {
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
-                            board[x][y].getKarten().setLayoutY(545);c++;System.out.println(c);
+                            board[x][y].getKarten().setLayoutY(545);
                             break;
                         case 1:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
-                            board[x][y].getKarten().setLayoutY(545);c++;System.out.println(c);
+                            board[x][y].getKarten().setLayoutY(545);
                             break;
                         case 2:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
-                            board[x][y].getKarten().setLayoutY(545);c++;System.out.println(c);
+                            board[x][y].getKarten().setLayoutY(545);
                             break;
                         case 3:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
-                            board[x][y].getKarten().setLayoutY(545);c++;System.out.println(c);
+                            board[x][y].getKarten().setLayoutY(545);
                             break;
                         case 4:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
-                            board[x][y].getKarten().setLayoutY(545);c++;System.out.println(c);
+                            board[x][y].getKarten().setLayoutY(545);
                             board[x][y].getKarten().setLayoutY(545);
                             break;
                     }
@@ -443,32 +432,31 @@ public class SpielViewController implements Initializable {
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
-                            board[x][y].getKarten().setLayoutY(650);c++;System.out.println(c);
+                            board[x][y].getKarten().setLayoutY(650);
                             break;
                         case 1:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
-                            board[x][y].getKarten().setLayoutY(650);c++;System.out.println(c);
+                            board[x][y].getKarten().setLayoutY(650);
                             break;
                         case 2:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
-                            board[x][y].getKarten().setLayoutY(650);c++;System.out.println(c);
+                            board[x][y].getKarten().setLayoutY(650);
                             break;
                         case 3:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
-                            board[x][y].getKarten().setLayoutY(650);c++;System.out.println(c);
+                            board[x][y].getKarten().setLayoutY(650);
                             break;
                         case 4:
                             getRandomTile();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
-                            board[x][y].getKarten().setLayoutY(650);c++;System.out.println(c);
-                            System.out.println(board[x][y].getKarten().getLayoutX());
+                            board[x][y].getKarten().setLayoutY(650);
                             break;
                     }
                   
@@ -477,10 +465,9 @@ public class SpielViewController implements Initializable {
             }
           
         }
-        App.getRandomkarte().getKarten().setLayoutX(277);
-        App.getRandomkarte().getKarten().setLayoutX(133);
+       
     }
-
+   
     private void grenze() {
 
         /**
@@ -635,16 +622,7 @@ public class SpielViewController implements Initializable {
             FigurGrün.setX(-424);
         } else {
         }
-        /**
-         * int x = (int) FigurGeld.getX(); int y = (int) FigurGeld.getY(); if(y
-         * > 424){ switch(x){ case 0: FigurGeld.setY(424); FigurGeld.setX(0);
-         * case 106: FigurGeld.setY(424); FigurGeld.setX(106); case 212:
-         * FigurGeld.setY(424); FigurGeld.setX(212); case 318:
-         * FigurGeld.setY(424); FigurGeld.setX(318); case 424:
-         * FigurGeld.setY(424); FigurGeld.setX(424);
-        }*
-         */
-
+    
     }
 
     @FXML
@@ -719,32 +697,14 @@ public class SpielViewController implements Initializable {
         System.out.println(FigurGrün.getX() + "X and Y " + FigurGrün.getY());
 
     }
-    
-    private void ausserhalbDesfeldes(){
-       for(KartenModel karten : App.getKartenKlasse()){
-       System.out.println(karten.getKarten().idProperty());
-             if(karten.getKarten().getLayoutX() < 0 || karten.getKarten().getLayoutX() > 424 || karten.getKarten().getLayoutY() > 0 || karten.getKarten().getLayoutY()< -424){
-             karten.getKarten().setLayoutX(243); karten.getKarten().setLayoutY(141);
-            
-        }
-    }
-        
-    }    
-    
-
+   
     @FXML
     private void StackPaneKeyPressed(KeyEvent event) {
     }
 
     @FXML
     private void btnPWestOben(MouseEvent event) {
-        ausserhalbDesfeldes();
-        board[1][0] = board[1][1];
-        board[1][1] = board[1][2];
-        board[1][2] = board[1][3];
-        board[1][3] = board[1][4];
-        board[1][4] = board[1][5];
-        
+     
 
     }
 
@@ -762,6 +722,35 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPNordLinks(MouseEvent event) {
+           String path = "C:\\Users\\user\\Desktop\\A\\Laser Sound Effect";
+         
+        
+        
+        
+                
+          
+        board[1][1] =  board[1][0];        board[1][1].getKarten().setLayoutX(475);             board[1][1].getKarten().setLayoutY(335);
+         
+            board[1][0] = App.getSpielkarten();  App.getSpielkarten().getKarten().setLayoutX(475);     App.getSpielkarten().getKarten().setLayoutY(230);
+
+         
+        //board[1][2] = board[1][1];      board[1][2].getKarten().setLayoutX(475);  board[1][2].getKarten().setLayoutY(440);
+          
+           
+       // board[1][3] = board[1][2];      board[1][3].getKarten().setLayoutX(475);              board[1][3].getKarten().setLayoutY(545);
+         
+            
+     //   board[1][4] = board[1][3];      board[1][4].getKarten().setLayoutX(475);              board[1][4].getKarten().setLayoutY(650);
+               
+            //   App.setSpielkarten(board [1][4]); board [1][4].getKarten().setX(243);  board [1][4].getKarten().setY(141);
+              //  System.out.println(board[1][4].getKarten().getLayoutX() + "  "+ .getKarten().getLayoutY());
+           
+         
+        
+      
+        
+        
+    
 
     }
 

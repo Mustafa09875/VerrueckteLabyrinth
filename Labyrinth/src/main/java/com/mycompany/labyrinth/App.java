@@ -27,13 +27,16 @@ public class App extends Application {
     
     private static KartenModel randomkarte;
     private static KartenModel spielkarten;
-  
-    
-  
-     
-     
-     
+    private static KartenModel aussenkarte;
 
+    public static KartenModel getAussenkarte() {
+        return aussenkarte;
+    }
+
+    public static void setAussenkarte(KartenModel aussenkarte) {
+        App.aussenkarte = aussenkarte;
+    }
+  
   
 
     public static ArrayList<BelohnungModel> getBelohnungen() {
@@ -107,7 +110,7 @@ public class App extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("SpielView"), 1250, 900);
+        scene = new Scene(loadFXML("StartView"), 1250, 900);
         stage.setScene(scene);
         stage.show();
     }
