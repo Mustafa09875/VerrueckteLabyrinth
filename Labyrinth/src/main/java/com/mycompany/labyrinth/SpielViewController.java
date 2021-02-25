@@ -205,6 +205,9 @@ public class SpielViewController implements Initializable {
         board[4][4].getKarten().setLayoutX(790);
 
         WarningBackText.setVisible(false);
+        
+        App.getSpielkarten().changeSpielkartenAusgang();
+        App.getRandomkarte().changeRandomkarteAusgang();
 
     }
 
