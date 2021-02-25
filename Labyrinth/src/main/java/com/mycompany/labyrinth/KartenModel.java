@@ -13,7 +13,8 @@ import javafx.scene.image.ImageView;
  */
 public class KartenModel {
     
-   
+   //Eigenschaften des KartenModels
+    //Die Seiten der Karten, in die der blaue Weg führtm, werden anhand von boolean werten festgelegt
     private boolean linkerEingang;
     private boolean obererEingang;
     private boolean rechterEingang;
@@ -35,10 +36,13 @@ public class KartenModel {
     }
 
 
-
+// Diese methode ist lediglich für die Karte drassen und im Scenebuidler ist sie in eine Richtung gedreht, damit man bei rotate ganz genau festlegen kann, wie sich die Eingänge verändern müssen
     public void changeSpielkartenAusgang(){
+        // Eine int Variable wird declariert
         int rotate;
+        //Der getRotate Wert der Spielkarte wird dem rotate Wert zugewiesen
         rotate = (int) App.getSpielkarten().getKarten().getRotate();
+        // Wenn es sich um eine T-förmige Karte handelt und die Karte um null Grad gedreht ist, dann werden die Eingänge dementsprechend festgelegt
         if(this.typ == "t-foermig"){
             switch(rotate){
                 case 0:
@@ -68,7 +72,7 @@ public class KartenModel {
                     
             }
         }
-        
+        // Wenn die Karte eine Kurve ist, das heißt, sie hat 2 Eingänge, dann werden diese je nach drehung festgelegt
         else if(this.typ == "kurve"){
             switch(rotate){
                 case 0:
@@ -98,7 +102,7 @@ public class KartenModel {
                     
             }
         }
-        
+        // Wenn es sich um eine Gerade handet, gibt es  ebenfalls nur 2 Eingänge
         else if(this.typ == "gerade"){
             switch(rotate){
                 case 0:
@@ -129,7 +133,7 @@ public class KartenModel {
             }
         }
     }
-    
+        //Diese Methode ist dieselbe wie die obere Methode, doch nicht für die Karte die eingesetzt wird, sonder für alle Karten im Feld
         public void changeRandomkarteAusgang(){
         int rotate;
         rotate = (int) App.getRandomkarte().getKarten().getRotate();
@@ -224,6 +228,7 @@ public class KartenModel {
         }
     }
 
+        //Getter und Setter
     public String getTyp() {
         return typ;
     }

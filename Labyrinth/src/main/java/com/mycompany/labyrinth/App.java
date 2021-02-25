@@ -16,23 +16,30 @@ import javafx.scene.image.ImageView;
  */
 public class App extends Application {
     
+    
+    //ArrayListen und Objekte
     private static Scene scene;
+    //Bolohnung nicht nicht im Einsatz
     private static ArrayList<BelohnungModel> belohnungen;
+    //Hier werden die Bilder gespeicher
     private static ArrayList<ImageView> karten;
+    //ArrayList für die zwei Spieler
     private static ArrayList<SpielfigurModel> spielfiguren;
     private static SpielFigurGelb sfgelb;
     private static SpielfigurGrün sfgrün;
+    // Arraylist für das KartenModel
     private static ArrayList <KartenModel> kartenKlasse;
 
-    
+    //Die Karten des Feldes werden der randomkarte zugewiesen
     private static KartenModel randomkarte;
+    //Die Karte die sich ausserhalb des Feles befindet und eingesetzt werden kann, wird der spielkarte zugewiesen
     private static KartenModel spielkarten;
    
 
     
   
   
-
+//Getter und Setter
     public static ArrayList<BelohnungModel> getBelohnungen() {
         return belohnungen;
     }
@@ -101,7 +108,7 @@ public class App extends Application {
     
     
     
-    
+    //Scene wird gestartet
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("StartView"), 1250, 900);
@@ -119,71 +126,12 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        // Initialisierung der ArrayListen
         belohnungen = new ArrayList<BelohnungModel>();
         karten = new ArrayList<ImageView>();
         spielfiguren = new ArrayList<SpielfigurModel>();
-       
-        
-    /**ImageView eins = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/1-");
-     ImageView zwei = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/2-");
-     ImageView drei = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/3-");
-     ImageView vier = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/4-");
-     ImageView fünf = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/5-");
-     ImageView sechs = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/6-");
-     ImageView sieben = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/7-");
-     ImageView acht = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/8-");
-     ImageView neun = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/9-");
-     ImageView zehn = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/10-");
-     ImageView elf = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/11");
-     ImageView zwölf = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/12-");
-     ImageView dreizehn = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/13-");
-     ImageView vierzehn = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/14-");
-     ImageView fünfzehn = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/15-");
-     ImageView sechszehn = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/16-");
-     ImageView siebzehn = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/17-");
-     ImageView achtzehn = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/18-");
-     ImageView neunzehn = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/19-");
-     ImageView zwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/20-");
-     ImageView einundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/21-");
-     ImageView zweiundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/22-");
-     ImageView dreiundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/23-");
-     ImageView vierundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/24-");
-     ImageView fünfundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/25-");
-     ImageView sechsundzwanzig = new ImageView("file:///C:/Users/USER/Desktop/VerrueckteLabyrinth/Labyrinth/src/main/resources/com/mycompany/labyrinth/Karten/26-");**/
-      
         kartenKlasse = new ArrayList <KartenModel>();
-        
-       /**kartenKlasse.add(new KartenModel(true, true, true, true, eins));
-        kartenKlasse.add(new KartenModel(true, true, true, true, zwei));
-        kartenKlasse.add(new KartenModel(true, true, true, true, drei));
-        kartenKlasse.add(new KartenModel(true, true, true, true, vier));
-        kartenKlasse.add(new KartenModel(true, true, true, true, fünf));
-        kartenKlasse.add(new KartenModel(true, true, true, true, sechs));
-        kartenKlasse.add(new KartenModel(true, true, true, true, sieben));
-        kartenKlasse.add(new KartenModel(true, true, true, true, acht));
-        kartenKlasse.add(new KartenModel(true, true, true, true, neun));
-        kartenKlasse.add(new KartenModel(true, true, true, true, zehn));
-        kartenKlasse.add(new KartenModel(true, true, true, true, elf));
-        kartenKlasse.add(new KartenModel(true, true, true, true, zwölf));
-        kartenKlasse.add(new KartenModel(true, true, true, true, dreizehn));
-        kartenKlasse.add(new KartenModel(true, true, true, true, vierzehn));
-        kartenKlasse.add(new KartenModel(true, true, true, true, fünfzehn));
-        kartenKlasse.add(new KartenModel(true, true, true, true, sechszehn));
-        kartenKlasse.add(new KartenModel(true, true, true, true, siebzehn));
-        kartenKlasse.add(new KartenModel(true, true, true, true, achtzehn));
-        kartenKlasse.add(new KartenModel(true, true, true, true, neunzehn));
-        kartenKlasse.add(new KartenModel(true, true, true, true, zwanzig));
-        kartenKlasse.add(new KartenModel(true, true, true, true, einundzwanzig));
-        kartenKlasse.add(new KartenModel(true, true, true, true, zweiundzwanzig));
-        kartenKlasse.add(new KartenModel(true, true, true, true, dreiundzwanzig));
-        kartenKlasse.add(new KartenModel(true, true, true, true, vierundzwanzig));
-        kartenKlasse.add(new KartenModel(true, true, true, true, fünfundzwanzig));
-        kartenKlasse.add(new KartenModel(true, true, true, true, sechsundzwanzig));**/
-        
-       
-            
-        
-
+      
         spielfiguren.add(new SpielfigurGrün("Grün", 2, 3, false));
         spielfiguren.add(new SpielFigurGelb("Gelb", 1, 2, false));
         

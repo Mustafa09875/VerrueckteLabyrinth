@@ -121,12 +121,14 @@ public class SpielViewController implements Initializable {
     @FXML
     private ImageView L8SpielKarte04;
 
+    // Diese Boolean Werte sind für die beiden Spielen, denn bisher haben wird es so, dass bei clicken des Spieler der Boolean wert auf true gesetzt wird
+    // dann kann sich ausschließlich dieser Spieler bewegen.
     boolean statusgrün;
     boolean statusgelb;
-
+    //Eine 2D Array vom Typ KartenModel für 5x5 Feld erstellt
     private static KartenModel[][] board = new KartenModel[5][5];
-    private static KartenModel[][] boardFuereinruecken = new KartenModel[5][5];
 
+    //Eine variable vom Typ Random
     private static Random randomzahl;
 
     /**
@@ -135,10 +137,10 @@ public class SpielViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-
+        //randomzahl wird initialisiert
         randomzahl = new Random();
-        //App.getSpielfiguren().add(new SpielfigurGrün("Grün", 2, 3, false));
 
+        //Die Objekte werde erstellt und initialisiert
         KartenModel km = new KartenModel(true, true, true, false, TSpielKarte20, "t-foermig");
         KartenModel km4 = new KartenModel(true, true, true, false, T4SpielKarte23, "t-foermig");
         KartenModel km1 = new KartenModel(true, true, true, false, T1SpielKarte30, "t-foermig");
@@ -168,6 +170,7 @@ public class SpielViewController implements Initializable {
         KartenModel km24 = new KartenModel(true, false, true, false, L5SpielKarte32, "gerade");
         KartenModel km25 = new KartenModel(true, false, true, false, I6SpielKarte43, "gerade");
 
+        //Die Objekte werden in die ArrayList geaddet
         App.getKartenKlasse().add(km);
         App.getKartenKlasse().add(km1);
         App.getKartenKlasse().add(km2);
@@ -195,20 +198,25 @@ public class SpielViewController implements Initializable {
         App.getKartenKlasse().add(km24);
         App.getKartenKlasse().add(km25);
 
-        System.out.println(App.getKartenKlasse().size());
-
+        // Das Feld wird generiert
         feld();
-        getRandomTile();
+        //Die Methode RandomTile wird aufgerunfen, denn sie gibt mit die Karten, die sich am Ende nach dem das Feld befüllt wurde, noch übrig bleibt.
+        getRandomKarte();
+        // Diese Übrig gebliebene Karte wird der Spielkarte zugewiesen und ihre Position wird festgelegt
         App.getSpielkarten().getKarten().setLayoutX(243);
         App.getSpielkarten().getKarten().setLayoutY(141);
 
+        // Diese Karte wurde nicht in der Methode da hingesetzt. Es gab einen Bug, deshalb hier die Zuweisung.
         board[4][4].getKarten().setLayoutX(790);
 
+        // Falls man mit der Maus auf den Zurückbutton geht, dann wern dieser Text gezeigt, deshalb ist er jetzt false
         WarningBackText.setVisible(false);
 
     }
 
-    public static void getRandomTile() {
+    // Diese Methode soll mir so viele zufällige karten aus der Arraylist geben, bis nur noch eine Karte übrig bleibt und diese wird der Spielkarte zugewiesen und nach aussen gesetzt
+    public static void getRandomKarte() {
+        // Eine Variable vom Typ int
         int grad = 0;
 
         /**
@@ -226,7 +234,6 @@ public class SpielViewController implements Initializable {
          * ist die 2, dann...*
          */
         int nummer = new Random().nextInt(3);
-        int b = 0;
 
         switch (nummer) {
             case 0:
@@ -246,29 +253,28 @@ public class SpielViewController implements Initializable {
         // solange in der ArrayList nicht eine Karte übrig geblieben ist, wird...
         if (App.getKartenKlasse().size() == 1) {
 
-            //Diese eine karte wird dann als Spielkarte nach aussen gesetzt und unten in der rotation Methode zum rotieren verwendet.
+            //Diese eine karte, die noch übrig bleibt, wird der Spielkarte zugewiesen.
             App.setSpielkarten(App.getKartenKlasse().get(t));
         } else {
-            //Mein KartenModel(Randomkarte) wird auf die zufällige karte gesetzt, die mit get t, also eine zufällige zahl aus der ArrayList geholt
+            //Der Randomkarten werden die zufälligen Karten aus der ArrayList zugewiesen
             App.setRandomkarte(App.getKartenKlasse().get(t));
 
-            //Dann bekommt die Karten eine zufällige gradnummer
+            //Dann bekommt wird Karte gemäß zugällige Gradnummer gedreht.
             App.getRandomkarte().getKarten().setRotate(grad);
 
-            // und sie wird dann gelöscht
+            // und sie wird dann aus der ArrayLit gelöscht, damit sie nicht nochmal geäddet werden kann
             App.getKartenKlasse().remove(t);
 
         }
-        System.out.println(App.getKartenKlasse().size());
+
     }
 
+    // Die Methode für das Denerieren des Feldes
     private void feld() {
 
-        int x;
-        int y;
-
-        for (x = 0; x < 5; x++) {
-            for (y = 0; y < 5; y++) {
+        //Mit der for Schleife wird die Reihe, solange sie nicht 5 cases erreicht hat, um eine Zahl bzw Karte erhöht
+        for (int x = 0; x < 5; x++) {
+            for (int y = 0; y < 5; y++) {
 
                 if (y == 0) {
                     switch (x) {
@@ -280,31 +286,32 @@ public class SpielViewController implements Initializable {
                          */
 
                         case 0:
-                            getRandomTile();
+                            // Die Methode RandomKarte wird aufgerufen und eine Karte wird der ersten Karte aus der ersten x und y Reihe zugewiesen und die Position festgesetzt.
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(230);
                             break;
                         case 1:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(230);
                             break;
                         case 2:
-                            getRandomTile();
+                           getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
                             board[x][y].getKarten().setLayoutY(230);
                             break;
                         case 3:
-                            getRandomTile();
+                           getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
                             board[x][y].getKarten().setLayoutY(230);
                             break;
                         case 4:
-                            getRandomTile();
+                          getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(230);
@@ -313,31 +320,31 @@ public class SpielViewController implements Initializable {
                 } else if (y == 1) {
                     switch (x) {
                         case 0:
-                            getRandomTile();
+                        getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(335);
                             break;
                         case 1:
-                            getRandomTile();
+                       getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(335);
                             break;
                         case 2:
-                            getRandomTile();
+                         getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
                             board[x][y].getKarten().setLayoutY(335);
                             break;
                         case 3:
-                            getRandomTile();
+                       getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
                             board[x][y].getKarten().setLayoutY(335);
                             break;
                         case 4:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(335);
@@ -347,31 +354,31 @@ public class SpielViewController implements Initializable {
                 } else if (y == 2) {
                     switch (x) {
                         case 0:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(440);
                             break;
                         case 1:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(440);
                             break;
                         case 2:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
                             board[x][y].getKarten().setLayoutY(440);
                             break;
                         case 3:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
                             board[x][y].getKarten().setLayoutY(440);
                             break;
                         case 4:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(440);
@@ -381,31 +388,31 @@ public class SpielViewController implements Initializable {
                 } else if (y == 3) {
                     switch (x) {
                         case 0:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(545);
                             break;
                         case 1:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(545);
                             break;
                         case 2:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
                             board[x][y].getKarten().setLayoutY(545);
                             break;
                         case 3:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
                             board[x][y].getKarten().setLayoutY(545);
                             break;
                         case 4:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(545);
@@ -416,31 +423,31 @@ public class SpielViewController implements Initializable {
                 } else if (y == 4) {
                     switch (x) {
                         case 0:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(650);
                             break;
                         case 1:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(650);
                             break;
                         case 2:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
                             board[x][y].getKarten().setLayoutY(650);
                             break;
                         case 3:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
                             board[x][y].getKarten().setLayoutY(650);
                             break;
                         case 4:
-                            getRandomTile();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(650);
@@ -642,73 +649,66 @@ public class SpielViewController implements Initializable {
 
         App.getRandomkarte().changeRandomkarteAusgang();
         App.getRandomkarte().changeSpielkartenAusgang();
-        
+
         // & FigurGeld.getLayoutX() <= 829 & FigurGeld.getLayoutX() >= 380 & FigurGeld.getLayoutY() <= 613 & FigurGeld.getLayoutY() <= 175
-        if (statusgelb == true ) {
-            if(statusgelb == true && App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == true && App.getRandomkarte().isUntererEingang() == true){
+        if (statusgelb == true) {
+            if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == true && App.getRandomkarte().isUntererEingang() == true) {
                 switch (event.getCode()) {
-                case W:
-                    FigurGeld.setY(FigurGeld.getY() - 106);
-                    break;
-                case S:
-                    FigurGeld.setY(FigurGeld.getY() + 106);
-                    break;
-                case A:
-                    FigurGeld.setX(FigurGeld.getX() - 106);
-                    break;
-                case D:
-                    FigurGeld.setX(FigurGeld.getX() + 106);
-                    break;
-                default:
-                    break;
-                 } 
-            }    
-                
-                else if (statusgelb == true &&App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == false){
+                    case W:
+                        FigurGeld.setY(FigurGeld.getY() - 106);
+                        break;
+                    case S:
+                        FigurGeld.setY(FigurGeld.getY() + 106);
+                        break;
+                    case A:
+                        FigurGeld.setX(FigurGeld.getX() - 106);
+                        break;
+                    case D:
+                        FigurGeld.setX(FigurGeld.getX() + 106);
+                        break;
+                    default:
+                        break;
+                }
+            } else if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == false) {
                 switch (event.getCode()) {
-                   case A:
-                    FigurGeld.setX(FigurGeld.getX() - 106);
-                    break;     }
-                
-                    }
-            
-                else if (statusgelb == true &&App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == false){
+                    case A:
+                        FigurGeld.setX(FigurGeld.getX() - 106);
+                        break;
+                }
+
+            } else if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == false) {
                 switch (event.getCode()) {
-                   case W:
-                    FigurGeld.setY(FigurGeld.getY() - 106);
-                    break;     }
-                
-                    }
-                 else if (statusgelb == true &&App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == true && App.getRandomkarte().isUntererEingang() == false){
+                    case W:
+                        FigurGeld.setY(FigurGeld.getY() - 106);
+                        break;
+                }
+
+            } else if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == true && App.getRandomkarte().isUntererEingang() == false) {
                 switch (event.getCode()) {
-                   case D:
-                    FigurGeld.setX(FigurGeld.getX() + 106);
-                    break;    }
-                
-                    }
-                    
-                    else if (statusgelb == true &&App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == true){
+                    case D:
+                        FigurGeld.setX(FigurGeld.getX() + 106);
+                        break;
+                }
+
+            } else if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == true) {
                 switch (event.getCode()) {
-                   case S:
-                    FigurGeld.setY(FigurGeld.getY() + 106);
-                    break;    }
-                
-                    }
-            
-                     else if (statusgelb == true &&App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == true){
+                    case S:
+                        FigurGeld.setY(FigurGeld.getY() + 106);
+                        break;
+                }
+
+            } else if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == true) {
                 switch (event.getCode()) {
-                  case W:
-                    FigurGeld.setY(FigurGeld.getY() - 106);
-                    break;   
-                case A:
-                    FigurGeld.setX(FigurGeld.getX() - 106);
-                    break;}
-                
-                    }
-            
-            
-            
-            
+                    case W:
+                        FigurGeld.setY(FigurGeld.getY() - 106);
+                        break;
+                    case A:
+                        FigurGeld.setX(FigurGeld.getX() - 106);
+                        break;
+                }
+
+            }
+
             grenze();
         } //  || FigurGrün.getX() < 829 || FigurGrün.getX() > 380 || FigurGrün.getY() < 613 || FigurGrün.getY() < 180
         else if (statusgrün == true) {
@@ -744,9 +744,8 @@ public class SpielViewController implements Initializable {
         KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[4][1]);
-        App.getSpielkarten().getKarten().setX(243);
-        App.getSpielkarten().getKarten().setY(141);
-        
+        App.getSpielkarten().getKarten().setLayoutX(243);
+        App.getSpielkarten().getKarten().setLayoutY(141);
 
         board[4][1] = board[3][1];
         board[4][1].getKarten().setLayoutX(790);
@@ -772,13 +771,12 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPOstOben(MouseEvent event) {
-        
+
         KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[0][1]);
-        App.getSpielkarten().getKarten().setX(243);
-        App.getSpielkarten().getKarten().setY(141);
-        
+        App.getSpielkarten().getKarten().setLayoutX(243);
+        App.getSpielkarten().getKarten().setLayoutY(141);
 
         board[0][1] = board[1][1];
         board[0][1].getKarten().setLayoutX(370);
@@ -803,13 +801,12 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPOstUnten(MouseEvent event) {
-        
+
         KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[0][3]);
-        App.getSpielkarten().getKarten().setX(243);
-        App.getSpielkarten().getKarten().setY(141);
-        
+        App.getSpielkarten().getKarten().setLayoutX(243);
+        App.getSpielkarten().getKarten().setLayoutY(141);
 
         board[0][3] = board[1][3];
         board[0][3].getKarten().setLayoutX(370);
@@ -834,13 +831,12 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPWestUnten(MouseEvent event) {
-        
-         KartenModel spielkarteKopie = App.getSpielkarten();
+
+        KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[4][3]);
-        App.getSpielkarten().getKarten().setX(243);
-        App.getSpielkarten().getKarten().setY(141);
-        
+        App.getSpielkarten().getKarten().setLayoutX(243);
+        App.getSpielkarten().getKarten().setLayoutY(141);
 
         board[4][3] = board[3][3];
         board[4][3].getKarten().setLayoutX(790);
@@ -869,12 +865,11 @@ public class SpielViewController implements Initializable {
 
         // Eine koopie der Karte, die draußen ist, wird gemacht, um diese  als letztes nach dem die vierte
         //Karte draußen ist, wieder einzusetzen.
-            KartenModel spielkarteKopie = App.getSpielkarten();
+        KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[1][4]);
-        App.getSpielkarten().getKarten().setX(243);
-        App.getSpielkarten().getKarten().setY(141);
-        
+        App.getSpielkarten().getKarten().setLayoutX(243);
+        App.getSpielkarten().getKarten().setLayoutY(141);
 
         board[1][4] = board[1][3];
         board[1][4].getKarten().setLayoutX(475);
@@ -903,9 +898,8 @@ public class SpielViewController implements Initializable {
         KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[3][4]);
-        App.getSpielkarten().getKarten().setX(243);
-        App.getSpielkarten().getKarten().setY(141);
-        
+        App.getSpielkarten().getKarten().setLayoutX(243);
+        App.getSpielkarten().getKarten().setLayoutY(141);
 
         board[3][4] = board[3][3];
         board[3][4].getKarten().setLayoutX(685);
@@ -927,17 +921,15 @@ public class SpielViewController implements Initializable {
         board[3][0].getKarten().setLayoutX(685);
         board[3][0].getKarten().setLayoutY(230);
 
-
     }
 
     @FXML
     private void btnPSüdRechts(MouseEvent event) {
-          KartenModel spielkarteKopie = App.getSpielkarten();
+        KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[3][0]);
-        App.getSpielkarten().getKarten().setX(243);
-        App.getSpielkarten().getKarten().setY(141);
-        
+        App.getSpielkarten().getKarten().setLayoutX(243);
+        App.getSpielkarten().getKarten().setLayoutY(141);
 
         board[3][0] = board[3][1];
         board[3][0].getKarten().setLayoutX(685);
@@ -958,18 +950,17 @@ public class SpielViewController implements Initializable {
         board[3][4] = spielkarteKopie;
         board[3][4].getKarten().setLayoutX(685);
         board[3][4].getKarten().setLayoutY(650);
-        
+
     }
 
     @FXML
     private void btnPSüdLinks(MouseEvent event) {
-        
-             KartenModel spielkarteKopie = App.getSpielkarten();
+
+        KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[1][0]);
-        App.getSpielkarten().getKarten().setX(243);
-        App.getSpielkarten().getKarten().setY(141);
-        
+        App.getSpielkarten().getKarten().setLayoutX(243);
+        App.getSpielkarten().getKarten().setLayoutY(141);
 
         board[1][0] = board[1][1];
         board[1][0].getKarten().setLayoutX(475);
@@ -1024,9 +1015,7 @@ public class SpielViewController implements Initializable {
             parentContainer.getChildren().remove(Container);
         });
         time.play();
-        
-       
-       
+
     }
 
     @FXML
