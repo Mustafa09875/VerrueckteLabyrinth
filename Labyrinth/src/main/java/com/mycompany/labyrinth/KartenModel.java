@@ -36,6 +36,69 @@ public class KartenModel {
 
 
 
+    public void changeAusgang(){
+        int rotate = (int) App.getSpielkarten().getKarten().getRotate();
+        if(this.typ == "t-foermig"){
+            switch(rotate){
+                case 0:
+                    App.getSpielkarten().setLinkerEingang(true);
+                    App.getSpielkarten().setObererEingang(true);
+                    App.getSpielkarten().setRechterEingang(true);
+                    App.getSpielkarten().setUntererEingang(false);
+                    break;
+                case 90:
+                    App.getSpielkarten().setLinkerEingang(false);
+                    App.getSpielkarten().setObererEingang(true);
+                    App.getSpielkarten().setRechterEingang(true);
+                    App.getSpielkarten().setUntererEingang(true);
+                    break;
+                case 180:
+                    App.getSpielkarten().setLinkerEingang(true);
+                    App.getSpielkarten().setObererEingang(false);
+                    App.getSpielkarten().setRechterEingang(true);
+                    App.getSpielkarten().setUntererEingang(true);
+                    break;
+                case 270:
+                    App.getSpielkarten().setLinkerEingang(true);
+                    App.getSpielkarten().setObererEingang(true);
+                    App.getSpielkarten().setRechterEingang(false);
+                    App.getSpielkarten().setUntererEingang(true);
+                    break;
+                    
+            }
+        }
+        
+        else if(this.typ == "kurve"){
+            switch(rotate){
+                case 0:
+                    App.getSpielkarten().setLinkerEingang(true);
+                    App.getSpielkarten().setObererEingang(true);
+                    App.getSpielkarten().setRechterEingang(true);
+                    App.getSpielkarten().setUntererEingang(false);
+                    break;
+                case 90:
+                    App.getSpielkarten().setLinkerEingang(false);
+                    App.getSpielkarten().setObererEingang(true);
+                    App.getSpielkarten().setRechterEingang(true);
+                    App.getSpielkarten().setUntererEingang(true);
+                    break;
+                case 180:
+                    App.getSpielkarten().setLinkerEingang(true);
+                    App.getSpielkarten().setObererEingang(false);
+                    App.getSpielkarten().setRechterEingang(true);
+                    App.getSpielkarten().setUntererEingang(true);
+                    break;
+                case 270:
+                    App.getSpielkarten().setLinkerEingang(true);
+                    App.getSpielkarten().setObererEingang(true);
+                    App.getSpielkarten().setRechterEingang(false);
+                    App.getSpielkarten().setUntererEingang(true);
+                    break;
+                    
+            }
+        }
+    }
+
     public String getTyp() {
         return typ;
     }

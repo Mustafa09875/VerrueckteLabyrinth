@@ -5,11 +5,7 @@
  */
 package com.mycompany.labyrinth;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -17,6 +13,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,6 +26,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -692,30 +690,140 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPWestOben(MouseEvent event) {
+        KartenModel spielkarteKopie = App.getSpielkarten();
+
+        App.setSpielkarten(board[4][1]);
+        App.getSpielkarten().getKarten().setX(243);
+        App.getSpielkarten().getKarten().setY(141);
+        
+
+        board[4][1] = board[3][1];
+        board[4][1].getKarten().setLayoutX(790);
+        board[4][1].getKarten().setLayoutY(335);
+
+        board[3][1] = board[2][1];
+        board[3][1].getKarten().setLayoutX(685);
+        board[3][1].getKarten().setLayoutY(335);
+
+        board[2][1] = board[1][1];
+        board[2][1].getKarten().setLayoutX(580);
+        board[2][1].getKarten().setLayoutY(335);
+
+        board[1][1] = board[0][1];
+        board[1][1].getKarten().setLayoutX(475);
+        board[1][1].getKarten().setLayoutY(335);
+
+        board[0][1] = spielkarteKopie;
+        board[0][1].getKarten().setLayoutX(370);
+        board[0][1].getKarten().setLayoutY(335);
 
     }
 
     @FXML
     private void btnPOstOben(MouseEvent event) {
+        
+        KartenModel spielkarteKopie = App.getSpielkarten();
+
+        App.setSpielkarten(board[0][1]);
+        App.getSpielkarten().getKarten().setX(243);
+        App.getSpielkarten().getKarten().setY(141);
+        
+
+        board[0][1] = board[1][1];
+        board[0][1].getKarten().setLayoutX(370);
+        board[0][1].getKarten().setLayoutY(335);
+
+        board[1][1] = board[2][1];
+        board[1][1].getKarten().setLayoutX(475);
+        board[1][1].getKarten().setLayoutY(335);
+
+        board[2][1] = board[3][1];
+        board[2][1].getKarten().setLayoutX(580);
+        board[2][1].getKarten().setLayoutY(335);
+
+        board[3][1] = board[4][1];
+        board[3][1].getKarten().setLayoutX(685);
+        board[3][1].getKarten().setLayoutY(335);
+
+        board[4][1] = spielkarteKopie;
+        board[4][1].getKarten().setLayoutX(790);
+        board[4][1].getKarten().setLayoutY(335);
     }
 
     @FXML
     private void btnPOstUnten(MouseEvent event) {
+        
+        KartenModel spielkarteKopie = App.getSpielkarten();
+
+        App.setSpielkarten(board[0][3]);
+        App.getSpielkarten().getKarten().setX(243);
+        App.getSpielkarten().getKarten().setY(141);
+        
+
+        board[0][3] = board[1][3];
+        board[0][3].getKarten().setLayoutX(370);
+        board[0][3].getKarten().setLayoutY(545);
+
+        board[1][3] = board[2][3];
+        board[1][3].getKarten().setLayoutX(475);
+        board[1][3].getKarten().setLayoutY(545);
+
+        board[2][3] = board[3][3];
+        board[2][3].getKarten().setLayoutX(580);
+        board[2][3].getKarten().setLayoutY(545);
+
+        board[3][3] = board[4][3];
+        board[3][3].getKarten().setLayoutX(685);
+        board[3][3].getKarten().setLayoutY(545);
+
+        board[4][3] = spielkarteKopie;
+        board[4][3].getKarten().setLayoutX(790);
+        board[4][3].getKarten().setLayoutY(545);
     }
 
     @FXML
     private void btnPWestUnten(MouseEvent event) {
+        
+         KartenModel spielkarteKopie = App.getSpielkarten();
+
+        App.setSpielkarten(board[4][3]);
+        App.getSpielkarten().getKarten().setX(243);
+        App.getSpielkarten().getKarten().setY(141);
+        
+
+        board[4][3] = board[3][3];
+        board[4][3].getKarten().setLayoutX(790);
+        board[4][3].getKarten().setLayoutY(545);
+
+        board[3][3] = board[2][3];
+        board[3][3].getKarten().setLayoutX(685);
+        board[3][3].getKarten().setLayoutY(545);
+
+        board[2][3] = board[1][3];
+        board[2][3].getKarten().setLayoutX(580);
+        board[2][3].getKarten().setLayoutY(545);
+
+        board[1][3] = board[0][3];
+        board[1][3].getKarten().setLayoutX(475);
+        board[1][3].getKarten().setLayoutY(545);
+
+        board[0][3] = spielkarteKopie;
+        board[0][3].getKarten().setLayoutX(370);
+        board[0][3].getKarten().setLayoutY(545);
     }
 
     @FXML
     private void btnPNordLinks(MouseEvent event) {
         String path = "C:\\Users\\user\\Desktop\\A\\Laser Sound Effect";
 
-        KartenModel spielkarteKopie = App.getSpielkarten();
+        // Eine koopie der Karte, die draußen ist, wird gemacht, um diese  als letztes nach dem die vierte
+        //Karte draußen ist, wieder einzusetzen.
+            KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[1][4]);
         App.getSpielkarten().getKarten().setX(243);
         App.getSpielkarten().getKarten().setY(141);
+        
 
         board[1][4] = board[1][3];
         board[1][4].getKarten().setLayoutX(475);
@@ -741,15 +849,96 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPNordRechts(MouseEvent event) {
+        KartenModel spielkarteKopie = App.getSpielkarten();
+
+        App.setSpielkarten(board[3][4]);
+        App.getSpielkarten().getKarten().setX(243);
+        App.getSpielkarten().getKarten().setY(141);
+        
+
+        board[3][4] = board[3][3];
+        board[3][4].getKarten().setLayoutX(685);
+        board[3][4].getKarten().setLayoutY(650);
+
+        board[3][3] = board[3][2];
+        board[3][3].getKarten().setLayoutX(685);
+        board[3][3].getKarten().setLayoutY(545);
+
+        board[3][2] = board[3][1];
+        board[3][2].getKarten().setLayoutX(685);
+        board[3][2].getKarten().setLayoutY(440);
+
+        board[3][1] = board[3][0];
+        board[3][1].getKarten().setLayoutX(685);
+        board[3][1].getKarten().setLayoutY(335);
+
+        board[3][0] = spielkarteKopie;
+        board[3][0].getKarten().setLayoutX(685);
+        board[3][0].getKarten().setLayoutY(230);
+
 
     }
 
     @FXML
     private void btnPSüdRechts(MouseEvent event) {
+          KartenModel spielkarteKopie = App.getSpielkarten();
+
+        App.setSpielkarten(board[3][0]);
+        App.getSpielkarten().getKarten().setX(243);
+        App.getSpielkarten().getKarten().setY(141);
+        
+
+        board[3][0] = board[3][1];
+        board[3][0].getKarten().setLayoutX(685);
+        board[3][0].getKarten().setLayoutY(230);
+
+        board[3][1] = board[3][2];
+        board[3][1].getKarten().setLayoutX(685);
+        board[3][1].getKarten().setLayoutY(335);
+
+        board[3][2] = board[3][3];
+        board[3][2].getKarten().setLayoutX(685);
+        board[3][2].getKarten().setLayoutY(440);
+
+        board[3][3] = board[3][4];
+        board[3][3].getKarten().setLayoutX(685);
+        board[3][3].getKarten().setLayoutY(545);
+
+        board[3][4] = spielkarteKopie;
+        board[3][4].getKarten().setLayoutX(685);
+        board[3][4].getKarten().setLayoutY(650);
+        
     }
 
     @FXML
     private void btnPSüdLinks(MouseEvent event) {
+        
+             KartenModel spielkarteKopie = App.getSpielkarten();
+
+        App.setSpielkarten(board[1][0]);
+        App.getSpielkarten().getKarten().setX(243);
+        App.getSpielkarten().getKarten().setY(141);
+        
+
+        board[1][0] = board[1][1];
+        board[1][0].getKarten().setLayoutX(475);
+        board[1][0].getKarten().setLayoutY(230);
+
+        board[1][1] = board[1][2];
+        board[1][1].getKarten().setLayoutX(475);
+        board[1][1].getKarten().setLayoutY(335);
+
+        board[1][2] = board[1][3];
+        board[1][2].getKarten().setLayoutX(475);
+        board[1][2].getKarten().setLayoutY(440);
+
+        board[1][3] = board[1][4];
+        board[1][3].getKarten().setLayoutX(475);
+        board[1][3].getKarten().setLayoutY(545);
+
+        board[1][4] = spielkarteKopie;
+        board[1][4].getKarten().setLayoutX(475);
+        board[1][4].getKarten().setLayoutY(650);
     }
 
     @FXML
@@ -784,7 +973,9 @@ public class SpielViewController implements Initializable {
             parentContainer.getChildren().remove(Container);
         });
         time.play();
-
+        
+       
+       
     }
 
     @FXML
