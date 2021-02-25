@@ -27,15 +27,9 @@ public class App extends Application {
     
     private static KartenModel randomkarte;
     private static KartenModel spielkarten;
-    private static KartenModel aussenkarte;
+   
 
-    public static KartenModel getAussenkarte() {
-        return aussenkarte;
-    }
-
-    public static void setAussenkarte(KartenModel aussenkarte) {
-        App.aussenkarte = aussenkarte;
-    }
+    
   
   
 

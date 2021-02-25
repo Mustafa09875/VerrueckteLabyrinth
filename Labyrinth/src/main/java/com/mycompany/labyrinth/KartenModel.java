@@ -39,6 +39,7 @@ public class KartenModel {
     public void changeSpielkartenAusgang(){
         int rotate;
         rotate = (int) App.getSpielkarten().getKarten().getRotate();
+        System.out.println(rotate);
         if(this.typ == "t-foermig"){
             switch(rotate){
                 case 0:
@@ -90,9 +91,9 @@ public class KartenModel {
                     App.getSpielkarten().setUntererEingang(true);
                     break;
                 case 270:
-                    App.getSpielkarten().setLinkerEingang(false);
+                    App.getSpielkarten().setLinkerEingang(true);
                     App.getSpielkarten().setObererEingang(false);
-                    App.getSpielkarten().setRechterEingang(true);
+                    App.getSpielkarten().setRechterEingang(false);
                     App.getSpielkarten().setUntererEingang(true);
                     break;
                     
@@ -128,11 +129,16 @@ public class KartenModel {
                     
             }
         }
+        System.out.println(App.getSpielkarten().isLinkerEingang());
+        System.out.println(App.getSpielkarten().isObererEingang());
+        System.out.println(App.getSpielkarten().isRechterEingang());
+        System.out.println(App.getSpielkarten().isUntererEingang());
     }
     
         public void changeRandomkarteAusgang(){
         int rotate;
         rotate = (int) App.getRandomkarte().getKarten().getRotate();
+        System.out.println(rotate);
         if(this.typ == "t-foermig"){
             switch(rotate){
                 case 0:
