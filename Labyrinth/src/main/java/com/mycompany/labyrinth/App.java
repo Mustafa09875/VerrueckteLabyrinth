@@ -15,7 +15,7 @@ import javafx.scene.image.ImageView;
  * JavaFX App
  */
 public class App extends Application {
-
+    
     private static Scene scene;
     private static ArrayList<BelohnungModel> belohnungen;
     private static ArrayList<ImageView> karten;
