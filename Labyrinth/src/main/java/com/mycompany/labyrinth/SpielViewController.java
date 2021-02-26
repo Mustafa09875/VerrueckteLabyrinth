@@ -1044,8 +1044,68 @@ public class SpielViewController implements Initializable {
 
     
     private void checkSpielerKoordinaten(){
-        if(FigurGeld.getX() == ){
-            
+        if(FigurGeld.getX() == 396 && FigurGeld.getY() == 183){
+            App.getSfgelb().setX(0); App.getSfgelb().setY(0);
+        }
+        else if(FigurGeld.getX() == 502 && FigurGeld.getY() == 183){
+            App.getSfgelb().setX(1); App.getSfgelb().setY(0);
+        }
+        else if(FigurGeld.getX() == 608 && FigurGeld.getY() == 183){
+            App.getSfgelb().setX(2); App.getSfgelb().setY(0);
+        }
+        else if(FigurGeld.getX() == 714 && FigurGeld.getY() == 183){
+            App.getSfgelb().setX(3); App.getSfgelb().setY(0);
+        }
+        else if(FigurGeld.getX() == 820 && FigurGeld.getY() == 183){
+            App.getSfgelb().setX(4); App.getSfgelb().setY(0);
+        }
+        
+        else if(FigurGeld.getX() == 396 && FigurGeld.getY() == 288){
+            App.getSfgelb().setX(0); App.getSfgelb().setY(1);
+        }
+        else if(FigurGeld.getX() == 502 && FigurGeld.getY() == 288){
+            App.getSfgelb().setX(1); App.getSfgelb().setY(1);
+        }
+        else if(FigurGeld.getX() == 609 && FigurGeld.getY() == 288){
+            App.getSfgelb().setX(2); App.getSfgelb().setY(1);
+        }
+        else if(FigurGeld.getX() == 714 && FigurGeld.getY() == 288){
+            App.getSfgelb().setX(3); App.getSfgelb().setY(1);
+        }
+        else if(FigurGeld.getX() == 820 && FigurGeld.getY() == 288){
+            App.getSfgelb().setX(4); App.getSfgelb().setY(1);
+        }
+        
+        else if(FigurGeld.getX() == 396 && FigurGeld.getY() == 393){
+            App.getSfgelb().setX(0); App.getSfgelb().setY(2);
+        }
+        else if(FigurGeld.getX() == 502 && FigurGeld.getY() == 393){
+            App.getSfgelb().setX(1); App.getSfgelb().setY(2);
+        }
+        else if(FigurGeld.getX() == 609 && FigurGeld.getY() == 393){
+            App.getSfgelb().setX(2); App.getSfgelb().setY(2);
+        }
+        else if(FigurGeld.getX() == 714 && FigurGeld.getY() == 393){
+            App.getSfgelb().setX(3); App.getSfgelb().setY(2);
+        }
+        else if(FigurGeld.getX() == 820 && FigurGeld.getY() == 393){
+            App.getSfgelb().setX(4); App.getSfgelb().setY(2);
+        }
+        
+        else if(FigurGeld.getX() == 396 && FigurGeld.getY() == 498){
+            App.getSfgelb().setX(0); App.getSfgelb().setY(3);
+        }
+        else if(FigurGeld.getX() == 502 && FigurGeld.getY() == 498){
+            App.getSfgelb().setX(1); App.getSfgelb().setY(3);
+        }
+        else if(FigurGeld.getX() == 609 && FigurGeld.getY() == 498){
+            App.getSfgelb().setX(2); App.getSfgelb().setY(3);
+        }
+        else if(FigurGeld.getX() == 714 && FigurGeld.getY() == 498){
+            App.getSfgelb().setX(3); App.getSfgelb().setY(3);
+        }
+        else if(FigurGeld.getX() == 820 && FigurGeld.getY() == 498){
+            App.getSfgelb().setX(4); App.getSfgelb().setY(3);
         }
     }
 }
