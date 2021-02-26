@@ -1044,6 +1044,10 @@ public class SpielViewController implements Initializable {
 
     
     private void checkSpielerKoordinaten(){
+        /*
+        Es wird die Position des Spielers gespeichert. die if-Abfrage guckt sich an, wo die ImageView der Figur
+        sich befindet und ändert dem entsprechend den x-Wert der Figur und speichert diese dann in dem Objekt ab.
+        */
         if(FigurGeld.getX() == 396 && FigurGeld.getY() == 183){
             App.getSfgelb().setX(0); App.getSfgelb().setY(0);
         }
@@ -1108,7 +1112,7 @@ public class SpielViewController implements Initializable {
             App.getSfgelb().setX(4); App.getSfgelb().setY(3);
         }
         
-                else if(FigurGeld.getX() == 396 && FigurGeld.getY() == 501){
+        else if(FigurGeld.getX() == 396 && FigurGeld.getY() == 501){
             App.getSfgelb().setX(0); App.getSfgelb().setY(4);
         }
         else if(FigurGeld.getX() == 502 && FigurGeld.getY() == 501){
