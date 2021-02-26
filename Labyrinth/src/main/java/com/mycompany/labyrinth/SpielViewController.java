@@ -22,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -622,7 +623,7 @@ public class SpielViewController implements Initializable {
 
     }
 
-    @FXML
+    @FXML                                                                                           
     private void FigurGelbClicked(MouseEvent event) {
         /**
          * Wird der gelbe Spieler angeclicked, dann wird der Status vom gelben
@@ -652,7 +653,7 @@ public class SpielViewController implements Initializable {
         FigurGeld.setY(FeldGrün.getY());
 
     }
-
+                                                                                   
     @FXML
     private void AnchoKeyPressed(KeyEvent event) {
 
@@ -704,7 +705,7 @@ public class SpielViewController implements Initializable {
 
     }
 
-    @FXML
+    @FXML                                                                           
     private void StackPaneKeyPressed(KeyEvent event) {
     }
 
@@ -773,7 +774,7 @@ public class SpielViewController implements Initializable {
         board[4][1].getKarten().setLayoutX(790);
         board[4][1].getKarten().setLayoutY(335);
     }
-
+                                                           
     @FXML
     private void btnPOstUnten(MouseEvent event) {
 
@@ -897,7 +898,7 @@ public class SpielViewController implements Initializable {
     }
 
     @FXML
-    private void btnPSüdRechts(MouseEvent event) {
+    private void btnPSüdRechts (MouseEvent event) {
         KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[3][0]);
@@ -990,12 +991,17 @@ public class SpielViewController implements Initializable {
             parentContainer.getChildren().remove(Container);
         });
         time.play();
-
+        
+       
     }
 
     @FXML
     private void btnRotateKarte(MouseEvent event) {
-
+        
+        /**
+         * Die Spiel Karte wird aufgerufen. Ist ihre Drehung kleiner als 360 Grad, dann die Gradzahl geprüft und um 90 erhöht
+         * Wenn sie sonst nicht kleiner als 360 ist, dann wird sie auf null gesetzt.
+         */
         if (App.getSpielkarten().getKarten().getRotate() <= 360) {
             App.getSpielkarten().getKarten().setRotate(App.getSpielkarten().getKarten().getRotate() + 90);
         } else {
