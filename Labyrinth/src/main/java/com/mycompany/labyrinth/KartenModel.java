@@ -137,7 +137,7 @@ public class KartenModel {
     
         public void changeRandomkarteAusgang(){
         int rotate;
-        rotate = (int) App.getRandomkarte().getKarten().getRotate();
+        rotate = board[x][y];
         System.out.println(rotate);
         if(this.typ == "t-foermig"){
             switch(rotate){

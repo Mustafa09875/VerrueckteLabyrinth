@@ -647,7 +647,7 @@ public class SpielViewController implements Initializable {
         
         // & FigurGeld.getLayoutX() <= 829 & FigurGeld.getLayoutX() >= 380 & FigurGeld.getLayoutY() <= 613 & FigurGeld.getLayoutY() <= 175
         if (statusgelb == true ) {
-            if(App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == true && App.getRandomkarte().isUntererEingang() == true){
+            if(statusgelb == true && App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == true && App.getRandomkarte().isUntererEingang() == true){
                 switch (event.getCode()) {
                 case W:
                     FigurGeld.setY(FigurGeld.getY() - 106);
@@ -666,7 +666,7 @@ public class SpielViewController implements Initializable {
                  } 
             }    
                 
-                else if (App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == false){
+                else if (statusgelb == true &&App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == false){
                 switch (event.getCode()) {
                    case A:
                     FigurGeld.setX(FigurGeld.getX() - 106);
@@ -674,14 +674,14 @@ public class SpielViewController implements Initializable {
                 
                     }
             
-                else if (App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == false){
+                else if (statusgelb == true &&App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == false){
                 switch (event.getCode()) {
                    case W:
                     FigurGeld.setY(FigurGeld.getY() - 106);
                     break;     }
                 
                     }
-                 else if (App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == true && App.getRandomkarte().isUntererEingang() == false){
+                 else if (statusgelb == true &&App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == true && App.getRandomkarte().isUntererEingang() == false){
                 switch (event.getCode()) {
                    case D:
                     FigurGeld.setX(FigurGeld.getX() + 106);
@@ -689,11 +689,22 @@ public class SpielViewController implements Initializable {
                 
                     }
                     
-                    else if (App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == true){
+                    else if (statusgelb == true &&App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == true){
                 switch (event.getCode()) {
                    case S:
                     FigurGeld.setY(FigurGeld.getY() + 106);
                     break;    }
+                
+                    }
+            
+                     else if (statusgelb == true &&App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == true){
+                switch (event.getCode()) {
+                  case W:
+                    FigurGeld.setY(FigurGeld.getY() - 106);
+                    break;   
+                case A:
+                    FigurGeld.setX(FigurGeld.getX() - 106);
+                    break;}
                 
                     }
             
@@ -1023,7 +1034,7 @@ public class SpielViewController implements Initializable {
     @FXML
     private void btnRotateKarte(MouseEvent event) {
 
-        if (App.getSpielkarten().getKarten().getRotate() < 360) {
+        if (App.getSpielkarten().getKarten().getRotate() < 270) {
             App.getSpielkarten().getKarten().setRotate(App.getSpielkarten().getKarten().getRotate() + 90);
         } else {
             App.getSpielkarten().getKarten().setRotate(0);
