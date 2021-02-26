@@ -20,6 +20,8 @@ public abstract class SpielfigurModel {
     private boolean isclicked;
 
     public SpielfigurModel(String name, int x, int y, boolean isclicked) {
+        
+        
         this.name = name;
         this.x = x;
         this.y = y;

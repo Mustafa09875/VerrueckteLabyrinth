@@ -1042,5 +1042,11 @@ public class SpielViewController implements Initializable {
         App.getSpielkarten().changeKartenAusgang();
     }
 
+    
+    private void checkSpielerKoordinaten(){
+        if(FigurGeld.getX() == ){
+            
+        }
+    }
 }
 
