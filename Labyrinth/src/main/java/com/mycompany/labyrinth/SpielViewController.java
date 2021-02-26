@@ -1108,5 +1108,71 @@ public class SpielViewController implements Initializable {
             App.getSfgelb().setX(4); App.getSfgelb().setY(3);
         }
     }
+    
+    private void checkSpielerKoordinatenGrün(){
+        if(FigurGrün.getX() == 396 && FigurGrün.getY() == 183){
+            App.getSfgrün().setX(0); App.getSfgrün().setY(0);
+        }
+        else if(FigurGrün.getX() == 502 && FigurGrün.getY() == 183){
+            App.getSfgrün().setX(1); App.getSfgrün().setY(0);
+        }
+        else if(FigurGrün.getX() == 608 && FigurGrün.getY() == 183){
+            App.getSfgrün().setX(2); App.getSfgrün().setY(0);
+        }
+        else if(FigurGrün.getX() == 714 && FigurGrün.getY() == 183){
+            App.getSfgrün().setX(3); App.getSfgrün().setY(0);
+        }
+        else if(FigurGrün.getX() == 820 && FigurGrün.getY() == 183){
+            App.getSfgrün().setX(4); App.getSfgrün().setY(0);
+        }
+        
+        else if(FigurGrün.getX() == 396 && FigurGrün.getY() == 288){
+            App.getSfgrün().setX(0); App.getSfgrün().setY(1);
+        }
+        else if(FigurGrün.getX() == 502 && FigurGrün.getY() == 288){
+            App.getSfgrün().setX(1); App.getSfgrün().setY(1);
+        }
+        else if(FigurGrün.getX() == 609 && FigurGrün.getY() == 288){
+            App.getSfgrün().setX(2); App.getSfgrün().setY(1);
+        }
+        else if(FigurGrün.getX() == 714 && FigurGrün.getY() == 288){
+            App.getSfgrün().setX(3); App.getSfgrün().setY(1);
+        }
+        else if(FigurGrün.getX() == 820 && FigurGrün.getY() == 288){
+            App.getSfgrün().setX(4); App.getSfgrün().setY(1);
+        }
+        
+        else if(FigurGrün.getX() == 396 && FigurGrün.getY() == 393){
+            App.getSfgrün().setX(0); App.getSfgrün().setY(2);
+        }
+        else if(FigurGrün.getX() == 502 && FigurGrün.getY() == 393){
+            App.getSfgrün().setX(1); App.getSfgrün().setY(2);
+        }
+        else if(FigurGrün.getX() == 609 && FigurGrün.getY() == 393){
+            App.getSfgrün().setX(2); App.getSfgrün().setY(2);
+        }
+        else if(FigurGrün.getX() == 714 && FigurGrün.getY() == 393){
+            App.getSfgrün().setX(3); App.getSfgrün().setY(2);
+        }
+        else if(FigurGrün.getX() == 820 && FigurGrün.getY() == 393){
+            App.getSfgrün().setX(4); App.getSfgrün().setY(2);
+        }
+        
+        else if(FigurGrün.getX() == 396 && FigurGrün.getY() == 498){
+            App.getSfgrün().setX(0); App.getSfgrün().setY(3);
+        }
+        else if(FigurGrün.getX() == 502 && FigurGrün.getY() == 498){
+            App.getSfgrün().setX(1); App.getSfgrün().setY(3);
+        }
+        else if(FigurGrün.getX() == 609 && FigurGrün.getY() == 498){
+            App.getSfgrün().setX(2); App.getSfgrün().setY(3);
+        }
+        else if(FigurGrün.getX() == 714 && FigurGrün.getY() == 498){
+            App.getSfgrün().setX(3); App.getSfgrün().setY(3);
+        }
+        else if(FigurGrün.getX() == 820 && FigurGrün.getY() == 498){
+            App.getSfgrün().setX(4); App.getSfgrün().setY(3);
+        }
+    }
 }
 
