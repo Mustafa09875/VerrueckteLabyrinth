@@ -49,15 +49,20 @@ public class StartViewController implements Initializable {
     
     @FXML
     private void SpielStartenBtn(ActionEvent event) throws IOException {
+        /**
+         * hier lesen wir als erstes unser fxml File ein. Die Datei laden wir 
+         * über die Methode getResource der Klasse, welche den ClassLoader nutzt um die Resource innerhalb des ClassPath zu finden.
+         */
         Parent root = FXMLLoader.load(getClass().getResource("SpielView.fxml")); 
       
-        Scene spielview = SpielStart.getScene();
+        
+        Scene spielstart = SpielStart.getScene();
       
       
-        root.translateYProperty().set(spielview.getHeight());
+        root.translateYProperty().set(spielstart.getHeight());
       
       
-        StackPane parentContainer =  (StackPane)spielview.getRoot();
+        StackPane parentContainer =  (StackPane)spielstart.getRoot();
         parentContainer.getChildren().add(root);
       
         Timeline time = new Timeline();

@@ -656,10 +656,12 @@ public class SpielViewController implements Initializable {
 
       
 
-        // & FigurGeld.getLayoutX() <= 829 & FigurGeld.getLayoutX() >= 380 & FigurGeld.getLayoutY() <= 613 & FigurGeld.getLayoutY() <= 175
+        //Wenn der Status true ist, dann kann sich der Spieler bewegen
         if (statusgelb == true) {
             
+            // Die Methode getCode von KeyEvent wird aufgerufen, danach kann sich der Spieler mit den Tasten W S A und D bewegen.
                 switch (event.getCode()) {
+                    // Drückt der Spieler W so wird Seine aktuelle Position überprüft und diese wird um 106 verringert
                     case W:
                         FigurGeld.setY(FigurGeld.getY() - 106);
                         break;
@@ -676,11 +678,9 @@ public class SpielViewController implements Initializable {
                         break;
                 }
            
-
-            
-
+                //Die Methode, die oben deklariert wurde, prüft ob der Spiele sich im Feld befindet.
             grenze();
-        } //  || FigurGrün.getX() < 829 || FigurGrün.getX() > 380 || FigurGrün.getY() < 613 || FigurGrün.getY() < 180
+        } 
         else if (statusgrün == true) {
             switch (event.getCode()) {
                 case W:
@@ -711,12 +711,18 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPWestOben(MouseEvent event) {
+        
+        // Ein neues Objekt der Karte, die draußen ist, wird erstellt, um diese  als letztes nach dem die vierte
+        //Karte draußen ist, wieder einzusetzen.
+        
         KartenModel spielkarteKopie = App.getSpielkarten();
-
+        
+        //Die letzte Karte in der letzten rechten Reihe wird der Spielkarte zugewiesen und auf die Position ausserhalb des Feldes plaziert.
         App.setSpielkarten(board[4][1]);
         App.getSpielkarten().getKarten().setLayoutX(243);
         App.getSpielkarten().getKarten().setLayoutY(141);
 
+        // Dann bewegt sich die Karte links nebenan nach rechts auf die Position der vorherigen Karte und so wird die ganze zeit einmal um eine Karte nach rechts verschoben
         board[4][1] = board[3][1];
         board[4][1].getKarten().setLayoutX(790);
         board[4][1].getKarten().setLayoutY(335);
@@ -733,6 +739,7 @@ public class SpielViewController implements Initializable {
         board[1][1].getKarten().setLayoutX(475);
         board[1][1].getKarten().setLayoutY(335);
 
+        // Nun bleibe nur noch ein Platz übrig und dort kommt die Spielkarte, die sich drassen befindet.
         board[0][1] = spielkarteKopie;
         board[0][1].getKarten().setLayoutX(370);
         board[0][1].getKarten().setLayoutY(335);
@@ -833,8 +840,7 @@ public class SpielViewController implements Initializable {
     private void btnPNordLinks(MouseEvent event) {
         String path = "C:\\Users\\user\\Desktop\\A\\Laser Sound Effect";
 
-        // Eine koopie der Karte, die draußen ist, wird gemacht, um diese  als letztes nach dem die vierte
-        //Karte draußen ist, wieder einzusetzen.
+        
         KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[1][4]);
@@ -955,16 +961,20 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void MouseEnteredBacktoStartView(MouseEvent event) {
+        //Wenn man mit der Maus den Bereich des Pfeils erreicht, wird dieser Text sichtbar
         WarningBackText.setVisible(true);
     }
 
     @FXML
     private void MouseExitedBacktoStartView(MouseEvent event) {
+        // Verlässt die Maus den Bereich, so wird der Text unsichtbar
         WarningBackText.setVisible(false);
     }
 
     @FXML
     private void BtnBackToStartView(MouseEvent event) throws IOException {
+        
+        //
 
         Parent root = FXMLLoader.load(getClass().getResource("StartView.fxml"));
 
