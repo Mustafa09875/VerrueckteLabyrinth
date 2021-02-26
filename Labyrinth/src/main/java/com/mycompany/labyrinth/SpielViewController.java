@@ -292,12 +292,14 @@ public class SpielViewController implements Initializable {
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(230);
                             break;
+                            //Dann zweite Karte erste obere Reihe
                         case 1:
                             getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(230);
                             break;
+                            //usw
                         case 2:
                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
@@ -465,11 +467,11 @@ public class SpielViewController implements Initializable {
     private void grenze() {
 
         /**
-         * Letzte Reihe unten: wird die Spielerposition y tiefer als 424 bewegt
-         * und befindet er sich im x Achsenabschnitt auf 0, dann wird nicht
-         * zugelassen, dass er weiter geht, indem der Spiele auf die
-         * dementsprechende Position gesetzt wird.
-         *
+         * Letzte Reihe unten: wird die Spielerposition y größer als 424, dh. bewegt sich der Spieler 
+         * tiefer als 424 im Y Bereich 
+         * und befindet er sich im X Achsenabschnitt auf 0, dann wird nicht
+         * zugelassen, dass er weiter geht, indem der Spiele auf zurück auf die Karte die in der letzten Reihe ist.
+         *Dabei wird geprüft, ob auf welcher Reihe sich der Spieler im X-Achsenabschnitt befindet.
          */
         if (FigurGeld.getY() > 424 && FigurGeld.getX() == 0) {
             FigurGeld.setY(424);
@@ -488,7 +490,8 @@ public class SpielViewController implements Initializable {
             FigurGeld.setX(424);
         }
 
-        // Nach rechts                      
+        // Nach rechts: wird x größer als 424, dh. beweget sich der Spiele nach rechts raus aus dem Feld 
+        //und befindet sich in der ersten oberen Reihe, dann wird er dort auf die letzte Karte zurückgesetzt              
         if (FigurGeld.getX() > 424 && FigurGeld.getY() == 0) {
             FigurGeld.setX(424);
             FigurGeld.setY(0);
@@ -506,7 +509,7 @@ public class SpielViewController implements Initializable {
             FigurGeld.setY(424);
         }
 
-        // Nach links: wenn x kleiner als 0 wird, das heißt, ich bewege mich nach links raus, dann werde ich zurückgesetzt auf meine vorherige position.                      
+        // Nach links: wenn x kleiner als 0 wird,dh. ich bewege mich nach links raus, dann werde ich zurückgesetzt auf meine vorherige position.                      
         if (FigurGeld.getX() < 0 && FigurGeld.getY() == 0) {
             FigurGeld.setX(0);
             FigurGeld.setY(0);
@@ -542,7 +545,7 @@ public class SpielViewController implements Initializable {
             FigurGeld.setX(424);
         }
 
-        //Alles für den grünen Spiele
+        //Alles nochmal für den grünen Spiele
         //nach unten
         if (FigurGrün.getY() > 0 && FigurGrün.getX() == 0) {
             FigurGrün.setY(0);
@@ -620,7 +623,11 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void FigurGelbClicked(MouseEvent event) {
-
+        /**
+         * Wird der gelbe Spieler angeclicked, dann wird der Status vom gelben Spieler auf true gesetzt
+         * und der vom grünen Spieler auf false. Zudem wird der Grüne spieler in die ecke auf seine
+         * Fläche gesetzt und der Gelbe ebenfalls. Anschließend kann man den Gelben Spieler bewegen
+         */
         statusgelb = true;
         statusgrün = false;
 
@@ -647,12 +654,11 @@ public class SpielViewController implements Initializable {
     @FXML
     private void AnchoKeyPressed(KeyEvent event) {
 
-        App.getRandomkarte().changeRandomkarteAusgang();
-        App.getRandomkarte().changeSpielkartenAusgang();
+      
 
         // & FigurGeld.getLayoutX() <= 829 & FigurGeld.getLayoutX() >= 380 & FigurGeld.getLayoutY() <= 613 & FigurGeld.getLayoutY() <= 175
         if (statusgelb == true) {
-            if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == true && App.getRandomkarte().isUntererEingang() == true) {
+            
                 switch (event.getCode()) {
                     case W:
                         FigurGeld.setY(FigurGeld.getY() - 106);
@@ -669,45 +675,9 @@ public class SpielViewController implements Initializable {
                     default:
                         break;
                 }
-            } else if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == false) {
-                switch (event.getCode()) {
-                    case A:
-                        FigurGeld.setX(FigurGeld.getX() - 106);
-                        break;
-                }
+           
 
-            } else if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == false) {
-                switch (event.getCode()) {
-                    case W:
-                        FigurGeld.setY(FigurGeld.getY() - 106);
-                        break;
-                }
-
-            } else if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == true && App.getRandomkarte().isUntererEingang() == false) {
-                switch (event.getCode()) {
-                    case D:
-                        FigurGeld.setX(FigurGeld.getX() + 106);
-                        break;
-                }
-
-            } else if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == false && App.getRandomkarte().isObererEingang() == false && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == true) {
-                switch (event.getCode()) {
-                    case S:
-                        FigurGeld.setY(FigurGeld.getY() + 106);
-                        break;
-                }
-
-            } else if (statusgelb == true && App.getRandomkarte().isLinkerEingang() == true && App.getRandomkarte().isObererEingang() == true && App.getRandomkarte().isRechterEingang() == false && App.getRandomkarte().isUntererEingang() == true) {
-                switch (event.getCode()) {
-                    case W:
-                        FigurGeld.setY(FigurGeld.getY() - 106);
-                        break;
-                    case A:
-                        FigurGeld.setX(FigurGeld.getX() - 106);
-                        break;
-                }
-
-            }
+            
 
             grenze();
         } //  || FigurGrün.getX() < 829 || FigurGrün.getX() > 380 || FigurGrün.getY() < 613 || FigurGrün.getY() < 180
