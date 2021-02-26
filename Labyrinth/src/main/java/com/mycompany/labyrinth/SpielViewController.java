@@ -1107,6 +1107,22 @@ public class SpielViewController implements Initializable {
         else if(FigurGeld.getX() == 820 && FigurGeld.getY() == 498){
             App.getSfgelb().setX(4); App.getSfgelb().setY(3);
         }
+        
+                else if(FigurGeld.getX() == 396 && FigurGeld.getY() == 501){
+            App.getSfgelb().setX(0); App.getSfgelb().setY(4);
+        }
+        else if(FigurGeld.getX() == 502 && FigurGeld.getY() == 501){
+            App.getSfgelb().setX(1); App.getSfgelb().setY(4);
+        }
+        else if(FigurGeld.getX() == 608 && FigurGeld.getY() == 501){
+            App.getSfgelb().setX(2); App.getSfgelb().setY(4);
+        }
+        else if(FigurGeld.getX() == 714 && FigurGeld.getY() == 501){
+            App.getSfgelb().setX(3); App.getSfgelb().setY(4);
+        }
+        else if(FigurGeld.getX() == 820 && FigurGeld.getY() == 501){
+            App.getSfgelb().setX(4); App.getSfgelb().setY(4);
+        }
     }
     
     private void checkSpielerKoordinatenGrün(){
