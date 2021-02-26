@@ -16,7 +16,7 @@ public class SpielfigurGrün extends SpielfigurModel {
     }
 
     public boolean statusausgeben() {
-       return this.isClicked();
+        return this.isClicked();
     }
-    
+
 }

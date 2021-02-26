@@ -36,44 +36,43 @@ public class StartViewController implements Initializable {
     @FXML
     private AnchorPane Container;
 
-    
-    
     //dsffffffffffff
-     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
-
-    
     @FXML
     private void SpielStartenBtn(ActionEvent event) throws IOException {
         /**
-         * hier lesen wir als erstes unser fxml File ein. Die Datei laden wir 
-         * über die Methode getResource der Klasse, welche den ClassLoader nutzt um die Resource innerhalb des ClassPath zu finden.
+         * hier lesen wir als erstes unser fxml File ein. Die Datei laden wir
+         * über die Methode getResource der Klasse, welche den ClassLoader nutzt
+         * um die Resource innerhalb des ClassPath zu finden.
          */
-        Parent root = FXMLLoader.load(getClass().getResource("SpielView.fxml")); 
-      
-        
-        Scene spielstart = SpielStart.getScene();
-      
-      
-        root.translateYProperty().set(spielstart.getHeight());
-      
-      
-        StackPane parentContainer =  (StackPane)spielstart.getRoot();
+        Parent root = FXMLLoader.load(getClass().getResource("SpielView.fxml"));
+
+        // Wenn der Button gedrückt wird dann wird die zweite Scene geladen, die sich erstmal unten befindet
+        Scene spielview = SpielStart.getScene();
+
+        //Der Y Wert der zweiten Scene(Spielview)entsprechend der ersten Szene(root) gleichgesetzt
+        root.translateYProperty().set(spielview.getHeight());
+
+        //Hier wird die zweite Scene in die StackPane geaddet, so sind beide Views nun in der Scene
+        StackPane parentContainer = (StackPane) spielview.getRoot();
         parentContainer.getChildren().add(root);
-      
+
+        // Die Animation wird erstellt. Zunächst wird ein neues Objekt der Timeline erstellt
         Timeline time = new Timeline();
+        //Mit dem KeyValue wird der Y Wert der zweiten Scene, die nach oben geht, animiert. Dabei steht Ease_In für einen etwas langsamen start und dann eine schnellere Bewegung.
         KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+        //Die Zeitdauer der Animation von kv wird festgelegt
         KeyFrame kf = new KeyFrame(javafx.util.Duration.seconds(0.3), kv);
         time.getKeyFrames().add(kf);
-        time.setOnFinished(event1 ->{ 
+        //Die erste Szene wird entfernt, nachdem die Animation ferig ist
+        time.setOnFinished(event1 -> {
             ParentContainer.getChildren().remove(Container);
         });
-        
+        //Animation startet
         time.play();
     }
 }
-    

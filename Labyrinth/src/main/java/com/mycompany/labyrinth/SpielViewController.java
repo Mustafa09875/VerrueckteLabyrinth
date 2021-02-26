@@ -292,28 +292,28 @@ public class SpielViewController implements Initializable {
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(230);
                             break;
-                            //Dann zweite Karte erste obere Reihe
+                        //Dann zweite Karte erste obere Reihe
                         case 1:
                             getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(230);
                             break;
-                            //usw
+                        //usw
                         case 2:
-                           getRandomKarte();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
                             board[x][y].getKarten().setLayoutY(230);
                             break;
                         case 3:
-                           getRandomKarte();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
                             board[x][y].getKarten().setLayoutY(230);
                             break;
                         case 4:
-                          getRandomKarte();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(790);
                             board[x][y].getKarten().setLayoutY(230);
@@ -322,25 +322,25 @@ public class SpielViewController implements Initializable {
                 } else if (y == 1) {
                     switch (x) {
                         case 0:
-                        getRandomKarte();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(370);
                             board[x][y].getKarten().setLayoutY(335);
                             break;
                         case 1:
-                       getRandomKarte();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(475);
                             board[x][y].getKarten().setLayoutY(335);
                             break;
                         case 2:
-                         getRandomKarte();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(580);
                             board[x][y].getKarten().setLayoutY(335);
                             break;
                         case 3:
-                       getRandomKarte();
+                            getRandomKarte();
                             board[x][y] = App.getRandomkarte();
                             board[x][y].getKarten().setLayoutX(685);
                             board[x][y].getKarten().setLayoutY(335);
@@ -467,11 +467,12 @@ public class SpielViewController implements Initializable {
     private void grenze() {
 
         /**
-         * Letzte Reihe unten: wird die Spielerposition y größer als 424, dh. bewegt sich der Spieler 
-         * tiefer als 424 im Y Bereich 
-         * und befindet er sich im X Achsenabschnitt auf 0, dann wird nicht
-         * zugelassen, dass er weiter geht, indem der Spiele auf zurück auf die Karte die in der letzten Reihe ist.
-         *Dabei wird geprüft, ob auf welcher Reihe sich der Spieler im X-Achsenabschnitt befindet.
+         * Letzte Reihe unten: wird die Spielerposition y größer als 424, dh.
+         * bewegt sich der Spieler tiefer als 424 im Y Bereich und befindet er
+         * sich im X Achsenabschnitt auf 0, dann wird nicht zugelassen, dass er
+         * weiter geht, indem der Spiele auf zurück auf die Karte die in der
+         * letzten Reihe ist. Dabei wird geprüft, ob auf welcher Reihe sich der
+         * Spieler im X-Achsenabschnitt befindet.
          */
         if (FigurGeld.getY() > 424 && FigurGeld.getX() == 0) {
             FigurGeld.setY(424);
@@ -624,9 +625,10 @@ public class SpielViewController implements Initializable {
     @FXML
     private void FigurGelbClicked(MouseEvent event) {
         /**
-         * Wird der gelbe Spieler angeclicked, dann wird der Status vom gelben Spieler auf true gesetzt
-         * und der vom grünen Spieler auf false. Zudem wird der Grüne spieler in die ecke auf seine
-         * Fläche gesetzt und der Gelbe ebenfalls. Anschließend kann man den Gelben Spieler bewegen
+         * Wird der gelbe Spieler angeclicked, dann wird der Status vom gelben
+         * Spieler auf true gesetzt und der vom grünen Spieler auf false. Zudem
+         * wird der Grüne spieler in die ecke auf seine Fläche gesetzt und der
+         * Gelbe ebenfalls. Anschließend kann man den Gelben Spieler bewegen
          */
         statusgelb = true;
         statusgrün = false;
@@ -654,34 +656,31 @@ public class SpielViewController implements Initializable {
     @FXML
     private void AnchoKeyPressed(KeyEvent event) {
 
-      
-
         //Wenn der Status true ist, dann kann sich der Spieler bewegen
         if (statusgelb == true) {
-            
+
             // Die Methode getCode von KeyEvent wird aufgerufen, danach kann sich der Spieler mit den Tasten W S A und D bewegen.
-                switch (event.getCode()) {
-                    // Drückt der Spieler W so wird Seine aktuelle Position überprüft und diese wird um 106 verringert
-                    case W:
-                        FigurGeld.setY(FigurGeld.getY() - 106);
-                        break;
-                    case S:
-                        FigurGeld.setY(FigurGeld.getY() + 106);
-                        break;
-                    case A:
-                        FigurGeld.setX(FigurGeld.getX() - 106);
-                        break;
-                    case D:
-                        FigurGeld.setX(FigurGeld.getX() + 106);
-                        break;
-                    default:
-                        break;
-                }
-           
-                //Die Methode, die oben deklariert wurde, prüft ob der Spiele sich im Feld befindet.
+            switch (event.getCode()) {
+                // Drückt der Spieler W so wird Seine aktuelle Position überprüft und diese wird um 106 verringert
+                case W:
+                    FigurGeld.setY(FigurGeld.getY() - 106);
+                    break;
+                case S:
+                    FigurGeld.setY(FigurGeld.getY() + 106);
+                    break;
+                case A:
+                    FigurGeld.setX(FigurGeld.getX() - 106);
+                    break;
+                case D:
+                    FigurGeld.setX(FigurGeld.getX() + 106);
+                    break;
+                default:
+                    break;
+            }
+
+            //Die Methode, die oben deklariert wurde, prüft ob der Spiele sich im Feld befindet.
             grenze();
-        } 
-        else if (statusgrün == true) {
+        } else if (statusgrün == true) {
             switch (event.getCode()) {
                 case W:
                     FigurGrün.setY(FigurGrün.getY() - 106);
@@ -711,12 +710,11 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void btnPWestOben(MouseEvent event) {
-        
+
         // Ein neues Objekt der Karte, die draußen ist, wird erstellt, um diese  als letztes nach dem die vierte
         //Karte draußen ist, wieder einzusetzen.
-        
         KartenModel spielkarteKopie = App.getSpielkarten();
-        
+
         //Die letzte Karte in der letzten rechten Reihe wird der Spielkarte zugewiesen und auf die Position ausserhalb des Feldes plaziert.
         App.setSpielkarten(board[4][1]);
         App.getSpielkarten().getKarten().setLayoutX(243);
@@ -840,7 +838,6 @@ public class SpielViewController implements Initializable {
     private void btnPNordLinks(MouseEvent event) {
         String path = "C:\\Users\\user\\Desktop\\A\\Laser Sound Effect";
 
-        
         KartenModel spielkarteKopie = App.getSpielkarten();
 
         App.setSpielkarten(board[1][4]);
@@ -973,8 +970,6 @@ public class SpielViewController implements Initializable {
 
     @FXML
     private void BtnBackToStartView(MouseEvent event) throws IOException {
-        
-        //
 
         Parent root = FXMLLoader.load(getClass().getResource("StartView.fxml"));
 

@@ -15,8 +15,7 @@ import javafx.scene.image.ImageView;
  * JavaFX App
  */
 public class App extends Application {
-    
-    
+
     //ArrayListen und Objekte
     private static Scene scene;
     //Bolohnung nicht nicht im Einsatz
@@ -28,17 +27,13 @@ public class App extends Application {
     private static SpielFigurGelb sfgelb;
     private static SpielfigurGrün sfgrün;
     // Arraylist für das KartenModel
-    private static ArrayList <KartenModel> kartenKlasse;
+    private static ArrayList<KartenModel> kartenKlasse;
 
     //Die Karten des Feldes werden der randomkarte zugewiesen
     private static KartenModel randomkarte;
     //Die Karte die sich ausserhalb des Feles befindet und eingesetzt werden kann, wird der spielkarte zugewiesen
     private static KartenModel spielkarten;
-   
 
-    
-  
-  
 //Getter und Setter
     public static ArrayList<BelohnungModel> getBelohnungen() {
         return belohnungen;
@@ -103,11 +98,7 @@ public class App extends Application {
     public static void setSpielkarten(KartenModel spielkarten) {
         App.spielkarten = spielkarten;
     }
-    
-    
-    
-    
-    
+
     //Scene wird gestartet
     @Override
     public void start(Stage stage) throws IOException {
@@ -115,7 +106,7 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
     }
-   
+
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
@@ -130,12 +121,11 @@ public class App extends Application {
         belohnungen = new ArrayList<BelohnungModel>();
         karten = new ArrayList<ImageView>();
         spielfiguren = new ArrayList<SpielfigurModel>();
-        kartenKlasse = new ArrayList <KartenModel>();
-      
+        kartenKlasse = new ArrayList<KartenModel>();
+
         spielfiguren.add(new SpielfigurGrün("Grün", 2, 3, false));
         spielfiguren.add(new SpielFigurGelb("Gelb", 1, 2, false));
-        
-        
+
         launch();
     }
 
