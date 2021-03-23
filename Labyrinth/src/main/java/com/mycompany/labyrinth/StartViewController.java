@@ -30,10 +30,13 @@ import javafx.scene.layout.StackPane;
 public class StartViewController implements Initializable {
 
     @FXML
+   
     private Button SpielStart;
     @FXML
+    //Bei Stackpane werden Elemente an derselben Position aufeinander gelegt.
     private StackPane ParentContainer;
     @FXML
+    //AnchorPane hat 5 Regionen: Top, Left, Bottom, Right, center
     private AnchorPane Container;
 
     //dsffffffffffff
@@ -45,9 +48,10 @@ public class StartViewController implements Initializable {
     @FXML
     private void SpielStartenBtn(ActionEvent event) throws IOException {
         /**
-         * hier lesen wir als erstes unser fxml File ein. Die Datei laden wir
-         * über die Methode getResource der Klasse, welche den ClassLoader nutzt
+         * hier lesen wir als erstes unsere fxml File ein. Die Datei laden wir
+         * über die Methode getResource der Klasse, welche den ClassLoader(Ein class loader dient dazu, zur Laufzeit Klassen und Ressourcen zu laden) nutzt
          * um die Resource innerhalb des ClassPath zu finden.
+         * Alle Nodes der SpielView werden geladen
          */
         Parent root = FXMLLoader.load(getClass().getResource("SpielView.fxml"));
 
@@ -59,6 +63,8 @@ public class StartViewController implements Initializable {
 
         //Hier wird die zweite Scene in die StackPane geaddet, so sind beide Views nun in der Scene
         StackPane parentContainer = (StackPane) spielview.getRoot();
+        
+        //Mein View wird in den Parentcontainer geaddet und befindet sich nun in der obersten Ebene
         parentContainer.getChildren().add(root);
 
         // Die Animation wird erstellt. Zunächst wird ein neues Objekt der Timeline erstellt
